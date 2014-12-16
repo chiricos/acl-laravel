@@ -1,6 +1,6 @@
 <?php
-
-class Proceso
+use Illuminate\Auth\UserInterface;
+class Proceso extends BaseController
 {
     private $_tablaRole;
     private $_tablaUsuario;
@@ -8,12 +8,12 @@ class Proceso
     private $_permisoTotal;
     private $_permisoDenegado;
 
-    public function __construct($tablaRole,$tablaUsuario,$tablaPermiso,$permisoDenegado)
+    public function __construct()
     {
-        $this->_tablaPermiso=$tablaPermiso;
-        $this->_tablaRole=$tablaRole;
-        $this->_tablaUsuario=$tablaUsuario;
-        $this->_permisoDenegado=$permisoDenegado;
+        $this->_tablaPermiso= $total_permisos=NombrePermiso::all()->lists('nombre','id');
+        $this->_tablaRole=Role::whereRaw("id_role=".Auth::user()->id_role."")->lists('id_permiso');
+        $this->_tablaUsuario=Permiso::whereRaw("id_usuario=".Auth::user()->id."")->lists('id_permiso');
+        $this->_permisoDenegado=Permiso::whereRaw("id_usuario=".Auth::user()->id."")->lists('no_permiso');
     }
 
     public function filtrarPermisos()

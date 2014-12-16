@@ -96,208 +96,124 @@ Route::filter('csrf', function()
 include('include/filtros/Proceso.php');
 
 if(Auth::user()){
-    $permisos_usuario= Permiso::whereRaw("id_usuario=".Auth::user()->id."")->lists('id_permiso');
-    $permisos_role= Role::whereRaw("id_role=".Auth::user()->id_role."")->lists('id_permiso');
-    $no_permiso= Permiso::whereRaw("id_usuario=".Auth::user()->id."")->lists('no_permiso');
-    $total_permisos=NombrePermiso::all()->lists('nombre','id');
-    $permiso =new Proceso($permisos_role,$permisos_usuario,$total_permisos,$no_permiso);
+
+    $permiso =new Proceso();
     $total=$permiso->filtrarPermisos();
     print_r($total);
 
 
 
 
-        Route::filter('permiso1', function(){
-            if (Auth::guest()) return Redirect::guest('/');
-            $permisos_usuario= Permiso::whereRaw("id_usuario=".Auth::user()->id."")->lists('id_permiso');
-            $permisos_role= Role::whereRaw("id_role=".Auth::user()->id_role."")->lists('id_permiso');
-            $no_permiso= Permiso::whereRaw("id_usuario=".Auth::user()->id."")->lists('no_permiso');
-            $total_permisos=NombrePermiso::all()->lists('nombre','id');
-            $permiso =new Proceso($permisos_role,$permisos_usuario,$total_permisos,$no_permiso);
-            $total=$permiso->filtrarPermisos();
-            if($total[1]<1){
+    Route::filter('permiso1', function(){
+        if (Auth::guest()) return Redirect::guest('/');
+        $permiso =new Proceso();
+        $total=$permiso->filtrarPermisos();
+        if($total[1]<1){
 
-                return Redirect::to('/');
-            }
-
-
-        });
-
+            return Redirect::to('/');
+        }
+    });
     Route::filter('permiso2', function(){
         if (Auth::guest()) return Redirect::guest('/');
-        $permisos_usuario= Permiso::whereRaw("id_usuario=".Auth::user()->id."")->lists('id_permiso');
-        $permisos_role= Role::whereRaw("id_role=".Auth::user()->id_role."")->lists('id_permiso');
-        $no_permiso= Permiso::whereRaw("id_usuario=".Auth::user()->id."")->lists('no_permiso');
-        $total_permisos=NombrePermiso::all()->lists('nombre','id');
-        $permiso =new Proceso($permisos_role,$permisos_usuario,$total_permisos,$no_permiso);
+        $permiso =new Proceso();
         $total=$permiso->filtrarPermisos();
         if($total[2]<1){
 
             return Redirect::to('/');
         }
-
-
     });
-
     Route::filter('permiso3', function(){
         if (Auth::guest()) return Redirect::guest('/');
-        $permisos_usuario= Permiso::whereRaw("id_usuario=".Auth::user()->id."")->lists('id_permiso');
-        $permisos_role= Role::whereRaw("id_role=".Auth::user()->id_role."")->lists('id_permiso');
-        $no_permiso= Permiso::whereRaw("id_usuario=".Auth::user()->id."")->lists('no_permiso');
-        $total_permisos=NombrePermiso::all()->lists('nombre','id');
-        $permiso =new Proceso($permisos_role,$permisos_usuario,$total_permisos,$no_permiso);
+        $permiso =new Proceso();
         $total=$permiso->filtrarPermisos();
         if($total[3]<1){
 
             return Redirect::to('/');
         }
-
-
     });
-
     Route::filter('permiso4', function(){
         if (Auth::guest()) return Redirect::guest('/');
-        $permisos_usuario= Permiso::whereRaw("id_usuario=".Auth::user()->id."")->lists('id_permiso');
-        $permisos_role= Role::whereRaw("id_role=".Auth::user()->id_role."")->lists('id_permiso');
-        $no_permiso= Permiso::whereRaw("id_usuario=".Auth::user()->id."")->lists('no_permiso');
-        $total_permisos=NombrePermiso::all()->lists('nombre','id');
-        $permiso =new Proceso($permisos_role,$permisos_usuario,$total_permisos,$no_permiso);
+        $permiso =new Proceso();
         $total=$permiso->filtrarPermisos();
         if($total[4]<1){
 
             return Redirect::to('/');
         }
-
-
     });
-
     Route::filter('permiso5', function(){
         if (Auth::guest()) return Redirect::guest('/');
-        $permisos_usuario= Permiso::whereRaw("id_usuario=".Auth::user()->id."")->lists('id_permiso');
-        $permisos_role= Role::whereRaw("id_role=".Auth::user()->id_role."")->lists('id_permiso');
-        $no_permiso= Permiso::whereRaw("id_usuario=".Auth::user()->id."")->lists('no_permiso');
-        $total_permisos=NombrePermiso::all()->lists('nombre','id');
-        $permiso =new Proceso($permisos_role,$permisos_usuario,$total_permisos,$no_permiso);
+        $permiso =new Proceso();
         $total=$permiso->filtrarPermisos();
         if($total[5]<1){
 
             return Redirect::to('/');
         }
-
-
     });
-
     Route::filter('permiso6', function(){
         if (Auth::guest()) return Redirect::guest('/');
-        $permisos_usuario= Permiso::whereRaw("id_usuario=".Auth::user()->id."")->lists('id_permiso');
-        $permisos_role= Role::whereRaw("id_role=".Auth::user()->id_role."")->lists('id_permiso');
-        $no_permiso= Permiso::whereRaw("id_usuario=".Auth::user()->id."")->lists('no_permiso');
-        $total_permisos=NombrePermiso::all()->lists('nombre','id');
-        $permiso =new Proceso($permisos_role,$permisos_usuario,$total_permisos,$no_permiso);
+        $permiso =new Proceso();
         $total=$permiso->filtrarPermisos();
         if($total[6]<1){
 
             return Redirect::to('/');
         }
-
-
     });
-
     Route::filter('permiso7', function(){
         if (Auth::guest()) return Redirect::guest('/');
-        $permisos_usuario= Permiso::whereRaw("id_usuario=".Auth::user()->id."")->lists('id_permiso');
-        $permisos_role= Role::whereRaw("id_role=".Auth::user()->id_role."")->lists('id_permiso');
-        $no_permiso= Permiso::whereRaw("id_usuario=".Auth::user()->id."")->lists('no_permiso');
-        $total_permisos=NombrePermiso::all()->lists('nombre','id');
-        $permiso =new Proceso($permisos_role,$permisos_usuario,$total_permisos,$no_permiso);
+        $permiso =new Proceso();
         $total=$permiso->filtrarPermisos();
         if($total[7]<1){
 
             return Redirect::to('/');
         }
-
-
     });
-
     Route::filter('permiso8', function(){
         if (Auth::guest()) return Redirect::guest('/');
-        $permisos_usuario= Permiso::whereRaw("id_usuario=".Auth::user()->id."")->lists('id_permiso');
-        $permisos_role= Role::whereRaw("id_role=".Auth::user()->id_role."")->lists('id_permiso');
-        $no_permiso= Permiso::whereRaw("id_usuario=".Auth::user()->id."")->lists('no_permiso');
-        $total_permisos=NombrePermiso::all()->lists('nombre','id');
-        $permiso =new Proceso($permisos_role,$permisos_usuario,$total_permisos,$no_permiso);
+        $permiso =new Proceso();
         $total=$permiso->filtrarPermisos();
         if($total[8]<1){
 
             return Redirect::to('/');
         }
-
-
     });
-
     Route::filter('permiso9', function(){
         if (Auth::guest()) return Redirect::guest('/');
-        $permisos_usuario= Permiso::whereRaw("id_usuario=".Auth::user()->id."")->lists('id_permiso');
-        $permisos_role= Role::whereRaw("id_role=".Auth::user()->id_role."")->lists('id_permiso');
-        $no_permiso= Permiso::whereRaw("id_usuario=".Auth::user()->id."")->lists('no_permiso');
-        $total_permisos=NombrePermiso::all()->lists('nombre','id');
-        $permiso =new Proceso($permisos_role,$permisos_usuario,$total_permisos,$no_permiso);
+        $permiso =new Proceso();
         $total=$permiso->filtrarPermisos();
         if($total[9]<1){
 
             return Redirect::to('/');
         }
-
-
     });
-
     Route::filter('permiso10', function(){
         if (Auth::guest()) return Redirect::guest('/');
-        $permisos_usuario= Permiso::whereRaw("id_usuario=".Auth::user()->id."")->lists('id_permiso');
-        $permisos_role= Role::whereRaw("id_role=".Auth::user()->id_role."")->lists('id_permiso');
-        $no_permiso= Permiso::whereRaw("id_usuario=".Auth::user()->id."")->lists('no_permiso');
-        $total_permisos=NombrePermiso::all()->lists('nombre','id');
-        $permiso =new Proceso($permisos_role,$permisos_usuario,$total_permisos,$no_permiso);
+        $permiso =new Proceso();
         $total=$permiso->filtrarPermisos();
         if($total[10]<1){
 
             return Redirect::to('/');
         }
-
-
     });
-
     Route::filter('permiso11', function(){
         if (Auth::guest()) return Redirect::guest('/');
-        $permisos_usuario= Permiso::whereRaw("id_usuario=".Auth::user()->id."")->lists('id_permiso');
-        $permisos_role= Role::whereRaw("id_role=".Auth::user()->id_role."")->lists('id_permiso');
-        $no_permiso= Permiso::whereRaw("id_usuario=".Auth::user()->id."")->lists('no_permiso');
-        $total_permisos=NombrePermiso::all()->lists('nombre','id');
-        $permiso =new Proceso($permisos_role,$permisos_usuario,$total_permisos,$no_permiso);
+        $permiso =new Proceso();
         $total=$permiso->filtrarPermisos();
         if($total[11]<1){
 
             return Redirect::to('/');
         }
-
-
     });
-
     Route::filter('permiso12', function(){
         if (Auth::guest()) return Redirect::guest('/');
-        $permisos_usuario= Permiso::whereRaw("id_usuario=".Auth::user()->id."")->lists('id_permiso');
-        $permisos_role= Role::whereRaw("id_role=".Auth::user()->id_role."")->lists('id_permiso');
-        $no_permiso= Permiso::whereRaw("id_usuario=".Auth::user()->id."")->lists('no_permiso');
-        $total_permisos=NombrePermiso::all()->lists('nombre','id');
-        $permiso =new Proceso($permisos_role,$permisos_usuario,$total_permisos,$no_permiso);
+        $permiso =new Proceso();
         $total=$permiso->filtrarPermisos();
         if($total[12]<1){
 
             return Redirect::to('/');
         }
-
-
     });
+
+
 
 
 }
