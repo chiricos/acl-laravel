@@ -99,9 +99,7 @@ if(Auth::user()){
 
     $permiso =new Proceso();
     $total=$permiso->filtrarPermisos();
-    print_r($total);
-
-
+    //print_r($total);
 
 
     Route::filter('permiso1', function(){

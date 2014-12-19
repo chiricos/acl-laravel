@@ -1,6 +1,5 @@
 <?php
-use Illuminate\Auth\UserInterface;
-class Proceso extends BaseController
+class Proceso
 {
     private $_tablaRole;
     private $_tablaUsuario;

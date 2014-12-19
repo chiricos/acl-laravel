@@ -55,7 +55,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'acl_lilipink',
+			'database'  => 'lilipinkCreditos',
 			'username'  => 'root',
 			'password'  => '123456',
 			'charset'   => 'utf8',

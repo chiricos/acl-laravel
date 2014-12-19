@@ -12,6 +12,7 @@ Route::group(array('before' => 'auth'), function()
 	{
 		return View::make('index');
 	});
+
     Route::group(array('before'=>'permiso1'),function(){
         Route::get('permiso1','PermisosController@permiso1');
     });
@@ -85,3 +86,5 @@ Route::group(array('before' => 'auth'), function()
 	// Esta ruta nos servirá para cerrar sesión.
 	Route::get('logout', 'AuthController@logOut');
 });
+
+Route::get('menu','PermisosController@menu');

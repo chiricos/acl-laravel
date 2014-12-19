@@ -3,6 +3,14 @@ use Illuminate\Auth\UserInterface;
 
 class PermisosController extends BaseController {
 
+
+    public function menu(){
+        $menus= DB::select('SELECT * FROM menus WHERE nivel = 0');
+        $submenus= DB::select('SELECT * FROM menus WHERE nivel = 1');
+        $subsubmenus=DB::select('SELECT * FROM menus WHERE nivel = 2');
+        return View::make('menu',array("menus"=>$menus,"submenus"=>$submenus,"subsubmenus"=>$subsubmenus));
+    }
+
     public function permiso1(){
         return View::make('permisos');
     }public function permiso2(){
@@ -28,4 +36,6 @@ class PermisosController extends BaseController {
     }public function permiso12(){
         return View::make('permisos');
     }
+
+
 }
