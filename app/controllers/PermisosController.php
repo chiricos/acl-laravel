@@ -122,13 +122,13 @@ class PermisosController extends BaseController {
     private function validateForms($inputs =array())
     {
         $rules= array(
-          'username'            =>  'required|min:1|max:105|unique:users',
-            'nombre'            =>  'required|min:1|max:105',
-            'apellido'          =>  'required|min:1|max:15',
-            'correo'            =>  'required|min:1|max:100|unique:users',
-            'password'          =>  'required|min:1|max:105',
-            'confirmar_password'=>  'required|min:1|max:105|same:password',
-            'id_role'           =>  'numeric'
+            'user_name'                 =>  'required|min:1|max:105|unique:users',
+            'name'                      =>  'required|min:1|max:105',
+            'last_name'                 =>  'required|min:1|max:15',
+            'email'                     =>  'required|min:1|max:100|unique:users',
+            'password'                  =>  'required|min:1|max:105',
+            'confirmar_password'        =>  'required|min:1|max:105|same:password',
+            'role_id'                   =>  'numeric'
         );
 
         $messages=array(

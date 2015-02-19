@@ -1,6 +1,5 @@
 <?php
 
-
 // Nos mostrará el formulario de login.
 Route::get('login', 'AuthController@showLogin');
 // Validamos los datos de inicio de sesión.

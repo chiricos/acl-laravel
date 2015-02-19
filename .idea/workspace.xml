@@ -2,44 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01be3750-e3c5-4a77-8606-2991103a775a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/Registro.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gitattributes" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/prueba-lilipink.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CONTRIBUTING.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/acl_lilipink.sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/commands/.gitkeep" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/config/app.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/config/auth.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/config/cache.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/config/compile.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/config/database.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/config/local/app.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/config/local/database.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/config/mail.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/config/packages/.gitkeep" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/config/queue.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/config/remote.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/config/services.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/config/session.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/config/testing/cache.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/config/testing/session.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/config/view.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/config/workbench.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/controllers/.gitkeep" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/controllers/AuthController.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/controllers/BaseController.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/controllers/HomeController.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/controllers/PermisosController.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/database/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/database/migrations/.gitkeep" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/database/migrations/2014_12_19_160820_create_user_table.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/database/migrations/2014_12_19_163418_create_role_table.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/database/migrations/2014_12_19_164142_create_permiso_table.php" afterPath="" />
@@ -53,52 +15,11 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/database/migrations/2014_12_19_174044_create_aceptacionCredito_table.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/database/migrations/2014_12_19_174411_create_aceptacionUsuario_table.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/database/migrations/2014_12_19_174730_create_log_table.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/database/seeds/.gitkeep" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/database/seeds/DatabaseSeeder.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/database/seeds/UserTableSeeder.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/filters.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/include/filtros/Proceso.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/lang/en/pagination.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/lang/en/reminders.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/lang/en/validation.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/models/Menu.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/models/NombrePermiso.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/models/Permiso.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/models/Role.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/models/User.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/start/artisan.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/start/global.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/start/local.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/storage/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/storage/cache/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/storage/logs/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/storage/meta/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/storage/sessions/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/storage/views/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/tests/ExampleTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/tests/TestCase.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/emails/auth/reminder.blade.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/hello.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/index.blade.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/login.blade.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/menu.blade.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/permisos.blade.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/artisan" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bootstrap/autoload.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bootstrap/paths.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bootstrap/start.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/composer.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpunit.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/.htaccess" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/favicon.ico" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/index.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/packages/.gitkeep" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/robots.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/readme.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/server.php" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/DRAWDE.md" afterPath="$PROJECT_DIR$/app/views/administration/createAccounts.blade.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/app/views/permission/permission.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/PermisosController.php" afterPath="$PROJECT_DIR$/app/controllers/PermisosController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/database.php" afterPath="$PROJECT_DIR$/app/config/database.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/predeterminado.iml" afterPath="$PROJECT_DIR$/.idea/predeterminado.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/routes.php" afterPath="$PROJECT_DIR$/app/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="predeterminado.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -135,45 +56,45 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PermisosController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PermisosController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/PermisosController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.3333333" vertical-offset="0" max-vertical-offset="3672">
-              <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.7590361" vertical-offset="702" max-vertical-offset="3672">
+              <caret line="60" column="20" selection-start-line="60" selection-start-column="20" selection-end-line="60" selection-end-column="20" />
               <folding>
-                <marker date="1419956944815" expanded="true" signature="487:522" placeholder="SELECT * FRO..menus..." />
-                <marker date="1419956944815" expanded="true" signature="557:592" placeholder="SELECT * FRO..menus..." />
-                <marker date="1419956944815" expanded="true" signature="629:664" placeholder="SELECT * FRO..menus..." />
+                <marker date="1424318544991" expanded="true" signature="487:522" placeholder="SELECT * FRO..menus..." />
+                <marker date="1424318544991" expanded="true" signature="557:592" placeholder="SELECT * FRO..menus..." />
+                <marker date="1424318544991" expanded="true" signature="629:664" placeholder="SELECT * FRO..menus..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="filters.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/filters.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.592592" vertical-offset="1235" max-vertical-offset="3996">
-              <caret line="101" column="20" selection-start-line="97" selection-start-column="0" selection-end-line="101" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="permission.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/permission/permission.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.0" vertical-offset="0" max-vertical-offset="324">
-              <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Proceso.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Proceso.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/include/filtros/Proceso.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1080">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1080">
               <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.6666667" vertical-offset="0" max-vertical-offset="1242">
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AuthController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/AuthController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-12.0" vertical-offset="0" max-vertical-offset="918">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -193,11 +114,25 @@
         <option value="$PROJECT_DIR$/app/models/Log.php" />
         <option value="$PROJECT_DIR$/app/models/Registro.php" />
         <option value="$PROJECT_DIR$/app/views/login.blade.php" />
-        <option value="$PROJECT_DIR$/app/routes.php" />
         <option value="$PROJECT_DIR$/app/views/accounts/registrarse.blade.php" />
         <option value="$PROJECT_DIR$/app/views/index.blade.php" />
         <option value="$PROJECT_DIR$/app/views/permission/permission.blade.php" />
         <option value="$PROJECT_DIR$/app/include/filtros/Proceso.php" />
+        <option value="$PROJECT_DIR$/app/routes.php" />
+        <option value="$PROJECT_DIR$/app/controllers/AuthController.php" />
+        <option value="$PROJECT_DIR$/app/config/database.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2015_02_19_014408_create_permissions_table.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2015_02_19_014651_create_permissionsRoles_table.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2015_02_19_014827_create_permission_table.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2015_02_19_015108_create_permissionRole_table.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2015_02_19_015404_create_permissionUser_table.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2015_02_19_015733_create_role_table.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2015_02_19_032340_create_user_table.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2015_02_19_033805_create_permissions_table.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2015_02_19_034134_create_permissionRoles_table.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2015_02_19_034418_create_permissionUsers_table.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2015_02_19_034738_create_roles_table.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2015_02_19_035120_create_users_table.php" />
         <option value="$PROJECT_DIR$/app/controllers/PermisosController.php" />
       </list>
     </option>
@@ -234,7 +169,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -249,7 +183,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="predeterminado" />
+              <option name="myItemId" value="acl-laravel" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -259,7 +193,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="predeterminado" />
+              <option name="myItemId" value="acl-laravel" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -273,25 +207,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="predeterminado" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="predeterminado" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="predeterminado" />
+              <option name="myItemId" value="acl-laravel" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -302,10 +218,6 @@
               <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="permission" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -313,7 +225,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="predeterminado" />
+              <option name="myItemId" value="acl-laravel" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -321,7 +233,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
+              <option name="myItemId" value="database" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -331,7 +243,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="predeterminado" />
+              <option name="myItemId" value="acl-laravel" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -339,11 +251,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="include" />
+              <option name="myItemId" value="database" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="filtros" />
+              <option name="myItemId" value="migrations" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -353,7 +265,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="predeterminado" />
+              <option name="myItemId" value="acl-laravel" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -365,13 +277,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="predeterminado" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="acl-laravel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../cerverus" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -416,27 +348,27 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="29" width="1280" height="995" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32918552" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32762313" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18093699" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32918552" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3296582" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -462,6 +394,94 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/controllers/PermisosController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="378" max-vertical-offset="3672">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <marker date="1424318544991" expanded="true" signature="487:522" placeholder="SELECT * FRO..menus..." />
+            <marker date="1424318544991" expanded="true" signature="557:592" placeholder="SELECT * FRO..menus..." />
+            <marker date="1424318544991" expanded="true" signature="629:664" placeholder="SELECT * FRO..menus..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/filters.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1217" max-vertical-offset="3996">
+          <caret line="100" column="20" selection-start-line="97" selection-start-column="0" selection-end-line="101" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/permission/permission.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="324">
+          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/include/filtros/Proceso.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1080">
+          <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="828" max-vertical-offset="1260">
+          <caret line="46" column="63" selection-start-line="46" selection-start-column="63" selection-end-line="46" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/AuthController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="936">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/PermisosController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="828">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <marker date="1424318544991" expanded="true" signature="487:522" placeholder="SELECT * FRO..menus..." />
+            <marker date="1424318544991" expanded="true" signature="557:592" placeholder="SELECT * FRO..menus..." />
+            <marker date="1424318544991" expanded="true" signature="629:664" placeholder="SELECT * FRO..menus..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/filters.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1235" max-vertical-offset="3996">
+          <caret line="101" column="20" selection-start-line="97" selection-start-column="0" selection-end-line="101" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/permission/permission.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="324">
+          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/include/filtros/Proceso.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1080">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="274" max-vertical-offset="1260">
@@ -470,19 +490,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/accounts/registrarse.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="576">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="594">
           <caret line="8" column="54" selection-start-line="8" selection-start-column="54" selection-end-line="8" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -491,9 +502,9 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="1350" max-vertical-offset="3672">
           <caret line="96" column="64" selection-start-line="96" selection-start-column="64" selection-end-line="96" selection-end-column="64" />
           <folding>
-            <marker date="1419956944815" expanded="true" signature="487:522" placeholder="SELECT * FRO..menus..." />
-            <marker date="1419956944815" expanded="true" signature="557:592" placeholder="SELECT * FRO..menus..." />
-            <marker date="1419956944815" expanded="true" signature="629:664" placeholder="SELECT * FRO..menus..." />
+            <marker date="1424318544991" expanded="true" signature="487:522" placeholder="SELECT * FRO..menus..." />
+            <marker date="1424318544991" expanded="true" signature="557:592" placeholder="SELECT * FRO..menus..." />
+            <marker date="1424318544991" expanded="true" signature="629:664" placeholder="SELECT * FRO..menus..." />
           </folding>
         </state>
       </provider>
@@ -522,30 +533,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/accounts/registrarse.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="576">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/PermisosController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="3654">
           <caret line="42" column="33" selection-start-line="42" selection-start-column="33" selection-end-line="42" selection-end-column="33" />
           <folding>
-            <marker date="1419956944815" expanded="true" signature="487:522" placeholder="SELECT * FRO..menus..." />
-            <marker date="1419956944815" expanded="true" signature="557:592" placeholder="SELECT * FRO..menus..." />
-            <marker date="1419956944815" expanded="true" signature="629:664" placeholder="SELECT * FRO..menus..." />
+            <marker date="1424318544991" expanded="true" signature="487:522" placeholder="SELECT * FRO..menus..." />
+            <marker date="1424318544991" expanded="true" signature="557:592" placeholder="SELECT * FRO..menus..." />
+            <marker date="1424318544991" expanded="true" signature="629:664" placeholder="SELECT * FRO..menus..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2014_12_19_160820_create_user_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="857">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -595,29 +591,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.16881594" vertical-offset="0" max-vertical-offset="853">
           <caret line="8" column="54" selection-start-line="8" selection-start-column="54" selection-end-line="8" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/accounts/registrarse.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.042203985" vertical-offset="0" max-vertical-offset="853">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6494725" vertical-offset="274" max-vertical-offset="1260">
-          <caret line="46" column="63" selection-start-line="46" selection-start-column="63" selection-end-line="46" selection-end-column="63" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/permission/permission.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.0" vertical-offset="0" max-vertical-offset="324">
+        <state vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="324">
           <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
           <folding />
         </state>
@@ -625,21 +604,73 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/filters.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.592592" vertical-offset="1235" max-vertical-offset="3996">
-          <caret line="101" column="20" selection-start-line="97" selection-start-column="0" selection-end-line="101" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1217" max-vertical-offset="3996">
+          <caret line="100" column="20" selection-start-line="97" selection-start-column="0" selection-end-line="101" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/PermisosController.php">
+    <entry file="file://$PROJECT_DIR$/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.3333333" vertical-offset="0" max-vertical-offset="3672">
-          <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
-          <folding>
-            <marker date="1419956944815" expanded="true" signature="487:522" placeholder="SELECT * FRO..menus..." />
-            <marker date="1419956944815" expanded="true" signature="557:592" placeholder="SELECT * FRO..menus..." />
-            <marker date="1419956944815" expanded="true" signature="629:664" placeholder="SELECT * FRO..menus..." />
-          </folding>
+        <state vertical-scroll-proportion="-0.6666667" vertical-offset="0" max-vertical-offset="1242">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_02_19_033805_create_permissions_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.3333335" vertical-offset="108" max-vertical-offset="684">
+          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_02_19_034134_create_permissionRoles_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.4814816" vertical-offset="347" max-vertical-offset="702">
+          <caret line="30" column="40" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_02_19_034418_create_permissionUsers_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.148148" vertical-offset="473" max-vertical-offset="720">
+          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_02_19_035120_create_users_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0895884" vertical-offset="0" max-vertical-offset="882">
+          <caret line="26" column="39" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2015_02_19_034738_create_roles_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3253012" vertical-offset="0" max-vertical-offset="830">
+          <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.58554214" vertical-offset="540" max-vertical-offset="2340">
+          <caret line="57" column="36" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/AuthController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.0" vertical-offset="0" max-vertical-offset="918">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -648,6 +679,18 @@
         <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1080">
           <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/PermisosController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7590361" vertical-offset="702" max-vertical-offset="3672">
+          <caret line="60" column="20" selection-start-line="60" selection-start-column="20" selection-end-line="60" selection-end-column="20" />
+          <folding>
+            <marker date="1424318544991" expanded="true" signature="487:522" placeholder="SELECT * FRO..menus..." />
+            <marker date="1424318544991" expanded="true" signature="557:592" placeholder="SELECT * FRO..menus..." />
+            <marker date="1424318544991" expanded="true" signature="629:664" placeholder="SELECT * FRO..menus..." />
+          </folding>
         </state>
       </provider>
     </entry>
