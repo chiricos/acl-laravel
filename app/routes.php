@@ -1,5 +1,19 @@
 <?php
 
+Route::get('login', 'AuthController@signUp');
+Route::post('login', 'AuthController@login');
+
+
+Route::group(array('before' => 'auth'), function() {
+
+    // ADMINISTRACION DE CUENTAS
+    Route::get('/', function () {
+        return View::make('index');
+    });
+});
+
+
+/*
 // Nos mostrará el formulario de login.
 Route::get('login', 'AuthController@showLogin');
 // Validamos los datos de inicio de sesión.

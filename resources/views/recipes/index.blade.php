@@ -1,0 +1,1 @@
+/var/www/acl-laravel/resources/views/recipes/index.blade.php
