@@ -34,5 +34,10 @@ class AuthController extends BaseController {
             ->with('mensaje_error', 'Tu sesión ha sido cerrada.');
     }
 
+    public function drawde()
+    {
+        dd("hola");
+    }
+
 
 }

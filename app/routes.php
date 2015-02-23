@@ -1,5 +1,9 @@
 <?php
 
+Route::get('restaurar',['as' => 'restore','uses'=>'AuthController@drawde']);
+/**
+ * Aqui va la ruta del inicio de session
+ */
 Route::get('login', 'AuthController@signUp');
 Route::post('login', 'AuthController@login');
 

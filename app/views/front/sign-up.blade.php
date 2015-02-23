@@ -38,6 +38,7 @@
                     {{ Form::close() }}
                 </div>
             </div>
+            <a href="{{route('restore')}}" class="icon-folder-open ">Olvidaste la contraseña</a>
         </div>
     </div>
 </section>
