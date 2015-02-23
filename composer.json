@@ -12,7 +12,7 @@
 	},
 	"autoload": {
 	  "psr-4": {
-		"credits\\": "app/cerverus"
+		"cerverus\\": "app/cerverus/"
 	  },
 		"classmap": [
 			"app/commands",
