@@ -1,38 +1,37 @@
-<!DOCTYPE html>
-<html >
+<!DOCTYPE HTML>
+<html>
 <head>
-    <meta charset="utf-8">
-    <title>Login</title>
-    {{ HTML::style('css/style.css'); }}
-    <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
 
 </head>
 <body>
-<div class="danger">{{ Session::get('mensaje_error') }}</div>
-<div id ="ima">
-    <img src="img/logo.png" />
-</div>
-<section class="container">
-    <div class="panel">
-        <div class="panel-body">
-            {{-- Preguntamos si hay algún mensaje de error y si hay lo mostramos  --}}
-            @if(Session::has('mensaje_error'))
+    <p>{{$errors->first('password')}}</p>
+    <p>{{$errors->first('confirmar_password')}}</p>
 
-            @endif
-            {{ Form::open(array('url' => 'fdjasklflsañ')) }}
-            <div class="form-group">
-                {{ Form::text('email', Input::old('email'), array('class' => 'form-control','placeholder'=>'Correo')); }}
-            </div>
-            <div class="margen">
-                <div class="enviar">
-                    {{ Form::submit('Enviar correo', array('class' => 'login-button')) }}
-                    {{ Form::close() }}
-                </div>
-            </div>
-            <a href="{{route('login')}}" class=" ">Iniciar Session</a>
+
+
+    <section class="Slider u-shadow-5">
+        <h1>Restaurar Contraseña</h1>
+        {{ Form::open(array('url' => 'restaurarContraseña/'.$user['id'],'class'=>'Credito-form')) }}
+        <div class="material-input">
+            {{Form::password('password','',['id' => 'password'])}}
+            {{Form::label('password','Password')}}
+            <span></span>
         </div>
-    </div>
-</section>
-<script src="https://code.jquery.com/jquery.js"></script>
+
+        <div class="material-input">
+            {{Form::password('confirmar_password','',['id' => 'confirmar_password'])}}
+            {{Form::label('confirmar_password','Confirmar Password')}}
+            <span></span>
+        </div>
+
+        <button class="u-button">
+            Enviar Solicitud
+        </button>
+
+        {{ Form::close() }}
+
+
+
+    </section>
 </body>
 </html>

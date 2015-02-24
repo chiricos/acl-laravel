@@ -1,10 +1,15 @@
 <?php
 
-route::get('restaurar', ['as' => 'restore', 'uses' => 'AuthController@drawde']);
-/**
- * Aqui va la ruta del inicio de session
- */
+//SON LAS RUTAS EN LAS QUE SE LES ENVIA UN CORREO CON EL LINK PARA RESTAURAR LA CONTRASEÑA
+route::get('restaurar', ['as' => 'restore', 'uses' => 'AuthController@showRestore']);
+route::post('restaurar', ['as' => 'restore', 'uses' => 'AuthController@sendRestore']);
 
+
+//RESTAURAR LA CONTRASEÑA
+route::get('restaurarContraseña/{id}', ['as' => 'restorePassword', 'uses' => 'AuthController@restorePassword']);
+route::post('restaurarContraseña/{id}', ['as' => 'restorePassword', 'uses' => 'AuthController@changePassword']);
+
+//INICIO DE SESSION
 route::get('login', ['as' => 'login', 'uses' => 'AuthController@signUp']);
 route::post('login', ['as' => 'login', 'uses' => 'AuthController@login']);
 

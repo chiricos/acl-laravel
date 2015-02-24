@@ -19,26 +19,17 @@
             @if(Session::has('mensaje_error'))
 
             @endif
-            {{ Form::open(array('route' => 'login')) }}
+            {{ Form::open(array('url' => 'restaurar')) }}
             <div class="form-group">
-                {{ Form::email('email', Input::old('email'), array('class' => 'form-control'),'required') }}
-            </div>
-            <div class="form-group">
-                {{ Form::password('password', array('class' => 'form-control')); }}
+                {{ Form::email('email', Input::old('email'), array('class' => 'form-control','placeholder'=>'Correo','required')); }}
             </div>
             <div class="margen">
-                <div class="checkbox">
-                    <label>
-                        {{ Form::checkbox('rememberme', true) }}
-                        Recordar contraseña
-                    </label>
-                </div>
                 <div class="enviar">
-                    {{ Form::submit('Ingresar', array('class' => 'btn btn-primary')) }}
+                    {{ Form::submit('Enviar correo', array('class' => 'login-button')) }}
                     {{ Form::close() }}
                 </div>
             </div>
-            <a href="{{route('restore')}}" class=" ">Olvidaste la contraseña</a>
+            <a href="{{route('login')}}" class=" ">Iniciar Session</a>
         </div>
     </div>
 </section>

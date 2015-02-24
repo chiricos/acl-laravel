@@ -15,12 +15,12 @@ return array(
 	*/
 
 	'mailgun' => array(
-		'domain' => '',
-		'secret' => '',
+		'domain' => 'cerveruus.no.reply@gmail.com',
+		'secret' => 'mi-martinez',
 	),
 
 	'mandrill' => array(
-		'secret' => '',
+		'secret' => 'cerveruus.no.reply@gmail.com',
 	),
 
 	'stripe' => array(
