@@ -99,10 +99,10 @@ if(Auth::user()){
 
     $permiso =new Proceso();
     $total=$permiso->filtrarPermisos();
-    print_r($total);
+    //print_r($total);
 
 
-    Route::filter('permiso1', function(){
+    Route::filter('permission1', function(){
         if (Auth::guest()) return Redirect::guest('/');
         $permiso =new Proceso();
         $total=$permiso->filtrarPermisos();

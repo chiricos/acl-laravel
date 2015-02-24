@@ -1,35 +1,40 @@
 <?php
+
+use cerverus\Entities\Permission;
+use cerverus\Entities\PermissionUser;
+use cerverus\Entities\PermissionRole;
+
 class Proceso
 {
-    private $_tablaRole;
-    private $_tablaUsuario;
-    private $_tablaPermiso;
-    private $_permisoTotal;
-    private $_permisoDenegado;
+    private $_tableRole;
+    private $_tableUser;
+    private $_tablePermission;
+    private $_AllPermission;
+    private $_permissionRejected;
 
     public function __construct()
     {
-        $this->_tablaPermiso= $total_permisos=NombrePermiso::all()->lists('nombre','id');
-        $this->_tablaRole=Role::whereRaw("id_role=".Auth::user()->id_role."")->lists('id_permiso');
-        $this->_tablaUsuario=Permiso::whereRaw("id_usuario=".Auth::user()->id."")->lists('id_permiso');
-        $this->_permisoDenegado=Permiso::whereRaw("id_usuario=".Auth::user()->id."")->lists('no_permiso');
+        $this->_tablePermission= $total_permisos=Permission::all()->lists('name','id');
+        $this->_tableRole=PermissionRole::whereRaw("role_id=".Auth::user()->role_id."")->lists('permission_id');
+        $this->_tableUser=PermissionUser::whereRaw("user_id=".Auth::user()->id."")->lists('permission_id');
+        $this->_permissionRejected=PermissionUser::whereRaw("user_id=".Auth::user()->id."")->lists('permission_no');
     }
 
     public function filtrarPermisos()
     {
-        $this->_permisoTotal=array_merge($this->_tablaRole,$this->_tablaUsuario);
+        $this->_AllPermission=array_merge($this->_tableRole,$this->_tableUser);
 
-        for ($i=1;$i<=count($this->_tablaPermiso);$i++)
+        for ($i=1;$i<=count($this->_tablePermission);$i++)
         {
-            for ($j=0;$j<count($this->_permisoTotal);$j++)
+            for ($j=0;$j<count($this->_AllPermission);$j++)
             {
-                if($i==$this->_permisoTotal[$j])
+                if($i==$this->_AllPermission[$j])
                 {
-                    $this->_tablaPermiso[$i]=1;
+                    $this->_tablePermission[$i]=1;
                 }
             }
-            if($this->_tablaPermiso[$i]!=1){
-                $this->_tablaPermiso[$i]=0;
+            if($this->_tablePermission[$i]!=1){
+                $this->_tablePermission[$i]=0;
             }
         }
         return $this->procesoFinal();
@@ -38,18 +43,18 @@ class Proceso
 
     public function procesoFinal()
     {
-        for ($i=1;$i<=count($this->_tablaPermiso);$i++)
+        for ($i=1;$i<=count($this->_tablePermission);$i++)
         {
-            for ($j=0;$j<count($this->_permisoDenegado);$j++)
+            for ($j=0;$j<count($this->_permissionRejected);$j++)
             {
-                if($i==$this->_permisoDenegado[$j])
+                if($i==$this->_permissionRejected[$j])
                 {
-                    $this->_tablaPermiso[$i]=0;
+                    $this->_tablePermission[$i]=0;
                 }
             }
 
         }
-        return $this->_tablaPermiso;
+        return $this->_tablePermission;
     }
 
 }

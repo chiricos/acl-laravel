@@ -19,7 +19,7 @@ class AuthController extends BaseController {
         $credentials = ['email' => $data['email'], 'password' => $data['password']];
          
         if (Auth::attempt($credentials, $data['remember'])) {
-            return Redirect::to('home');
+            return Redirect::to('/');
         }
 
         return Redirect::to('login')
@@ -36,7 +36,7 @@ class AuthController extends BaseController {
 
     public function drawde()
     {
-        dd("hola");
+        return View::make('front.restorePassword');
     }
 
 

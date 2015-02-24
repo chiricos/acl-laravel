@@ -6,10 +6,11 @@ body {
     font-family: 'Questrial', sans-serif;
 }
 
+
+
 #ima {
     margin-top: 87px;
     margin-bottom: 35px;
-    background: 000;
     text-align: center;
 }
 
@@ -121,6 +122,11 @@ input[type=checkbox] {
 
 }
 
+.login-button{
+    margin-left: 131px !important;
+    width: 58% !important;
+}
 
-
-
+.hidden, #hidden{
+    display: none;
+}
