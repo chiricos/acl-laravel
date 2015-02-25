@@ -19,7 +19,7 @@ class AuthController extends BaseController {
         $credentials = ['email' => $data['email'], 'password' => $data['password']];
          
         if (Auth::attempt($credentials, $data['remember'])) {
-            return Redirect::to('/');
+            return Redirect::route('home');
         }
 
         return Redirect::to('login')
@@ -99,6 +99,9 @@ class AuthController extends BaseController {
         return Redirect::route('login')->with(array('mensaje' => 'El usuario ha sido creado correctamente.'));
     }
 
-
+    public function index()
+    {
+        return View::make('front.home');
+    }
 
 }

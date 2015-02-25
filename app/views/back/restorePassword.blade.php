@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Login</title>
-    {{ HTML::style('css/style.css'); }}
+    {{ HTML::style(Login.css); }}
     <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
 
 </head>
