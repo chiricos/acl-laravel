@@ -18,13 +18,21 @@
     @yield('javascript')
 </head>
 <body>
+
 {{ Session::get('message') }}
     <header>
-        <a href="{{route('business')}}">Empresas</a>
-        <a href="{{route('contacts')}}">contactos</a>
-        <a href="{{route('administrator')}}">Administrar</a>
-        <a href="{{route('profile')}}">Perfil</a>
 
+        @if($total[1]==1)
+            <a href="{{route('business')}}">Empresas</a>
+        @endif
+        @if($total[2]==1)
+                <a href="{{route('contacts')}}">contactos</a>
+        @endif
+        @if($total[3]==1)
+                <a href="{{route('administrator')}}">Administrar</a>
+        @endif
+
+        <a href="{{route('profile')}}">Perfil</a>
     </header>
 
     @yield('content')

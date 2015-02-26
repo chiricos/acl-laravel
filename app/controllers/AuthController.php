@@ -100,7 +100,9 @@ class AuthController extends BaseController {
 
     public function index()
     {
-        return View::make('front.home');
+        $permiso =new Proceso();
+        $total=$permiso->filtrarPermisos();
+        return View::make('front.home',compact('total'));
     }
 
 }

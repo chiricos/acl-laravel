@@ -1,5 +1,6 @@
 <?php
 
+
 //SON LAS RUTAS EN LAS QUE SE LES ENVIA UN CORREO CON EL LINK PARA RESTAURAR LA CONTRASEÑA
 route::get('restaurar', ['as' => 'restore', 'uses' => 'AuthController@showRestore']);
 route::post('restaurar', ['as' => 'restore', 'uses' => 'AuthController@sendRestore']);
@@ -28,8 +29,10 @@ Route::group(array('before' => 'auth'), function()
 
     route::get('peril', ['as' => 'profile', 'uses' => 'AuthController@index']);
 
-    Route::group(array('before'=>'business'),function(){
-        route::get('admin/Empresas', ['as' => 'business', 'uses' => 'AuthController@index']);
+    Route::group(array('before'=>'business'),function() {
+        {
+            route::get('admin/Empresas', ['as' => 'business', 'uses' => 'AuthController@index']);
+        }
     });
 
     Route::group(array('before'=>'contacts'),function(){
@@ -37,6 +40,7 @@ Route::group(array('before' => 'auth'), function()
     });
 
     Route::group(array('before'=>'administrator'),function(){
+
         route::get('admin/cuentas', ['as' => 'administrator', 'uses' => 'UserController@showUsers']);
     });
 

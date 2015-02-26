@@ -3,7 +3,9 @@
 
 @section('content')
     <h1>users</h1>
+    @if($total[4]==1)
     <a href="{{route('createUser')}}">crear usuario</a>
+    @endif
     @if(Auth::user()->role_id==1)
         <table class=" ">
             <thead>
@@ -73,8 +75,12 @@
                 <th>Role</th>
                 <th>Encargado</th>
                 <th>ver</th>
+                @if($total[6]==1)
                 <th>actualizar</th>
+                @endif
+                @if($total[5]==1)
                 <th>eliminar</th>
+                @endif
 
             </tr>
             </thead>
@@ -111,8 +117,12 @@
                         <td>sin encargado</td>
                     @endif
                     <td><a href="{{route('home',$user->id)}}" class="icon-folder-open ">ver</a></td>
-                    <td><a href="{{route('home',$user->id)}}" class="icon-folder-open ">actualizar</a></td>
+                    @if($total[6]==1)
+                        <td><a href="{{route('home',$user->id)}}" class="icon-folder-open ">actualizar</a></td>
+                    @endif
+                    @if($total[5]==1)
                     <td><a href="{{route('home',$user->id)}}" class="icon-folder-open ">eliminar</a></td>
+                    @endif
                 </tr>
                 @endif
             @endforeach

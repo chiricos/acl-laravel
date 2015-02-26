@@ -8,19 +8,23 @@ class UserController extends BaseController
 {
     public function showUsers()
     {
+        $permiso =new Proceso();
+        $total=$permiso->filtrarPermisos();
         $users=User::all();
-        return View::make('front.accounts.users',compact('users'));
+        return View::make('front.accounts.users',compact('users','total'));
     }
 
     public function createUser()
     {
+        $permiso =new Proceso();
+        $total=$permiso->filtrarPermisos();
         $managers = [ "0" => "selecione un encargado"]
             +User::whereRaw('role_id=2')->lists('user_name','id');
         $charges= [ 'seleccione un role'=> "seleccione un role"]
             +[ 3 => "vendedor"]
             +[ 2 => "administrador"]
             +[ 1 => "super administrador"];
-        return View::make('front.accounts.create',compact('managers','charges'));
+        return View::make('front.accounts.create',compact('managers','charges','total'));
     }
 
     public function saveUser()

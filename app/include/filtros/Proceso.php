@@ -1,5 +1,4 @@
 <?php
-
 use cerverus\Entities\Permission;
 use cerverus\Entities\PermissionUser;
 use cerverus\Entities\PermissionRole;
