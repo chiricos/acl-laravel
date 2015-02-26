@@ -5,7 +5,7 @@
 	</head>
 <body>
     <header>
-        {{HTML::link(URL::to('permiso1'),'crear cuentas')}}
+        {{HTML::link(URL::to('Inicio'),'Administrar')}}
         {{HTML::link(URL::to('permiso2'),'permisos')}}
         {{HTML::link(URL::to('permiso3'),'3')}}
         {{HTML::link(URL::to('permiso4'),'4')}}

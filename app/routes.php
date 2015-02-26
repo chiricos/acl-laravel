@@ -24,8 +24,25 @@ Route::group(array('before' => 'auth'), function()
         return View::make('index');
     });
 
-    Route::group(array('before'=>'Permission1'),function(){
-        route::get('Inicio', ['as' => 'home', 'uses' => 'AuthController@index']);
+    route::get('Inicio', ['as' => 'home', 'uses' => 'AuthController@index']);
+
+    route::get('peril', ['as' => 'profile', 'uses' => 'AuthController@index']);
+
+    Route::group(array('before'=>'business'),function(){
+        route::get('admin/Empresas', ['as' => 'business', 'uses' => 'AuthController@index']);
+    });
+
+    Route::group(array('before'=>'contacts'),function(){
+        route::get('admin/contactos', ['as' => 'contacts', 'uses' => 'AuthController@index']);
+    });
+
+    Route::group(array('before'=>'administrator'),function(){
+        route::get('admin/cuentas', ['as' => 'administrator', 'uses' => 'UserController@showUsers']);
+    });
+
+    Route::group(array('before'=>'createUser'),function(){
+        route::get('admin/crearUsuario', ['as' => 'createUser', 'uses' => 'UserController@createUser']);
+        route::post('admin/crearUsuario', ['as' => 'createUser', 'uses' => 'UserController@saveUser']);
     });
 
 

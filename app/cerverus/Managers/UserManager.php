@@ -33,7 +33,7 @@ class UserManager extends BaseManager
         $user->password=$this->data['password'];
         if($user->save())
         {
-            return $user->user_name;
+            return ['username'=>$user->user_name]+['id'=>$user->id];
         }
         return false;
 

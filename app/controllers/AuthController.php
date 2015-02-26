@@ -36,6 +36,7 @@ class AuthController extends BaseController {
 
     public function showRestore()
     {
+
         return View::make('back.restorePassword');
     }
 
@@ -52,15 +53,15 @@ class AuthController extends BaseController {
         }else{
             return Redirect::to('restaurar')->with('mensaje_error','tu correo no se encuentra registrado')->withInput();
         }
-        return Redirect::to('login')->with('mensaje_error','El correo fue enviado con exito')->withInput();
-       /* new LogRepo(
+
+        new LogRepo(
             [
                 'responsible'=> $validator['username'],
+                'responsible_id'=> $validator['id'],
                 'action' => 'ha solicitado restaurar la contraseña',
-                'affected_entity' => '',
-                'method' => 'password'
             ]
-        );*/
+        );
+        return Redirect::to('login')->with('mensaje_error','El correo fue enviado con exito')->withInput();
     }
 
     public function restorePassword($restore_password)
@@ -85,16 +86,14 @@ class AuthController extends BaseController {
             return Redirect::to('restaurarContraseña/'.$restore_password)->withErrors($userValidation)->withInput();
         }
 
-        $userName=$userManager->savePassword($restore_password);
-
-        /*new LogRepo(
+        $user=$userManager->savePassword($restore_password);
+        new LogRepo(
             [
-                'responsible'=> $userName,
-                'action' => 'restauro la contraseña',
-                'affected_entity' => '',
-                'method' => 'savePassword'
+                'responsible'=> $user['username'],
+                'responsible_id'=> $user['id'],
+                'action' => 'ha restaurado la contraseña',
             ]
-        );*/
+        );
 
         return Redirect::route('login')->with(array('mensaje' => 'El usuario ha sido creado correctamente.'));
     }

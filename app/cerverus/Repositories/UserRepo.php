@@ -26,7 +26,8 @@ class UserRepo extends BaseRepo
         $user->save();
         return $data = ['link' => 'restaurarContraseña/' . $restore_password]
             + ['return' => true]
-            + ['username' => $user->user_name];
+            + ['username' => $user->user_name]
+            + ['id'=>$user->id];
     }
 
     public function validatorUser($restore_password)

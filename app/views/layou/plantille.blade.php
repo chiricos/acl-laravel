@@ -18,23 +18,16 @@
     @yield('javascript')
 </head>
 <body>
-
+{{ Session::get('message') }}
     <header>
-        {{HTML::link(URL::to('permiso1'),'crear cuentas')}}
-        {{HTML::link(URL::to('permiso2'),'permisos')}}
-        {{HTML::link(URL::to('permiso3'),'3')}}
-        {{HTML::link(URL::to('permiso4'),'4')}}
-        {{HTML::link(URL::to('permiso5'),'5')}}
-        {{HTML::link(URL::to('permiso6'),'6')}}
-        {{HTML::link(URL::to('permiso7'),'7')}}
-        {{HTML::link(URL::to('permiso8'),'8')}}
-        {{HTML::link(URL::to('permiso9'),'9')}}
-        {{HTML::link(URL::to('permiso10'),'10')}}
-        {{HTML::link(URL::to('permiso11'),'11')}}
-        {{HTML::link(URL::to('permiso12'),'12')}}
-        {{ HTML::link(URL::to('logout'), 'Cerrar Session',array('id'=>'e')) }}
+        <a href="{{route('business')}}">Empresas</a>
+        <a href="{{route('contacts')}}">contactos</a>
+        <a href="{{route('administrator')}}">Administrar</a>
+        <a href="{{route('profile')}}">Perfil</a>
+
     </header>
-    <h1>fda</h1>
+
     @yield('content')
+    {{ HTML::link(URL::to('logout'), 'Cerrar Session',array('id'=>'e')) }}
 </body>
 </html>

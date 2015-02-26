@@ -99,11 +99,11 @@ if(Auth::user()){
 
     $permiso =new Proceso();
     $total=$permiso->filtrarPermisos();
-    //print_r($total);
+    print_r($total);
 
 
-    Route::filter('permission1', function(){
-        if (Auth::guest()) return Redirect::guest('/');
+    Route::filter('business', function(){
+        if (Auth::guest()) return Redirect::guest('Inicio');
         $permiso =new Proceso();
         $total=$permiso->filtrarPermisos();
         if($total[1]<1){
@@ -111,8 +111,8 @@ if(Auth::user()){
             return Redirect::to('/');
         }
     });
-    Route::filter('permiso2', function(){
-        if (Auth::guest()) return Redirect::guest('/');
+    Route::filter('contacts', function(){
+        if (Auth::guest()) return Redirect::guest('Inicio');
         $permiso =new Proceso();
         $total=$permiso->filtrarPermisos();
         if($total[2]<1){
@@ -120,8 +120,8 @@ if(Auth::user()){
             return Redirect::to('/');
         }
     });
-    Route::filter('permiso3', function(){
-        if (Auth::guest()) return Redirect::guest('/');
+    Route::filter('administrator', function(){
+        if (Auth::guest()) return Redirect::guest('Inicio');
         $permiso =new Proceso();
         $total=$permiso->filtrarPermisos();
         if($total[3]<1){
@@ -130,7 +130,7 @@ if(Auth::user()){
         }
     });
     Route::filter('permiso4', function(){
-        if (Auth::guest()) return Redirect::guest('/');
+        if (Auth::guest()) return Redirect::guest('Inicio');
         $permiso =new Proceso();
         $total=$permiso->filtrarPermisos();
         if($total[4]<1){
