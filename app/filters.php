@@ -103,12 +103,12 @@ if(Auth::user()){
 
 
     Route::filter('business', function(){
-        if (Auth::guest()) return Redirect::guest('Inicio');
+        if (Auth::guest()) return Redirect::guest('/');
         $permiso =new Proceso();
         $total=$permiso->filtrarPermisos();
         if($total[1]<1){
 
-            return Redirect::to('/');
+            return Redirect::to('Inicio');
         }
     });
     Route::filter('contacts', function(){
@@ -117,7 +117,7 @@ if(Auth::user()){
         $total=$permiso->filtrarPermisos();
         if($total[2]<1){
 
-            return Redirect::to('/');
+            return Redirect::to('Inicio');
         }
     });
     Route::filter('administrator', function(){
@@ -126,7 +126,7 @@ if(Auth::user()){
         $total=$permiso->filtrarPermisos();
         if($total[3]<1){
 
-            return Redirect::to('/');
+            return Redirect::to('Inicio');
         }
     });
     Route::filter('createUser', function(){
@@ -135,7 +135,7 @@ if(Auth::user()){
         $total=$permiso->filtrarPermisos();
         if($total[4]<1){
 
-            return Redirect::to('/');
+            return Redirect::to('Inicio');
         }
     });
     Route::filter('deleteUser', function(){
@@ -144,7 +144,7 @@ if(Auth::user()){
         $total=$permiso->filtrarPermisos();
         if($total[5]<1){
 
-            return Redirect::to('/');
+            return Redirect::to('Inicio');
         }
     });
     Route::filter('updateUser', function(){
@@ -153,7 +153,7 @@ if(Auth::user()){
         $total=$permiso->filtrarPermisos();
         if($total[6]<1){
 
-            return Redirect::to('/');
+            return Redirect::to('Inicio');
         }
     });
     Route::filter('showUser', function(){
@@ -162,7 +162,7 @@ if(Auth::user()){
         $total=$permiso->filtrarPermisos();
         if($total[7]<1){
 
-            return Redirect::to('/');
+            return Redirect::to('Inicio');
         }
     });
     Route::filter('permiso8', function(){
@@ -171,7 +171,7 @@ if(Auth::user()){
         $total=$permiso->filtrarPermisos();
         if($total[8]<1){
 
-            return Redirect::to('/');
+            return Redirect::to('Inicio');
         }
     });
     Route::filter('permiso9', function(){
