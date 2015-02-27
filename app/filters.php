@@ -99,7 +99,7 @@ if(Auth::user()){
 
     $permiso =new Proceso();
     $total=$permiso->filtrarPermisos();
-    //print_r($total);
+    print_r($total);
 
 
     Route::filter('business', function(){
@@ -129,7 +129,7 @@ if(Auth::user()){
             return Redirect::to('/');
         }
     });
-    Route::filter('permiso4', function(){
+    Route::filter('createUser', function(){
         if (Auth::guest()) return Redirect::guest('Inicio');
         $permiso =new Proceso();
         $total=$permiso->filtrarPermisos();
@@ -138,7 +138,7 @@ if(Auth::user()){
             return Redirect::to('/');
         }
     });
-    Route::filter('permiso5', function(){
+    Route::filter('deleteUser', function(){
         if (Auth::guest()) return Redirect::guest('/');
         $permiso =new Proceso();
         $total=$permiso->filtrarPermisos();
@@ -147,7 +147,7 @@ if(Auth::user()){
             return Redirect::to('/');
         }
     });
-    Route::filter('permiso6', function(){
+    Route::filter('updateUser', function(){
         if (Auth::guest()) return Redirect::guest('/');
         $permiso =new Proceso();
         $total=$permiso->filtrarPermisos();
@@ -156,7 +156,7 @@ if(Auth::user()){
             return Redirect::to('/');
         }
     });
-    Route::filter('permiso7', function(){
+    Route::filter('showUser', function(){
         if (Auth::guest()) return Redirect::guest('/');
         $permiso =new Proceso();
         $total=$permiso->filtrarPermisos();

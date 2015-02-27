@@ -49,6 +49,15 @@ Route::group(array('before' => 'auth'), function()
         route::post('admin/crearUsuario', ['as' => 'createUser', 'uses' => 'UserController@saveUser']);
     });
 
+    Route::group(array('before'=>'updateUser'),function(){
+        route::get('admin/actualizarUsuario/{id}', ['as' => 'updateUser', 'uses' => 'UserController@showUpdateUser']);
+        route::post('admin/actualizarUsuario/{id}', ['as' => 'updateUser', 'uses' => 'UserController@uploadUser']);
+    });
+
+    Route::group(array('before'=>'deleteUser'),function(){
+        route::get('admin/eliminarUsuario/{id}', ['as' => 'deleteUser', 'uses' => 'UserController@deleteUser']);
+    });
+
 
 	// Esta ruta nos servirá para cerrar sesión.
 	Route::get('logout', 'AuthController@logOut');

@@ -20,6 +20,7 @@
 <body>
 
 {{ Session::get('message') }}
+{{ Session::get('message_error') }}
     <header>
 
         @if($total[1]==1)
