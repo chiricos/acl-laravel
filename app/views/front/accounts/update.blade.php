@@ -5,7 +5,7 @@
     <h1>users</h1>
     <a href="{{route('administrator')}}">volver</a>
     <div>
-        {{ Form::open(array('name'=>'form-create-user','rotute' => 'uploadUser', 'method' => 'POST')) }}
+        {{ Form::open(array('name'=>'form-create-user','to' => 'admin/actualizarUsuario/'.$user->id, 'method' => 'POST')) }}
 
         {{ Form::text('id',$user->id,['id'=>'hidden']) }}
 

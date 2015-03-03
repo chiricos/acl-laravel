@@ -35,7 +35,12 @@ Route::group(array('before' => 'auth'), function()
     });
 
     Route::group(array('before'=>'contacts'),function(){
-        route::get('admin/contactos', ['as' => 'contacts', 'uses' => 'AuthController@index']);
+        route::get('admin/contactos', ['as' => 'contacts', 'uses' => 'ContactController@contact']);
+        route::post('admin/contactos', ['as' => 'contacts', 'uses' => 'ContactController@createContact']);
+        route::post('admin/cargos', ['as' => 'charges', 'uses' => 'ContactController@createCharges']);
+        route::get('admin/eliminar/{id}', ['as' => 'deleteCharges', 'uses' => 'ContactController@deleteCharges']);
+        route::get('admin/actualizar/{id}', ['as' => 'updateContacts', 'uses' => 'ContactController@showUpdateContact']);
+        route::post('admin/actualizar/{id}', ['as' => 'updateContacts', 'uses' => 'ContactController@updateContact']);
     });
 
     Route::group(array('before'=>'administrator'),function(){
@@ -50,7 +55,7 @@ Route::group(array('before' => 'auth'), function()
 
     Route::group(array('before'=>'updateUser'),function(){
         route::get('admin/actualizarUsuario/{id}', ['as' => 'updateUser', 'uses' => 'UserController@showUpdateUser']);
-        route::post('admin/actualizarUsuario/{id}', ['as' => 'updateUser', 'uses' => 'UserController@uploadUser']);
+        route::post('admin/actualizarUsuario/{id}', ['as' => 'updateUser', 'uses' => 'UserController@updateUser']);
     });
 
     Route::group(array('before'=>'deleteUser'),function(){

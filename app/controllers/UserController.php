@@ -1,6 +1,7 @@
 <?php
 
 use cerverus\Entities\User;
+use cerverus\Entities\Business;
 use cerverus\Managers\CreateUserManager;
 use cerverus\Managers\UpdateUserManager;
 use cerverus\Repositories\LogRepo;
@@ -80,11 +81,27 @@ class UserController extends BaseController
         return View::make('front.accounts.update',compact('user','total','managers','charges'));
     }
 
-    public function uploadUser($id)
+    public function updateUser($id)
     {
-        $permiso =new Proceso();
-        $total=$permiso->filtrarPermisos();
+        $message="";
         $user=User::find($id);
+        if(Input::get('role_id')!=$user->role_id)
+        {
+            if($user->role_id==2 )
+            {
+                $sell=User::where('manager','=',$id)->first();
+                if($sell)
+                {
+                    $message='no puede cambiar de role, ya tiene vendedores a su cargo';
+                }
+            }
+            if($user->role_id==3 ){
+                $business=Business::where('manager','=',$id)->first();
+                if($business){
+                    $message='no puede cambiar de role, ya tiene empresas a su cargo';
+                }
+            }
+        }
         $userUpdate=new UpdateUserManager($user,Input::all());
         $userValidator=$userUpdate->isValid();
         $manager="";
@@ -95,9 +112,9 @@ class UserController extends BaseController
                 $manager="seleccione un encargado";
             }
         }
-        if($userValidator or $manager!="")
+        if($userValidator or $manager!="" or $message)
         {
-            return Redirect::route('updateUser',$id)->with('manager', $manager)->withErrors($userValidator)->withInput();
+            return Redirect::route('updateUser',$id)->with('message_error',$message)->with('manager', $manager)->withErrors($userValidator)->withInput();
         }
 
         $updateUser=$userUpdate->updateUser($id);

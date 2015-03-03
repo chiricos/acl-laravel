@@ -5,7 +5,7 @@
     <h1>users</h1>
     <a href="{{route('administrator')}}">volver</a>
     <div>
-        {{ Form::open(array('name'=>'form-create-user','rotute' => 'createUser', 'method' => 'POST')) }}
+        {{ Form::open(array('name'=>'form-create-user','route' => 'createUser', 'method' => 'POST')) }}
         <div>
             {{ Form::label('user_name', 'Username') }}
             {{ Form::text('user_name') }}
