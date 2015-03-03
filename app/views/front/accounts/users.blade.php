@@ -32,7 +32,7 @@
             @foreach ($users as $user)
                 @if($user->role_id>1)
                 <tr>
-                    <td>{{ HTML::image('img/'.$user->photo,'',array('id'=>'')) }}</td>
+                    <td>{{ HTML::image('user/'.$user->photo,'',array('id'=>'')) }}</td>
                     <td>{{$user->name}}</td>
                     <td>{{$user->last_name}}</td>
                     <td>{{$user->email}}</td>
@@ -61,11 +61,15 @@
                         <td>sin encargado</td>
                     @endif
                     <td><a href="{{route('home',$user->id)}}" class="icon-folder-open ">ver</a></td>
-                    @if(isset($total[6])==1)
-                        <td><a href="{{route('updateUser',$user->id)}}" class="icon-folder-open ">actualizar</a></td>
+                    @if(isset($total[6]))
+                        @if($total[6]==1)
+                            <td><a href="{{route('updateUser',$user->id)}}" class="icon-folder-open ">actualizar</a></td>
+                        @endif
                     @endif
-                    @if(isset($total[5)==1)
-                        <td><a href="{{route('deleteUser',$user->id)}}" class="icon-folder-open ">eliminar</a></td>
+                    @if(isset($total[5]))
+                        @if($total[5]==1)
+                            <td><a href="{{route('deleteUser',$user->id)}}" class="icon-folder-open ">eliminar</a></td>
+                        @endif
                     @endif
                 </tr>
                 @endif
@@ -98,7 +102,7 @@
             @foreach ($users as $user)
                 @if(Auth::user()->id==$user->manager)
                 <tr>
-                    <td>{{ HTML::image('img/'.$user->photo,'',array('id'=>'')) }}</td>
+                    <td>{{ HTML::image('user/'.$user->photo,'',array('id'=>'')) }}</td>
                     <td>{{$user->name}}</td>
                     <td>{{$user->last_name}}</td>
                     <td>{{$user->email}}</td>
@@ -128,11 +132,15 @@
                         <td>sin encargado</td>
                     @endif
                     <td><a href="{{route('home',$user->id)}}" class="icon-folder-open ">ver</a></td>
-                    @if(isset($total[6])==1)
-                        <td><a href="{{route('updateUser',$user->id)}}" class="icon-folder-open ">actualizar</a></td>
+                    @if(isset($total[6]))
+                    @if($total[6]==1)
+                            <td><a href="{{route('updateUser',$user->id)}}" class="icon-folder-open ">actualizar</a></td>
+                        @endif
                     @endif
-                    @if(isset($total[7])==1)
-                    <td><a href="{{route('deleteUser',$user->id)}}" class="icon-folder-open ">eliminar</a></td>
+                    @if(isset($total[5]))
+                        @if($total[5]==1)
+                            <td><a href="{{route('deleteUser',$user->id)}}" class="icon-folder-open ">eliminar</a></td>
+                        @endif
                     @endif
                 </tr>
                 @endif

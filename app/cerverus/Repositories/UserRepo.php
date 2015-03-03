@@ -37,4 +37,21 @@ class UserRepo extends BaseRepo
         return $user;
     }
 
+    public function getManager($id,$role_id,$user_name)
+    {
+        $users=['seleccione un encargado'=>'seleccione un encargado'];
+        if($role_id==1)
+        {
+            $users=['seleccione un encargado'=>'seleccione un encargado']+User::whereRaw('role_id=3')->lists('user_name','id');
+        }
+        if($role_id==2)
+        {
+            $users=['seleccione un encargado'=>'seleccione un encargado']+User::whereRaw('manager='.$id)->lists('user_name','id');
+        }
+        if($role_id==3)
+        {
+            $users=[$id => $user_name];
+        }
+        return $users;
+    }
 }

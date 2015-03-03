@@ -22,15 +22,20 @@
 {{ Session::get('message') }}
 {{ Session::get('message_error') }}
     <header>
-
-        @if(isset($total[1])==1)
-            <a href="{{route('business')}}">Empresas</a>
+        @if(isset($total[1]) )
+            @if($total[1]==1)
+                <a href="{{route('business')}}">Empresas</a>
+            @endif
         @endif
-        @if(isset($total[2])==1)
+        @if(isset($total[2]))
+            @if($total[2]==1)
                 <a href="{{route('contacts')}}">contactos</a>
+            @endif
         @endif
-        @if(isset($total[3])==1)
+        @if(isset($total[3]))
+            @if($total[3]==1)
                 <a href="{{route('administrator')}}">Administrar</a>
+            @endif
         @endif
 
         <a href="{{route('profile')}}">Perfil</a>

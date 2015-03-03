@@ -30,9 +30,8 @@ Route::group(array('before' => 'auth'), function()
     route::get('peril', ['as' => 'profile', 'uses' => 'AuthController@index']);
 
     Route::group(array('before'=>'business'),function() {
-        {
-            route::get('admin/Empresas', ['as' => 'business', 'uses' => 'AuthController@index']);
-        }
+        route::get('admin/Empresas', ['as' => 'business', 'uses' => 'BusinessController@showBusiness']);
+        route::post('admin/Empresas', ['as' => 'business', 'uses' => 'BusinessController@saveBusiness']);
     });
 
     Route::group(array('before'=>'contacts'),function(){
