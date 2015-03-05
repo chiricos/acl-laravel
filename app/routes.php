@@ -22,7 +22,9 @@ Route::group(array('before' => 'auth'), function()
 {
     Route::get('/', function()
     {
-        return View::make('index');
+        $permiso =new Proceso();
+        $total=$permiso->filtrarPermisos();
+        return View::make('front.home',compact('total'));
     });
 
     route::get('Inicio', ['as' => 'home', 'uses' => 'AuthController@index']);
@@ -32,6 +34,9 @@ Route::group(array('before' => 'auth'), function()
     Route::group(array('before'=>'business'),function() {
         route::get('admin/Empresas', ['as' => 'business', 'uses' => 'BusinessController@showBusiness']);
         route::post('admin/Empresas', ['as' => 'business', 'uses' => 'BusinessController@saveBusiness']);
+        route::get('admin/actualizarEmpresa/{id}', ['as' => 'updateBusiness', 'uses' => 'BusinessController@showUpdateBusiness']);
+        route::post('admin/actualizarEmpresa/{id}', ['as' => 'updateBusiness', 'uses' => 'BusinessController@updateBusiness']);
+
     });
 
     Route::group(array('before'=>'contacts'),function(){

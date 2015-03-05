@@ -140,5 +140,5 @@
 @stop
 
 @section('javascript')
-
+    {{ HTML::script('js/contact.js'); }}
 @stop

@@ -54,4 +54,23 @@ class UserRepo extends BaseRepo
         }
         return $users;
     }
+    public function getState()
+    {
+        return ['seleccione un estado'=>'seleccione un estado']
+        +['1'=>'Activo']
+        +['2'=>'Mensual']
+        +['3'=>'Moroso']
+        +['4'=>'Eliminado'];
+    }
+
+    public function getStates()
+    {
+        return ['seleccione un estado'=>'seleccione un estado']
+        +['1'=>'Cotizacion ordinaria y anexo']
+        +['2'=>'Portafolio y propuesta']
+        +['3'=>'Primera llamada']
+        +['4'=>'Cotizacion especifica']
+        +['5'=>'Segunda llamada']
+        +['6'=>'Negociacion'];
+    }
 }

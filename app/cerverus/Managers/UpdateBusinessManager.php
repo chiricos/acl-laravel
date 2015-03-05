@@ -1,7 +1,7 @@
 <?php
 namespace cerverus\Managers;
 
-class BusinessManager extends BaseManager
+class UpdateBusinessManager extends BaseManager
 {
 
     public function getRules()
@@ -9,14 +9,13 @@ class BusinessManager extends BaseManager
         if($this->data["type"]==1)
         {
             $rules=[
-
-                'name'                  => 'required|unique:business',
+                'name'                  => 'required|unique:business,name,'.$this->data["id"].'',
                 'state'                 => 'required|numeric',
                 'nit'                   => 'numeric',
                 'phone'                 => 'numeric',
                 'ext'                   => 'numeric',
-                'email'                 => 'required|email|unique:business',
-                'second_email'          => 'email|unique:business',
+                'email'                 => 'required|email|unique:business,email,'.$this->data["id"].'',
+                'second_email'          => 'email|unique:business,email,'.$this->data["id"].'',
                 'mobile_phone'          => 'required|numeric',
                 'manager'               => 'required|numeric',
                 'fax'                   => 'numeric',
@@ -27,13 +26,13 @@ class BusinessManager extends BaseManager
         }else{
             $rules=[
 
-                'name'                  => 'required|unique:business',
+                'name'                  => 'required|unique:business,name,'.$this->data["id"].'',
                 'state'                 => 'required|numeric',
                 'nit'                   => 'numeric',
                 'phone'                 => 'numeric',
                 'ext'                   => 'numeric',
-                'email'                 => 'required|email|unique:business',
-                'second_email'          => 'email|unique:business',
+                'email'                 => 'required|email|unique:business,email,'.$this->data["id"].'',
+                'second_email'          => 'email|unique:business,email,'.$this->data["id"].'',
                 'mobile_phone'          => 'required|numeric',
                 'manager'               => 'required|numeric',
                 'fax'                   => 'numeric',
@@ -52,23 +51,22 @@ class BusinessManager extends BaseManager
         return $messages;
     }
 
-    public function saveBusiness()
+    public function updateBusiness()
     {
-        $data=$this->prepareData($this->data);
-        $file=$data["photo"];
-        if($data['photo']!="")
+        $file=$this->data["photo"];
+        if($this->data["photo"]=="")
         {
+            $this->data["photo"]=$this->entity->photo;
+        }else{
             $before = str_random(15);
             $destinationPath="business";
-            $data["photo"]=$before.$file->getClientOriginalName();
+            $this->data["photo"]=$before.$file->getClientOriginalName();
             $file->move($destinationPath, $before.$file->getClientOriginalName());
-        }else{
-            $data["photo"]="perfil.png";
         }
-        $this->entity->fill($data);
-        if($this->entity->save())
+        $this->entity->fill($this->data);
+        if($this->entity->update($this->data))
         {
-            if($data["type"]==1)
+            if($this->data["type"]==1)
             {
                 return "Cliente";
             }
@@ -76,6 +74,8 @@ class BusinessManager extends BaseManager
         }
         return false;
     }
+
+
 
 
 }

@@ -28,7 +28,7 @@ class ContactController extends BaseController
         $contactValidator=$contactManager->isValid();
         if($contactValidator)
         {
-            return Redirect::route('contacts')->withErrors($contactValidator)->withInput();
+            return Redirect::route('contacts')->with('see','1')->withErrors($contactValidator)->withInput();
         }
         $saveContact=$contactManager->saveContact();
         if($saveContact)

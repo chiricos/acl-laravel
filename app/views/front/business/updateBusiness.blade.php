@@ -5,118 +5,119 @@
     <h1>Empresas</h1>
     <div>
         <div>
-            <p class="business-fixed">Crear Empresa</p>
-            <p class="business">Crear Prospecto</p>
-            <section class="business-one type{{Session::get('type')}}  hidden ">
-                <h2>Crear Cliente</h2>
+            <a href="{{route('business')}}" class="business-fixed">Crear</a>
+            <section class="business-one type hidden ">
+                <h2>Actualizar Cliente</h2>
                 <div>
-                    {{ Form::open(array('name'=>'form-show-business','route' => 'business','files'=>true, 'method' => 'POST')) }}
-                    {{ Form::text('type','',['class'=>'hidden business1']) }}
+                    {{ Form::open(array('name'=>'form-show-business','url' => 'admin/actualizarEmpresa/'.$updateBusiness->id,'files'=>true, 'method' => 'POST')) }}
+                    {{ Form::text('type',$updateBusiness->type,['class'=>'hidden  update-business']) }}
+                    {{ Form::text('id',$updateBusiness->id,['class'=>'hidden ']) }}
+
                     <div>
                         {{Form::label('manager','Encargado','',array('id'=>'manager'))}}
-                        {{ Form::select('manager', $managers, null, array('id' => 'manager')) }}
+                        {{ Form::select('manager', $managers, $updateBusiness->manager, array('id' => 'manager')) }}
                         {{$errors->first('manager')}}
                     </div>
 
                     <div>
                         {{ Form::label('name', 'Nombre') }}
-                        {{ Form::text('name') }}
+                        {{ Form::text('name',$updateBusiness->name) }}
                         {{$errors->first('name')}}
                     </div>
 
                     <div>
                         {{ Form::label('state', 'Estado') }}
-                        {{ Form::select('state', $state, null) }}
+                        {{ Form::select('state', $state, $updateBusiness->state) }}
                         {{$errors->first('state')}}
                     </div>
 
                     <div>
                         {{ Form::label('nit', 'Nit') }}
-                        {{ Form::text('nit') }}
+                        {{ Form::text('nit',$updateBusiness->nit) }}
                         {{$errors->first('nit')}}
                     </div>
 
                     <div>
                         {{ Form::label('address', 'address') }}
-                        {{ Form::text('address') }}
+                        {{ Form::text('address',$updateBusiness->address) }}
                         {{$errors->first('address')}}
                     </div>
 
                     <div>
                         {{ Form::label( 'phone','Telefono') }}
-                        {{ Form::text('phone') }}
+                        {{ Form::text('phone',$updateBusiness->phone) }}
                         {{$errors->first('phone')}}
                     </div>
 
                     <div>
                         {{ Form::label('ext', 'Ext') }}
-                        {{ Form::text('ext') }}
+                        {{ Form::text('ext',$updateBusiness->ext) }}
                         {{$errors->first('ext')}}
                     </div>
 
                     <div>
                         {{ Form::label('email', 'E-mail') }}
-                        {{ Form::text('email') }}
+                        {{ Form::text('email',$updateBusiness->email) }}
                         {{$errors->first('email')}}
                     </div>
 
                     <div>
                         {{ Form::label('second_email', 'Correo Opcional') }}
-                        {{ Form::text('second_email') }}
+                        {{ Form::text('second_email',$updateBusiness->second_email) }}
                         {{$errors->first('second_email')}}
                     </div>
 
                     <div>
                         {{ Form::label('mobile_phone', 'Celular') }}
-                        {{ Form::text('mobile_phone') }}
+                        {{ Form::text('mobile_phone',$updateBusiness->mobile_phone) }}
                         {{$errors->first('mobile_phone')}}
                     </div>
 
                     <div>
                         {{ Form::label('page_web', 'Pagina Web') }}
-                        {{ Form::text('page_web') }}
+                        {{ Form::text('page_web',$updateBusiness->page_web) }}
                         {{$errors->first('page_web')}}
                     </div>
 
                     <div>
                         {{ Form::label('fax', 'Fax') }}
-                        {{ Form::text('fax') }}
+                        {{ Form::text('fax',$updateBusiness->fax) }}
                         {{$errors->first('fax')}}
                     </div>
 
                     <div>
                         {{ Form::label('country', 'Pais') }}
-                        {{ Form::text('country') }}
+                        {{ Form::text('country',$updateBusiness->country) }}
                         {{$errors->first('country')}}
                     </div>
 
                     <div>
                         {{ Form::label('city', 'Ciudad') }}
-                        {{ Form::text('city') }}
+                        {{ Form::text('city',$updateBusiness->city) }}
                         {{$errors->first('city')}}
                     </div>
 
                     <div>
                         {{ Form::label('skype', 'Skype') }}
-                        {{ Form::text('skype') }}
+                        {{ Form::text('skype',$updateBusiness->skype) }}
                         {{$errors->first('skype')}}
                     </div>
 
                     <div>
                         {{ Form::label('source', 'Fuente del Cliente') }}
-                        {{ Form::text('source') }}
+                        {{ Form::text('source',$updateBusiness->source) }}
                         {{$errors->first('source')}}
                     </div>
 
                     <div>
                         {{ Form::label('payment_date', 'Fecha de pago') }}
-                        {{Form::input('date','payment_date','')}}
+                        {{Form::input('date','payment_date',$updateBusiness->payment_date)}}
                         {{$errors->first('payment_date')}}
                     </div>
 
                     <div>
                         {{ Form::label('expedition_date', 'Fecha de Expedicion') }}
-                        {{Form::input('date','expedition_date','')}}
+                        {{Form::input('date','expedition_date',$updateBusiness->expedition_date)}}
                         {{$errors->first('expedition_date')}}
                     </div>
 
@@ -126,110 +127,111 @@
                         {{$errors->first('photo')}}
                     </div>
 
-                    {{ Form::submit('Crear Cliente') }}
+                    {{ Form::submit('Actualizar Cliente') }}
 
                     {{ Form::close() }}
 
                 </div>
             </section>
-            <section class="business-two type-tow{{Session::get('type')}} hidden">
-                <h2>Crear Prospecto</h2>
+            <section class="business-two  hidden">
+                <h2>Actualizar Prospecto</h2>
                 <div>
-                    {{ Form::open(array('name'=>'form-show-business-two','route' => 'business','files'=>true, 'method' => 'POST')) }}
-                    {{ Form::text('type','',['class'=>'hidden business2']) }}
+                    {{ Form::open(array('name'=>'form-show-business-two','url' => 'admin/actualizarEmpresa/'.$updateBusiness->id,'files'=>true, 'method' => 'POST')) }}
+                    {{ Form::text('type',$updateBusiness->type,['class'=>'hidden  update-business']) }}
+                    {{ Form::text('id',$updateBusiness->id,['class'=>'hidden ']) }}
                     <div>
                         {{Form::label('manager','Encargado','',array('id'=>'manager'))}}
-                        {{ Form::select('manager', $managers, null, array('id' => 'manager')) }}
+                        {{ Form::select('manager', $managers, $updateBusiness->manager, array('id' => 'manager')) }}
                         {{$errors->first('manager')}}
                     </div>
 
                     <div>
                         {{ Form::label('name', 'Nombre') }}
-                        {{ Form::text('name') }}
+                        {{ Form::text('name',$updateBusiness->name) }}
                         {{$errors->first('name')}}
                     </div>
 
                     <div>
                         {{ Form::label('state', 'Estado') }}
-                        {{ Form::select('state', $states, null) }}
+                        {{ Form::select('state', $states, $updateBusiness->state) }}
                         {{$errors->first('state')}}
                     </div>
 
                     <div>
                         {{ Form::label('nit', 'Nit') }}
-                        {{ Form::text('nit') }}
+                        {{ Form::text('nit',$updateBusiness->nit) }}
                         {{$errors->first('nit')}}
                     </div>
 
                     <div>
                         {{ Form::label('address', 'address') }}
-                        {{ Form::text('address') }}
+                        {{ Form::text('address',$updateBusiness->address) }}
                         {{$errors->first('address')}}
                     </div>
 
                     <div>
                         {{ Form::label( 'phone','Telefono') }}
-                        {{ Form::text('phone') }}
+                        {{ Form::text('phone',$updateBusiness->phone) }}
                         {{$errors->first('phone')}}
                     </div>
 
                     <div>
                         {{ Form::label('ext', 'Ext') }}
-                        {{ Form::text('ext') }}
+                        {{ Form::text('ext',$updateBusiness->ext) }}
                         {{$errors->first('ext')}}
                     </div>
 
                     <div>
                         {{ Form::label('email', 'E-mail') }}
-                        {{ Form::text('email') }}
+                        {{ Form::text('email',$updateBusiness->email) }}
                         {{$errors->first('email')}}
                     </div>
 
                     <div>
                         {{ Form::label('second_email', 'Correo Opcional') }}
-                        {{ Form::text('second_email') }}
+                        {{ Form::text('second_email',$updateBusiness->second_email) }}
                         {{$errors->first('second_email')}}
                     </div>
 
                     <div>
                         {{ Form::label('mobile_phone', 'Celular') }}
-                        {{ Form::text('mobile_phone') }}
+                        {{ Form::text('mobile_phone',$updateBusiness->mobile_phone) }}
                         {{$errors->first('mobile_phone')}}
                     </div>
 
                     <div>
                         {{ Form::label('page_web', 'Pagina Web') }}
-                        {{ Form::text('page_web') }}
+                        {{ Form::text('page_web',$updateBusiness->page_web) }}
                         {{$errors->first('page_web')}}
                     </div>
 
                     <div>
                         {{ Form::label('fax', 'Fax') }}
-                        {{ Form::text('fax') }}
+                        {{ Form::text('fax',$updateBusiness->fax) }}
                         {{$errors->first('fax')}}
                     </div>
 
                     <div>
                         {{ Form::label('country', 'Pais') }}
-                        {{ Form::text('country') }}
+                        {{ Form::text('country',$updateBusiness->country) }}
                         {{$errors->first('country')}}
                     </div>
 
                     <div>
                         {{ Form::label('city', 'Ciudad') }}
-                        {{ Form::text('city') }}
+                        {{ Form::text('city',$updateBusiness->city) }}
                         {{$errors->first('city')}}
                     </div>
 
                     <div>
                         {{ Form::label('skype', 'Skype') }}
-                        {{ Form::text('skype') }}
+                        {{ Form::text('skype',$updateBusiness->skype) }}
                         {{$errors->first('skype')}}
                     </div>
 
                     <div>
                         {{ Form::label('source', 'Fuente del Cliente') }}
-                        {{ Form::text('source') }}
+                        {{ Form::text('source',$updateBusiness->source) }}
                         {{$errors->first('source')}}
                     </div>
 
@@ -239,7 +241,7 @@
                         {{$errors->first('photo')}}
                     </div>
 
-                    {{ Form::submit('Crear Prospecto') }}
+                    {{ Form::submit('Actualizar Prospecto') }}
 
                     {{ Form::close() }}
 
@@ -247,41 +249,41 @@
             </section>
             <section class="show-business">
                 <h2>Clientes</h2>
-                        <table class=" ">
-                            <thead>
-                                <tr>
-                                    <th>Foto</th>
-                                    <th>Nombre</th>
-                                    <th>Estado</th>
-                                    <th>Direccion</th>
-                                    <th>E-mail</th>
-                                    <th>Celular</th>
-                                    <th>Encargado</th>
-                                    <th>Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            @foreach($business as $businessClient)
-                                @if($businessClient->type==1)
+                <table class=" ">
+                    <thead>
+                    <tr>
+                        <th>Foto</th>
+                        <th>Nombre</th>
+                        <th>Estado</th>
+                        <th>Direccion</th>
+                        <th>E-mail</th>
+                        <th>Celular</th>
+                        <th>Encargado</th>
+                        <th>Acciones</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($business as $businessClient)
+                        @if($businessClient->type==1)
 
-                                <tr>
-                                    <td>{{ HTML::image('business/'.$businessClient->photo,'',array('style'=>'width: 100px;')) }}</td>
-                                    <td>{{$businessClient->name}}</td>
-                                    <td>{{$businessClient->state}}</td>
-                                    <td>{{$businessClient->address}}</td>
-                                    <td>{{$businessClient->email}}</td>
-                                    <td>{{$businessClient->mobile_phone}}</td>
+                            <tr>
+                                <td>{{ HTML::image('business/'.$businessClient->photo,'',array('style'=>'width: 100px;')) }}</td>
+                                <td>{{$businessClient->name}}</td>
+                                <td>{{$businessClient->state}}</td>
+                                <td>{{$businessClient->address}}</td>
+                                <td>{{$businessClient->email}}</td>
+                                <td>{{$businessClient->mobile_phone}}</td>
                                 @foreach($users as $user)
                                     @if($user->id==$businessClient->manager)
                                         <td>{{$user->user_name}}</td>
                                     @endif
                                 @endforeach
-                                    <td><a href="{{route('updateBusiness',$businessClient->id)}}">+</a><a href=" {{route('business')}}">E</a> <a href="{{route('updateBusiness',$businessClient->id)}}">a</a></td>
-                                </tr>
-                                @endif
-                            @endforeach
-                            </tbody>
-                        </table>
+                                <td><a href="{{route('updateBusiness',$businessClient->id)}}">+</a> <a href=" {{route('business')}}">E</a><a href="{{route('updateBusiness',$businessClient->id)}}">a</a></td>
+                            </tr>
+                        @endif
+                    @endforeach
+                    </tbody>
+                </table>
                 <h2>Prospectos</h2>
                 <table class=" ">
                     <thead>
@@ -307,12 +309,12 @@
                                 <td>{{$businessClient->address}}</td>
                                 <td>{{$businessClient->email}}</td>
                                 <td>{{$businessClient->mobile_phone}}</td>
-                            @foreach($users as $user)
-                                @if($user->id==$businessClient->manager)
-                                    <td>{{$user->user_name}}</td>
-                                @endif
-                            @endforeach
-                                <td><a href="{{route('business')}}">+</a><a href=" {{route('business')}}">E</a> <a href="{{route('updateBusiness',$businessClient->id)}}">a</a></td>
+                                @foreach($users as $user)
+                                    @if($user->id==$businessClient->manager)
+                                        <td>{{$user->user_name}}</td>
+                                    @endif
+                                @endforeach
+                                <td><a href="{{route('business')}}">+</a><a href=" {{route('business')}}">E</a><a href="{{route('updateBusiness',$businessClient->id)}}">a</a></td>
                             </tr>
                         @endif
                     @endforeach
@@ -327,5 +329,5 @@
 @stop
 
 @section('javascript')
-    {{ HTML::script('js/business.js'); }}
+    {{ HTML::script('js/updateBusiness.js'); }}
 @stop

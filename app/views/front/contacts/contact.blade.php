@@ -3,8 +3,9 @@
 
 @section('content')
 <div>
-    <h1>Contactos</h1>
-    <div>
+    <p class="new-contact">nuevo contacto</p>
+    <div class="content-contact hidden contact{{Session::get('see')}}">
+        <h1>Contactos</h1>
         {{ Form::open(array('name'=>'form-create-contacts','route' => 'contacts', 'method' => 'POST')) }}
 
         <div>
@@ -49,7 +50,7 @@
             {{$errors->first('business_id')}}
         </div>
 
-        {{ Form::submit('Crear Contacto') }}
+        {{ Form::submit('Crear Contacto',['class'=>'button-contact']) }}
 
         {{ Form::close() }}
 
@@ -124,9 +125,8 @@
     <div>
         {{ Form::open(array('name'=>'form-create-charges','route' => 'charges', 'method' => 'POST')) }}
 
-            {{ Form::label('name', 'Nombre del cargo') }}
+            {{ Form::label('name', 'Nombre del cargo',['id'=>'name-charges']) }}
             {{ Form::text('name') }}
-            {{$errors->first('name')}}
         {{ Form::submit('Crear Cargo') }}
 
         {{ Form::close() }}
@@ -139,5 +139,5 @@
 @stop
 
 @section('javascript')
-
+    {{ HTML::script('js/contact.js'); }}
 @stop
