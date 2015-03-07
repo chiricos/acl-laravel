@@ -43,23 +43,82 @@
                 @foreach($contacts as $contact)
 
                     <details>
-                        <summary><h2>{{$contact->name}}</h2></summary>
+                        <summary><h3>{{$contact->name}}</h3></summary>
 
-                        <p>Nombre:{{$contact->name}}</p>
-                        <p>Apellido:{{$contact->last_name}}</p>
-                        <p>Correo:{{$contact->email}}</p>
-                        <p>Cargo:{{$contact->charge_id}}</p>
-                        <p>Telefono:{{$contact->phone}}</p>
-                        <p>Movil:{{$contact->mobile_phone}}</p>
-                        <p>Empresa:{{$business->name}}</p>
-                        <a href="{{route('updateContacts',$contact->id)}}">Actualizar</a>
+                        <p>Nombre: {{$contact->name}}</p>
+                        <p>Apellido: {{$contact->last_name}}</p>
+                        @foreach($charges as $charge)
+                            @if($charge->id==$contact->charges_id)
+                                <p>Cargo: {{$charge->name}}</p>
+                            @endif
+                        @endforeach
+                        <p>E-mail: {{$contact->email}}</p>
+                        <p>Telefono: {{$contact->phone}}</p>
+                        <p>Celular: {{$contact->mobile_phone}}</p>
                     </details>
                 @endforeach
                 <a href="{{route('contacts')}}">Crear Contacto</a>
             </div>
         </section>
         <section>
+            <div>
+                <h2>Estado</h2>
+                {{ Form::open(array('name'=>'form-see-business','url' => 'admin/verEmpresa/'.$business->id, 'method' => 'POST')) }}
+                <details>
+                    <summary><h3>cotizacion oridnaria</h3></summary>
+                    <p>{{$business->record["state_one"]}}</p>
+                    {{ Form::textarea('state_one',$business->record["state_one"], ['class' => '']) }}
+                </details>
+                <details>
+                    <summary><h3>Portafolio y propuesta</h3></summary>
+                    <p>{{$business->record["state_two"]}}</p>
+                    {{ Form::textarea('state_two',$business->record["state_two"], ['class' => '']) }}
+                </details>
+                <details>
+                    <summary><h3>Primera llamada</h3></summary>
+                    <p>{{$business->record["state_three"]}}</p>
+                    {{ Form::textarea('state_three',$business->record["state_three"], ['class' => '']) }}
+                </details>
+                <details>
+                    <summary><h3>Cotizacion especifica</h3></summary>
+                    <p>{{$business->record["state_four"]}}</p>
+                    {{ Form::textarea('state_four',$business->record["state_four"], ['class' => '']) }}
+                </details>
+                <details>
+                    <summary><h3>Segunda llamada</h3></summary>
+                    <p>{{$business->record["state_five"]}}</p>
+                    {{ Form::textarea('state_five',$business->record["state_five"], ['class' => '']) }}
+                </details>
+                <details>
+                    <summary><h3>Negociacion</h3></summary>
+                    <p>{{$business->record["state_six"]}}</p>
+                    {{ Form::textarea('state_six',$business->record["state_six"], ['class' => '']) }}
+                </details>
+                <details>
+                    <summary><h3>Activo</h3></summary>
+                    <p>{{$business->record["state_seven"]}}</p>
+                    {{ Form::textarea('state_seven',$business->record["state_seven"], ['class' => '']) }}
+                </details>
+                <details>
+                    <summary><h3>Mensual</h3></summary>
+                    <p>{{$business->record["state_eight"]}}</p>
+                    {{ Form::textarea('state_eight',$business->record["state_eight"], ['class' => '']) }}
+                </details>
+                <details>
+                    <summary><h3>Moroso</h3></summary>
+                    <p>{{$business->record["state_nine"]}}</p>
+                    {{ Form::textarea('state_nine',$business->record["state_nine"], ['class' => '']) }}
+                </details>
+                <details>
+                    <summary><h3>Eliminado</h3></summary>
+                    <p>{{$business->record["state_ten"]}}</p>
+                    {{ Form::textarea('state_ten',$business->record["state_ten"], ['class' => '']) }}
+                </details>
 
+                {{ Form::submit('Guardar Cambios') }}
+
+                {{ Form::close() }}
+            </div>
         </section>
     </div>
 

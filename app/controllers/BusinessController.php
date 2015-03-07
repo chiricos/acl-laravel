@@ -3,7 +3,7 @@
 use cerverus\Entities\Business;
 use cerverus\Entities\User;
 use cerverus\Entities\Contact;
-use cerverus\Entities\Record;
+use cerverus\Entities\Charge;
 use cerverus\Managers\BusinessManager;
 use cerverus\Managers\UpdateBusinessManager;
 use cerverus\Repositories\UserRepo;
@@ -99,6 +99,29 @@ class BusinessController extends BaseController
         $businessRepo=new BusinessRepo();
         $state=$businessRepo->getState($business->type,$business->state);
         $contacts=Contact::where('business_id', '=', $id)->get();
-        return View::make('front.business.stateBusiness',compact('total','business','manager','state','contacts'));
+        $charges=Charge::all();
+        return View::make('front.business.stateBusiness',compact('total','business','manager','state','contacts','charges'));
+    }
+
+    public function saveStates($id)
+    {
+        $business=Business::find($id);
+        $business->record["state_one"]=Input::get("state_one");
+        $business->record["state_two"]=Input::get("state_two");
+        $business->record["state_three"]=Input::get("state_three");
+        $business->record["state_four"]=Input::get("state_four");
+        $business->record["state_five"]=Input::get("state_five");
+        $business->record["state_six"]=Input::get("state_six");
+        $business->record["state_seven"]=Input::get("state_seven");
+        $business->record["state_eight"]=Input::get("state_eight");
+        $business->record["state_nine"]=Input::get("state_nine");
+        $business->record["state_ten"]=Input::get("state_ten");
+        if($business->record->save())
+        {
+            return Redirect::route('seeBusiness',$id)->with("message",'se guardo los estados correctamente');
+        }else{
+            return Redirect::route('seeBusiness',$id)->with("message_error",'no se guardo los estados correctamente');
+        }
+
     }
 }

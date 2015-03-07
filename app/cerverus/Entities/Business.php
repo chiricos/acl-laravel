@@ -9,7 +9,7 @@ class Business extends \Eloquent
 
     public function record()
     {
-        return $this->hasOne('cerverus\Entities\Record','id');
+        return $this->hasOne('cerverus\Entities\Record','business_id');
     }
 
 }
