@@ -60,7 +60,9 @@
                 <a href="{{route('contacts')}}">Crear Contacto</a>
             </div>
         </section>
-        <section>
+        <section class="business-states">
+            <p class="get-type">{{$business->type}}</p>
+            <p class="get-state">{{$business->state}}</p>
             <div>
                 <h2>Estado</h2>
                 {{ Form::open(array('name'=>'form-see-business','url' => 'admin/verEmpresa/'.$business->id, 'method' => 'POST')) }}
@@ -122,4 +124,9 @@
         </section>
     </div>
 
+@stop
+
+
+@section('javascript')
+    {{ HTML::script('js/business.js'); }}
 @stop

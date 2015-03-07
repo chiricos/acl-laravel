@@ -38,6 +38,13 @@ $(document).on('ready', function() {
             j=0;
         }
     });
+    /* STADOS */
 
+    if($('.get-type').text()==1)
+    {
+        console.log($('.get-state').text())
+    }else{
+        console.log($('.get-state').text())
+    }
 
 });
