@@ -1,6 +1,6 @@
 @extends('layou/plantille')
 
 
-@section('section')
+@section('content')
 
 @stop

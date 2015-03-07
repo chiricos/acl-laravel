@@ -2,10 +2,14 @@
 
 use cerverus\Entities\Business;
 use cerverus\Entities\User;
+use cerverus\Entities\Contact;
+use cerverus\Entities\Record;
 use cerverus\Managers\BusinessManager;
 use cerverus\Managers\UpdateBusinessManager;
 use cerverus\Repositories\UserRepo;
+use cerverus\Repositories\BusinessRepo;
 use cerverus\Repositories\LogRepo;
+use cerverus\Repositories\RecordRepo;
 
 class BusinessController extends BaseController
 {
@@ -84,5 +88,17 @@ class BusinessController extends BaseController
             return Redirect::route('business')->with('message','el '.$upload.' se actualizo correctamente');
         }
             return Redirect::route('buesiness')->with('message_error','el '.$upload.' no se pudo actualizar correctamente ');
+    }
+
+    public function showSeeBusiness($id)
+    {
+        $permiso =new Proceso();
+        $total=$permiso->filtrarPermisos();
+        $business=Business::find($id);
+        $manager=User::find($business->manager)->first();
+        $businessRepo=new BusinessRepo();
+        $state=$businessRepo->getState($business->type,$business->state);
+        $contacts=Contact::where('business_id', '=', $id)->get();
+        return View::make('front.business.stateBusiness',compact('total','business','manager','state','contacts'));
     }
 }

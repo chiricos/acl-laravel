@@ -36,6 +36,8 @@ Route::group(array('before' => 'auth'), function()
         route::post('admin/Empresas', ['as' => 'business', 'uses' => 'BusinessController@saveBusiness']);
         route::get('admin/actualizarEmpresa/{id}', ['as' => 'updateBusiness', 'uses' => 'BusinessController@showUpdateBusiness']);
         route::post('admin/actualizarEmpresa/{id}', ['as' => 'updateBusiness', 'uses' => 'BusinessController@updateBusiness']);
+        route::get('admin/verEmpresa/{id}', ['as' => 'seeBusiness', 'uses' => 'BusinessController@showSeeBusiness']);
+        route::post('admin/verEmpresa/{id}', ['as' => 'seeBusiness', 'uses' => 'BusinessController@updateBusiness']);
 
     });
 

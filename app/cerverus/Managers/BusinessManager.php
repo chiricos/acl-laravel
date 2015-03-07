@@ -1,6 +1,10 @@
 <?php
 namespace cerverus\Managers;
 
+use cerverus\Entities\Business;
+use cerverus\Entities\Record;
+use cerverus\Repositories\BusinessRepo;
+
 class BusinessManager extends BaseManager
 {
 
@@ -66,7 +70,8 @@ class BusinessManager extends BaseManager
             $data["photo"]="perfil.png";
         }
         $this->entity->fill($data);
-        if($this->entity->save())
+        $this->entity->save();
+        if($this->entity->record()->save(new Record()))
         {
             if($data["type"]==1)
             {

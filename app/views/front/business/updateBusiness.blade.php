@@ -62,7 +62,7 @@
                     </div>
 
                     <div>
-                        {{ Form::label('second_email', 'Correo Opcional') }}
+                        {{ Form::label('second_email', 'E-mail Opcional') }}
                         {{ Form::text('second_email',$updateBusiness->second_email) }}
                         {{$errors->first('second_email')}}
                     </div>
@@ -188,7 +188,7 @@
                     </div>
 
                     <div>
-                        {{ Form::label('second_email', 'Correo Opcional') }}
+                        {{ Form::label('second_email', 'E-mail Opcional') }}
                         {{ Form::text('second_email',$updateBusiness->second_email) }}
                         {{$errors->first('second_email')}}
                     </div>
@@ -278,7 +278,7 @@
                                         <td>{{$user->user_name}}</td>
                                     @endif
                                 @endforeach
-                                <td><a href="{{route('updateBusiness',$businessClient->id)}}">+</a> <a href=" {{route('business')}}">E</a><a href="{{route('updateBusiness',$businessClient->id)}}">a</a></td>
+                                <td><a href="{{route('seeBusiness'.$businessClient->id)}}">+</a> <a href=" {{route('business')}}">E</a><a href="{{route('updateBusiness',$businessClient->id)}}">a</a></td>
                             </tr>
                         @endif
                     @endforeach
@@ -314,7 +314,7 @@
                                         <td>{{$user->user_name}}</td>
                                     @endif
                                 @endforeach
-                                <td><a href="{{route('business')}}">+</a><a href=" {{route('business')}}">E</a><a href="{{route('updateBusiness',$businessClient->id)}}">a</a></td>
+                                <td><a href="{{route('seeBusiness',$businessClient->id)}}">+</a><a href=" {{route('business')}}">E</a><a href="{{route('updateBusiness',$businessClient->id)}}">a</a></td>
                             </tr>
                         @endif
                     @endforeach
