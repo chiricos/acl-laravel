@@ -156,12 +156,12 @@ if(Auth::user()){
             return Redirect::to('Inicio');
         }
     });
+
     Route::filter('showUser', function(){
         if (Auth::guest()) return Redirect::guest('/');
         $permiso =new Proceso();
         $total=$permiso->filtrarPermisos();
         if($total[7]<1){
-
             return Redirect::to('Inicio');
         }
     });

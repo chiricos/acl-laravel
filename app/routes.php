@@ -60,6 +60,11 @@ Route::group(array('before' => 'auth'), function()
         route::post('admin/crearUsuario', ['as' => 'createUser', 'uses' => 'UserController@saveUser']);
     });
 
+    Route::group(array('before'=>'showUser'),function(){
+        route::get('admin/ver/{id}', ['as' => 'showUser', 'uses' => 'UserController@showUser']);
+        route::post('admin/ver/{id}', ['as' => 'showUser', 'uses' => 'UserController@showUser']);
+    });
+
     Route::group(array('before'=>'updateUser'),function(){
         route::get('admin/actualizarUsuario/{id}', ['as' => 'updateUser', 'uses' => 'UserController@showUpdateUser']);
         route::post('admin/actualizarUsuario/{id}', ['as' => 'updateUser', 'uses' => 'UserController@updateUser']);

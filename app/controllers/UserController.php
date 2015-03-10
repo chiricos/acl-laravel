@@ -137,18 +137,36 @@ class UserController extends BaseController
     public function deleteUser($id)
     {
         $user=User::find($id);
-        if($user->delete())
+        $business=Business::where('manager','=',$user->id)->get();
+        $manager=User::where('manager','=',$user->id)->get();
+        if($business or $manager)
         {
-            new LogRepo(
-                [
-                    'responsible'=> Auth::user()->user_name,
-                    'responsible_id'=> Auth::user()->id,
-                    'action' => 'ha eliminado una cuenta ',
-                    'affected_entity'=> $user->user_name,
-                    'affected_entity_id'=> $id,
-                ]
-            );
-            return Redirect::route('administrator')->with('message','el usuario fue eliminado exitosamente');
+            return Redirect::route('administrator')->with('message_error','el usuario no fue eliminado exitosamente por que tiene vendedores a su cargo');
+        }else{
+            if($user->delete())
+            {
+                new LogRepo(
+                    [
+                        'responsible'=> Auth::user()->user_name,
+                        'responsible_id'=> Auth::user()->id,
+                        'action' => 'ha eliminado una cuenta ',
+                        'affected_entity'=> $user->user_name,
+                        'affected_entity_id'=> $id,
+                    ]
+                );
+                return Redirect::route('administrator')->with('message','el usuario fue eliminado exitosamente');
+            }
         }
+
+
+    }
+
+    public function showUser($id)
+    {
+        $user=User::find($id);
+        $permiso =new Proceso();
+        $total=$permiso->filtrarPermisos();
+        $business=Business::where('manager','=',$user->id)->get();
+        return View::make('front.accounts.show',compact('total','business','user'));
     }
 }

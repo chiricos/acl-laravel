@@ -60,7 +60,11 @@
                     @if($i==0)
                         <td>sin encargado</td>
                     @endif
-                    <td><a href="{{route('home',$user->id)}}" class="icon-folder-open ">ver</a></td>
+                    @if(isset($total[7]))
+                        @if($total[7]==1)
+                        <td><a href="{{route('showUser',$user->id)}}" class="icon-folder-open ">ver</a></td>
+                        @endif
+                    @endif
                     @if(isset($total[6]))
                         @if($total[6]==1)
                             <td><a href="{{route('updateUser',$user->id)}}" class="icon-folder-open ">actualizar</a></td>
@@ -131,7 +135,11 @@
                     @if($i==0)
                         <td>sin encargado</td>
                     @endif
-                    <td><a href="{{route('home',$user->id)}}" class="icon-folder-open ">ver</a></td>
+                    @if(isset($total[7]))
+                        @if($total[7]==1)
+                            <td><a href="{{route('showUser',$user->id)}}" class="icon-folder-open ">ver</a></td>
+                        @endif
+                    @endif
                     @if(isset($total[6]))
                     @if($total[6]==1)
                             <td><a href="{{route('updateUser',$user->id)}}" class="icon-folder-open ">actualizar</a></td>

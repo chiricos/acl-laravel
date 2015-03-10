@@ -1,7 +1,7 @@
 <?php
 namespace cerverus\Managers;
 
-use cerverus\Entities\Business;
+use cerverus\Entities\Payment;
 use cerverus\Entities\Record;
 use cerverus\Repositories\BusinessRepo;
 
@@ -71,6 +71,13 @@ class BusinessManager extends BaseManager
         }
         $this->entity->fill($data);
         $this->entity->save();
+        if(isset($data["payment_date"]))
+        {
+            $payment=new Payment(['first_payment'=>$data["payment_date"]]);
+        }else{
+            $payment=new Payment();
+        }
+        $this->entity->payment()->save($payment);
         if($this->entity->record()->save(new Record()))
         {
             if($data["type"]==1)

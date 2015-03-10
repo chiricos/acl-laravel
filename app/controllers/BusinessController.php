@@ -67,7 +67,6 @@ class BusinessController extends BaseController
 
     public function updateBusiness($id)
     {
-        dd("fdgd");
         $business=Business::find($id);
         $businessManager=new UpdateBusinessManager($business,Input::all());
         $businessValidator=$businessManager->isValid();

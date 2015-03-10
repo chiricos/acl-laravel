@@ -12,4 +12,9 @@ class Business extends \Eloquent
         return $this->hasOne('cerverus\Entities\Record','business_id');
     }
 
+    public function payment()
+    {
+        return $this->hasOne('cerverus\Entities\Payment','business_id');
+    }
+
 }
