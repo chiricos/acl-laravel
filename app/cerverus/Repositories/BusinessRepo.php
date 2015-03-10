@@ -64,5 +64,62 @@ class BusinessRepo extends BaseRepo
 
     }
 
+    public function saveState($type,$state,$date,$id)
+    {
+        $business=Business::find($id);
+        if($type==2)
+        {
+            if($state==1)
+            {
+                if($date["state_one"]!="")
+                {
+                    $business->state=2;
+                    $business->save();
+                }
+            }
+            if($state==2)
+            {
+                if($date["state_two"]!="")
+                {
+                    $business->state=3;
+                    $business->save();
+                }
+            }
+            if($state==3)
+            {
+                if($date["state_three"]!="")
+                {
+                    $business->state=4;
+                    $business->save();
+                }
+            }
+            if($state==4)
+            {
+                if($date["state_four"]!="")
+                {
+                    $business->state=5;
+                    $business->save();
+                }
+            }
+            if($state==5)
+            {
+                if($date["state_five"]!="")
+                {
+                    $business->state=6;
+                    $business->save();
+                }
+            }
+            if($state==6)
+            {
+                if($date["state_six"]!="")
+                {
+                    $business->state=1;
+                    $business->type=1;
+                    $business->save();
+                }
+            }
+        }
+    }
+
 
 }

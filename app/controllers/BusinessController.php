@@ -67,6 +67,7 @@ class BusinessController extends BaseController
 
     public function updateBusiness($id)
     {
+        dd("fdgd");
         $business=Business::find($id);
         $businessManager=new UpdateBusinessManager($business,Input::all());
         $businessValidator=$businessManager->isValid();
@@ -118,6 +119,8 @@ class BusinessController extends BaseController
         $business->record["state_ten"]=Input::get("state_ten");
         if($business->record->save())
         {
+            $businessRepo=new BusinessRepo();
+            $businessRepo->saveState($business->type,$business->state,Input::all(),$id);
             return Redirect::route('seeBusiness',$id)->with("message",'se guardo los estados correctamente');
         }else{
             return Redirect::route('seeBusiness',$id)->with("message_error",'no se guardo los estados correctamente');

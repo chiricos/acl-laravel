@@ -40,11 +40,82 @@ $(document).on('ready', function() {
     });
     /* STADOS */
 
+    var state=parseInt($('.get-state').text());
     if($('.get-type').text()==1)
     {
-        console.log($('.get-state').text())
+        $('.state-input').each(function(index)
+        {
+                $(this).removeClass('hidden');
+        });
     }else{
-        console.log($('.get-state').text())
+
+        $('.state-input').each(function(index)
+        {
+            if(index<state)
+            {
+                $(this).removeClass('hidden');
+            }
+
+        });
+        $('.state-change').on('change',function()
+        {
+            console.log("si llenas");
+            alert("Si llenas este campo pasara a ser cliente de Mi-Martinez");
+        });
+
     }
+
+
+    $('.state-p0').on('click',function()
+    {
+        $('.state0').css("display", "block");
+        $(this).addClass('hidden');
+    });
+    $('.state-p1').on('click',function()
+    {
+        $('.state1').css("display", "block");
+        $(this).addClass('hidden');
+    });
+    $('.state-p2').on('click',function()
+    {
+        $('.state2').css("display", "block");
+        $(this).addClass('hidden');
+    });
+    $('.state-p3').on('click',function()
+    {
+        $('.state3').css("display", "block");
+        $(this).addClass('hidden');
+    });
+    $('.state-p4').on('click',function()
+    {
+        $('.state4').css("display", "block");
+        $(this).addClass('hidden');
+    });
+    $('.state-p5').on('click',function()
+    {
+        $('.state-change').css("display", "block");
+        $(this).addClass('hidden');
+    });
+    $('.state-p6').on('click',function()
+    {
+        $('.state6').css("display", "block");
+        $(this).addClass('hidden');
+    });
+    $('.state-p7').on('click',function()
+    {
+        $('.state7').css("display", "block");
+        $(this).addClass('hidden');
+    });
+    $('.state-p8').on('click',function()
+    {
+        $('.state8').css("display", "block");
+        $(this).addClass('hidden');
+    });
+    $('.state-p9').on('click',function()
+    {
+        $('.state9').css("display", "block");
+        $(this).addClass('hidden');
+    });
+
 
 });

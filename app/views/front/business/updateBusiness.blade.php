@@ -2,6 +2,7 @@
 
 
 @section('content')
+
     <h1>Empresas</h1>
     <div>
         <div>
@@ -278,11 +279,12 @@
                                         <td>{{$user->user_name}}</td>
                                     @endif
                                 @endforeach
-                                <td><a href="{{route('seeBusiness'.$businessClient->id)}}">+</a> <a href=" {{route('business')}}">E</a><a href="{{route('updateBusiness',$businessClient->id)}}">a</a></td>
+                                <td><a href="{{route('seeBusiness',$businessClient->id)}}">+</a><a href=" {{route('business')}}">E</a> <a href="{{route('updateBusiness',$businessClient->id)}}">a</a></td>
                             </tr>
                         @endif
                     @endforeach
                     </tbody>
+
                 </table>
                 <h2>Prospectos</h2>
                 <table class=" ">
@@ -314,7 +316,7 @@
                                         <td>{{$user->user_name}}</td>
                                     @endif
                                 @endforeach
-                                <td><a href="{{route('seeBusiness',$businessClient->id)}}">+</a><a href=" {{route('business')}}">E</a><a href="{{route('updateBusiness',$businessClient->id)}}">a</a></td>
+                                <td><a href="{{route('seeBusiness',$businessClient->id)}}">+</a><a href=" {{route('business')}}">E</a> <a href="{{route('updateBusiness',$businessClient->id)}}">a</a></td>
                             </tr>
                         @endif
                     @endforeach
