@@ -1,0 +1,44 @@
+$(document).on('ready',function()
+{
+    if($('#payment-option').val()==1)
+    {
+        $('.payment-input').eq(0).removeClass('hidden');
+        $('.payment-input').eq(1).addClass('hidden');
+        $('.payment-input').eq(2).addClass('hidden');
+
+
+    }
+    if($('#payment-option').val()==2)
+    {
+        $('.payment-input').eq(0).removeClass('hidden');
+        $('.payment-input').eq(1).removeClass('hidden');
+        $('.payment-input').eq(2).addClass('hidden');
+    }
+    if($('#payment-option').val()==3)
+    {
+        $('.payment-input').eq(0).removeClass('hidden');
+        $('.payment-input').eq(1).removeClass('hidden');
+        $('.payment-input').eq(2).removeClass('hidden');
+    }
+    $('#payment-option').on('change',function()
+    {
+        if($('#payment-option').val()==1)
+        {
+            $('.payment-input').eq(0).removeClass('hidden');
+            $('.payment-input').eq(1).addClass('hidden');
+            $('.payment-input').eq(2).addClass('hidden');
+        }
+        if($('#payment-option').val()==2)
+        {
+            $('.payment-input').eq(0).removeClass('hidden');
+            $('.payment-input').eq(1).removeClass('hidden');
+            $('.payment-input').eq(2).addClass('hidden');
+        }
+        if($('#payment-option').val()==3)
+        {
+            $('.payment-input').eq(0).removeClass('hidden');
+            $('.payment-input').eq(1).removeClass('hidden');
+            $('.payment-input').eq(2).removeClass('hidden');
+        }
+    });
+});

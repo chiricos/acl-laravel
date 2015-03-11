@@ -27,9 +27,9 @@ Route::group(array('before' => 'auth'), function()
         return View::make('front.home',compact('total'));
     });
 
-    route::get('Inicio', ['as' => 'home', 'uses' => 'AuthController@index']);
+    route::get('Inicio', ['as' => 'home', 'uses' => 'HomeController@index']);
 
-    route::get('peril', ['as' => 'profile', 'uses' => 'AuthController@index']);
+    route::get('perfil', ['as' => 'profile', 'uses' => 'AuthController@index']);
 
     Route::group(array('before'=>'business'),function() {
         route::get('admin/Empresas', ['as' => 'business', 'uses' => 'BusinessController@showBusiness']);
@@ -38,6 +38,8 @@ Route::group(array('before' => 'auth'), function()
         route::post('admin/actualizarEmpresa/{id}', ['as' => 'updateBusiness', 'uses' => 'BusinessController@updateBusiness']);
         route::get('admin/verEmpresa/{id}', ['as' => 'seeBusiness', 'uses' => 'BusinessController@showSeeBusiness']);
         route::post('admin/verEmpresa/{id}', ['as' => 'seeBusiness', 'uses' => 'BusinessController@saveStates']);
+        route::get('admin/pagos/{id}',['as'=>'paymentBusiness','uses'=>'BusinessController@showPayment']);
+        route::post('admin/pagos/{id}',['as'=>'paymentBusiness','uses'=>'BusinessController@updatePayment']);
 
     });
 

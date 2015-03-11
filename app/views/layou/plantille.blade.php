@@ -22,6 +22,7 @@
 {{ Session::get('message') }}
 {{ Session::get('message_error') }}
     <header>
+                <a href="{{route('home')}}">Inicio</a>
         @if(isset($total[1]) )
             @if($total[1]==1)
                 <a href="{{route('business')}}">Empresas</a>

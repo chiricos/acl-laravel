@@ -276,7 +276,7 @@
                                         <td>{{$user->user_name}}</td>
                                     @endif
                                 @endforeach
-                                    <td><a href="{{route('seeBusiness',$businessClient->id)}}">+</a><a href=" {{route('business')}}">E</a> <a href="{{route('updateBusiness',$businessClient->id)}}">a</a></td>
+                                    <td><a href="{{route('seeBusiness',$businessClient->id)}}">+</a><a href=" {{route('business')}}">E</a> <a href="{{route('updateBusiness',$businessClient->id)}}">a</a><a href="{{route('paymentBusiness',$businessClient->id)}}">-</a></td>
                                 </tr>
                                 @endif
                             @endforeach

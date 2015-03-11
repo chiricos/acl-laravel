@@ -118,6 +118,14 @@ class BusinessController extends BaseController
         $business->record["state_ten"]=Input::get("state_ten");
         if($business->record->save())
         {
+            new LogRepo(
+                [
+                    'responsible'=> Auth::user()->user_name,
+                    'responsible_id'=> Auth::user()->id,
+                    'action' => 'ha modificado los estados de la empresa ',
+                    'affected_entity'=> $business->name,
+                ]
+            );
             $businessRepo=new BusinessRepo();
             $businessRepo->saveState($business->type,$business->state,Input::all(),$id);
             return Redirect::route('seeBusiness',$id)->with("message",'se guardo los estados correctamente');
@@ -125,5 +133,43 @@ class BusinessController extends BaseController
             return Redirect::route('seeBusiness',$id)->with("message_error",'no se guardo los estados correctamente');
         }
 
+    }
+
+    public function showPayment($id)
+    {
+        $permiso =new Proceso();
+        $total=$permiso->filtrarPermisos();
+        $option=["1"=>"Una sola cuota"]
+                +["2"=>"Dos cuotas"]
+                +["3"=>"Tres cuotas"];
+        $business=Business::find($id);
+        return View::make('front.business.payment',compact('total','option','business'));
+    }
+
+    public function updatePayment($id)
+    {
+        $business=Business::find($id);
+        $business->payment["name"]=Input::get("name");
+        $business->payment["first_payment"]=Input::get("first_payment");
+        $business->payment["second_payment"]=Input::get("second_payment");
+        $business->payment["third_payment"]=Input::get("third_payment");
+        $business->payment["first_validator"]=Input::get("first_validator");
+        $business->payment["second_validator"]=Input::get("second_validator");
+        $business->payment["third_validator"]=Input::get("third_validator");
+
+        if($business->payment->save())
+        {
+            new LogRepo(
+                [
+                    'responsible'=> Auth::user()->user_name,
+                    'responsible_id'=> Auth::user()->id,
+                    'action' => 'ha modificado los pagos de la empresa ',
+                    'affected_entity'=> $business->name,
+                ]
+            );
+            return Redirect::route('paymentBusiness',$id)->with('message','se guardaron los cambios correctamente');
+        }else{
+            return Redirect::route('paymentBusiness',$id)->with('message_error','no se guardaron los cambios correctamente');
+        }
     }
 }
