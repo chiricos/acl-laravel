@@ -263,7 +263,6 @@
                             <tbody>
                             @foreach($business as $businessClient)
                                 @if($businessClient->type==1)
-
                                 <tr>
                                     <td>{{ HTML::image('business/'.$businessClient->photo,'',array('style'=>'width: 100px;')) }}</td>
                                     <td>{{$businessClient->name}}</td>

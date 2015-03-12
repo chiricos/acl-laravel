@@ -17,7 +17,12 @@ class BusinessController extends BaseController
     {
         $permiso =new Proceso();
         $total=$permiso->filtrarPermisos();
-        $business=Business::all();
+        if(Auth::user()->role_id==3)
+        {
+            $business=Business::where('manager','=',Auth::user()->id)->get();
+        }else{
+            $business=Business::all();
+        }
         $users=User::all();
         $userRepo=new UserRepo();
         $managers=$userRepo->getManager(Auth::user()->id,Auth::user()->role_id,Auth::user()->user_name);
