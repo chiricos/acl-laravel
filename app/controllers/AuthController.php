@@ -86,7 +86,7 @@ class AuthController extends BaseController {
             return Redirect::to('restaurarContraseña/'.$restore_password)->withErrors($userValidation)->withInput();
         }
 
-        $user=$userManager->savePassword($restore_password);
+        $user=$userManager->savePassword($restore_password,0);
         new LogRepo(
             [
                 'responsible'=> $user['username'],

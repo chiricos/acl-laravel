@@ -2,8 +2,11 @@
 
 use cerverus\Entities\User;
 use cerverus\Entities\Business;
+use cerverus\Entities\Log;
 use cerverus\Managers\CreateUserManager;
 use cerverus\Managers\UpdateUserManager;
+use cerverus\Managers\UpdateProfileManager;
+use cerverus\Managers\UserManager;
 use cerverus\Repositories\LogRepo;
 
 class UserController extends BaseController
@@ -131,7 +134,7 @@ class UserController extends BaseController
             );
             return Redirect::route('administrator')->with('message','el usuario fue actualizado exitosamente');
         }
-        return Redirect::route('administrator')->with('message','el usuario no fue actualizado exitosamente');
+        return Redirect::route('administrator')->with('message_error','el usuario no fue actualizado exitosamente');
     }
 
     public function deleteUser($id)
@@ -166,7 +169,67 @@ class UserController extends BaseController
         $user=User::find($id);
         $permiso =new Proceso();
         $total=$permiso->filtrarPermisos();
+        $logs=Log::where('responsible_id','=',$id)->get();
         $business=Business::where('manager','=',$user->id)->get();
-        return View::make('front.accounts.show',compact('total','business','user'));
+        return View::make('front.accounts.show',compact('total','business','user','logs'));
+    }
+
+    public function showProfile()
+    {
+        $permiso =new Proceso();
+        $total=$permiso->filtrarPermisos();
+        $user=User::find(Auth::user()->id);
+        $manager=User::where('id','=',$user->manager)->first();
+        $logs=Log::where('responsible_id','=',$user->id)->get();
+        return View::make('front.accounts.profile',compact('user','manager','logs','total'));
+    }
+
+    public function updateProfile()
+    {
+        $user=User::find(Auth::user()->id);
+        $updateProfile=new UpdateProfileManager($user,Input::all());
+        $updateValidator=$updateProfile->isValid();
+        if($updateValidator)
+        {
+            return Redirect::route('profile')->with('upload','1')->withErrors($updateValidator)->withInput();
+        }
+
+        $updateUser=$updateProfile->updateUser();
+        if($updateUser)
+        {
+            new LogRepo(
+                [
+                    'responsible'=> Auth::user()->user_name,
+                    'responsible_id'=> Auth::user()->id,
+                    'action' => 'ha actualizado sus datos ',
+                    'affected_entity'=> '',
+                    'affected_entity_id'=> '',
+                ]
+            );
+            return Redirect::route('profile')->with('message','sus datos fueron actualizados exitosamente');
+        }
+        return Redirect::route('profile')->with('message_error','sus datos no puedieron se actualizados');
+
+    }
+
+    public function changePassword()
+    {
+        $dataUser =  Input::all();
+        $userManager= new UserManager(new User(),$dataUser);
+        $userValidation = $userManager->isValid();
+        if ($userValidation) {
+            return Redirect::route('profile')->with('password','1')->withErrors($userValidation);
+        }
+
+        $userManager->savePassword(Auth::user()->id,1);
+        new LogRepo(
+            [
+                'responsible'=> Auth::user()->user_name,
+                'responsible_id'=> Auth::user()->id,
+                'action' => 'ha restaurado la contraseña su contraseña',
+            ]
+        );
+
+        return Redirect::route('profile')->with(array('message' => 'Has cambiado la contraseña exitosamente'));
     }
 }

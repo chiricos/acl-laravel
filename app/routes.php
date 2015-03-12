@@ -29,7 +29,9 @@ Route::group(array('before' => 'auth'), function()
 
     route::get('Inicio', ['as' => 'home', 'uses' => 'HomeController@index']);
 
-    route::get('perfil', ['as' => 'profile', 'uses' => 'AuthController@index']);
+    route::get('perfil', ['as' => 'profile', 'uses' => 'UserController@showProfile']);
+    route::post('actualizardatos', ['as' => 'updateProfile', 'uses' => 'UserController@updateProfile']);
+    route::post('cambiarContraseña', ['as' => 'changePassword', 'uses' => 'UserController@changePassword']);
 
     Route::group(array('before'=>'business'),function() {
         route::get('admin/Empresas', ['as' => 'business', 'uses' => 'BusinessController@showBusiness']);

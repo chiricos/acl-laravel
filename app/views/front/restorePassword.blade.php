@@ -4,8 +4,6 @@
 
 </head>
 <body>
-    <p>{{$errors->first('password')}}</p>
-    <p>{{$errors->first('confirmar_password')}}</p>
 
 
 
@@ -15,17 +13,17 @@
         <div class="material-input">
             {{Form::password('password','',['id' => 'password'])}}
             {{Form::label('password','Password')}}
-            <span></span>
+            {{$errors->first('password')}}
         </div>
 
         <div class="material-input">
             {{Form::password('confirmar_password','',['id' => 'confirmar_password'])}}
             {{Form::label('confirmar_password','Confirmar Password')}}
-            <span></span>
+            {{$errors->first('confirmar_password')}}
         </div>
 
         <button class="u-button">
-            Enviar Solicitud
+            Restaurar contraseña
         </button>
 
         {{ Form::close() }}

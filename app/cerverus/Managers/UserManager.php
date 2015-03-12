@@ -26,10 +26,15 @@ class UserManager extends BaseManager
         return $messages;
     }
 
-    public function savePassword($restore_password)
+    public function savePassword($restore_password,$auth)
     {
 
-        $user = User::where('restore_password', '=', $restore_password)->first();
+        if($auth==1)
+        {
+            $user = User::where('id', '=', $restore_password)->first();
+        }else{
+            $user = User::where('restore_password', '=', $restore_password)->first();
+        }
         $user->password=$this->data['password'];
         if($user->save())
         {

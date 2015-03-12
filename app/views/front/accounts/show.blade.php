@@ -2,7 +2,7 @@
 
 
 @section('content')
-
+            @if($user->role_id==3)
             <section class="show-business">
                 <h2>Clientes</h2>
                 <table class=" ">
@@ -74,5 +74,28 @@
         </div>
 
     </div>
+    @endif
+            <div>
+                @if(count($logs)>0)
+                    <h2 class="showMove">Movimientos</h2>
+                    <section class="profileLogs hidden">
+                        @foreach($logs as $log)
+                            <p>
+                                {{$log->responsible}}
+                                 {{$log->action}}
+                                @if($log->affected_entity)
+                                    de {{$log->affected_entity}}
+                                @endif
+                                el {{$log->created_at}}
+                            </p>
+                        @endforeach
+                    </section>
 
+                @endif
+            </div>
+
+@stop
+
+@section('javascript')
+    {{ HTML::script('js/user.js'); }}
 @stop
