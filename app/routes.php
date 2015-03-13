@@ -59,6 +59,13 @@ Route::group(array('before' => 'auth'), function()
         route::get('admin/cuentas', ['as' => 'administrator', 'uses' => 'UserController@showUsers']);
     });
 
+    Route::group(array('before'=>'roles'),function(){
+
+        route::get('admin/roles', ['as' => 'roles', 'uses' => 'PermissionController@show']);
+        route::get('admin/role/{id}', ['as' => 'showPermissions', 'uses' => 'PermissionController@showPermissions']);
+        route::post('admin/actualizarPermisos/{id}', ['as' => 'updatePermissions', 'uses' => 'PermissionController@updatePermissions']);
+    });
+
     Route::group(array('before'=>'createUser'),function(){
         route::get('admin/crearUsuario', ['as' => 'createUser', 'uses' => 'UserController@createUser']);
         route::post('admin/crearUsuario', ['as' => 'createUser', 'uses' => 'UserController@saveUser']);

@@ -38,6 +38,11 @@
                 <a href="{{route('administrator')}}">Administrar</a>
             @endif
         @endif
+        @if(isset($total[8]))
+            @if($total[8]==1)
+                <a href="{{route('roles')}}">Roles</a>
+            @endif
+        @endif
 
         <a href="{{route('profile')}}">Perfil</a>
     </header>

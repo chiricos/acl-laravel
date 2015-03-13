@@ -165,7 +165,7 @@ if(Auth::user()){
             return Redirect::to('Inicio');
         }
     });
-    Route::filter('permiso8', function(){
+    Route::filter('roles', function(){
         if (Auth::guest()) return Redirect::guest('/');
         $permiso =new Proceso();
         $total=$permiso->filtrarPermisos();

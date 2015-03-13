@@ -25,10 +25,25 @@ class UserController extends BaseController
         $total=$permiso->filtrarPermisos();
         $managers = [ "0" => "selecione un encargado"]
             +User::whereRaw('role_id=2')->lists('user_name','id');
-        $charges= [ 'seleccione un role'=> "seleccione un role"]
-            +[ 3 => "vendedor"]
-            +[ 2 => "administrador"]
-            +[ 1 => "super administrador"];
+        if(Auth::user()->role_id==1)
+        {
+            $charges= [ 'seleccione un role'=> "seleccione un role"]
+                +[ 3 => "vendedor"]
+                +[ 2 => "administrador"]
+                +[ 1 => "super administrador"];
+        }
+        if(Auth::user()->role_id==2)
+        {
+            $charges= [ 'seleccione un role'=> "seleccione un role"]
+                +[ 3 => "vendedor"]
+                +[ 2 => "administrador"];
+        }
+        if(Auth::user()->role_id==3)
+        {
+            $charges= [ 'seleccione un role'=> "seleccione un role"]
+                +[ 3 => "vendedor"];
+        }
+
         return View::make('front.accounts.create',compact('managers','charges','total'));
     }
 
