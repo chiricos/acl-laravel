@@ -12,7 +12,7 @@ class CreateContactManager extends BaseManager
             'email'                 => 'required|email|unique:contacts',
             'phone'                 => 'required|numeric',
             'mobile_phone'          => 'required|numeric',
-            'charges_id'            => 'required|numeric',
+            'charge'                => 'required',
             'business_id'           => 'required|numeric'
         ];
         return  $rules;

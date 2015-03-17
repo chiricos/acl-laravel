@@ -35,12 +35,6 @@ class UserController extends BaseController
         if(Auth::user()->role_id==2)
         {
             $charges= [ 'seleccione un role'=> "seleccione un role"]
-                +[ 3 => "vendedor"]
-                +[ 2 => "administrador"];
-        }
-        if(Auth::user()->role_id==3)
-        {
-            $charges= [ 'seleccione un role'=> "seleccione un role"]
                 +[ 3 => "vendedor"];
         }
 

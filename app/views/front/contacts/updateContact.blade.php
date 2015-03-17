@@ -21,9 +21,9 @@
             </div>
 
             <div>
-                {{ Form::label('charges_id', 'Cargo') }}
-                {{ Form::select('charges_id', $charges_id, $contact->charges_id, array('id' => '')) }}
-                {{$errors->first('charges_id')}}
+                {{ Form::label('charge', 'Cargo') }}
+                {{ Form::text('charge') }}
+                {{$errors->first('charge')}}
             </div>
 
             <div>
@@ -80,11 +80,8 @@
                             <td>{{$contact->phone}}</td>
                             <td>{{$contact->mobile_phone}}</td>
                             <td>{{$contact->email}}</td>
-                            @foreach($charges as $charge)
-                                @if($charge->id==$contact->charges_id)
-                                    <td>{{$charge->name}}</td>
-                                @endif
-                            @endforeach
+                            <td>{{$contact->charge}}</td>
+
                             @foreach($business as $businessContact)
                                 @if($businessContact->id==$contact->business_id)
                                     <td>{{$businessContact->name}}</td>
@@ -98,40 +95,7 @@
 
             </section>
         </div>
-        <div>
-            <section class="show-business">
-                <h2>Cargos</h2>
-                <table class=" ">
-                    <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Eliminar</th>
-                    </tr>
-                    </thead>
-                    <tbody>
 
-                    @foreach($charges as $charge)
-                        <tr>
-                            <td>{{$charge->name}}</td>
-                            <td><a href="{{route('deleteCharges',$charge->id)}}">Eliminar</a></td>
-                        </tr>
-                    @endforeach
-
-                    </tbody>
-                </table>
-
-            </section>
-        </div>
-        <div>
-            {{ Form::open(array('name'=>'form-create-charges','route' => 'charges', 'method' => 'POST')) }}
-
-            {{ Form::label('name', 'Nombre del cargo') }}
-            {{ Form::text('name') }}
-            {{$errors->first('name')}}
-            {{ Form::submit('Crear Cargo') }}
-
-            {{ Form::close() }}
-        </div>
     </div>
 
 

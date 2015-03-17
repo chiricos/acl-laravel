@@ -14,7 +14,7 @@ class UpdateContactManager extends BaseManager
             'email'                 => 'required|email|unique:contacts,email,'.$this->data["id"],'',
             'phone'                 => 'required|numeric',
             'mobile_phone'          => 'required|numeric',
-            'charges_id'            => 'required|numeric',
+            'charge'               => 'required',
             'business_id'           => 'required|numeric'
         ];
         return  $rules;

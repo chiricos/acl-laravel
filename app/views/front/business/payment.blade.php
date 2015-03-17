@@ -7,56 +7,60 @@
         {{ Form::open(array('name'=>'form-create-user','url' => 'admin/pagos/'.$business->id, 'method' => 'POST')) }}
 
         <div>
-            {{ Form::label('name', 'Općiones') }}
-            {{ Form::select('name', $option, $business->payment["name"], array('id' => 'payment-option')) }}
-            {{$errors->first('name')}}
+            @if(count($business->payments)==1)
+                <p>Una Cuota</p>
+            @endif
+            @if(count($business->payments)==2)
+                <p>Dos Cuotas</p>
+            @endif
+            @if(count($business->payments)==3)
+                <p>Tres Cuotas</p>
+            @endif
         </div>
-        <section class="payment-input hidden">
+        @if(count($business->payments)>=1)
+
+        <section class="payment-input ">
             <div >
-                {{ Form::label('first_payment', 'Primer pago') }}
-                {{Form::input('date','first_payment',$business->payment["first_payment"])}}
-                {{$errors->first('first_payment')}}
-            </div>
-
-            <div>
-                {{ Form::label('first_validator', 'Pago realizado') }}
-                {{ Form::checkbox('first_validator',1,$business->payment["first_validator"]) }}
-                {{$errors->first('first_validator')}}
+                {{ Form::text('id0',$business->payments[0]["id"]) }}
+                <p>Primer Pago: {{$business->payments[0]["payment"]}}</p>
+                {{ Form::label('validator0', 'Pago realizado') }}
+                {{ Form::checkbox('validator0',1,$business->payments[0]["validator"]) }}
             </div>
         </section>
+        @endif
+        @if(count($business->payments)>=2)
+            <section class="payment-input ">
+                <div >
+                    {{ Form::text('id1',$business->payments[1]["id"]) }}
+                    <p>Primer Pago: {{$business->payments[1]["payment"]}}</p>
+                    {{ Form::label('validator1', 'Pago realizado') }}
+                    {{ Form::checkbox('validator1',1,$business->payments[1]["validator"]) }}
+                </div>
+            </section>
+        @endif
+        @if(count($business->payments)==3)
+            <section class="payment-input ">
+                <div >
+                    {{ Form::text('id2',$business->payments[2]["id"]) }}
+                    <p>Primer Pago: {{$business->payments[2]["payment"]}}</p>
+                    {{ Form::label('validator2', 'Pago realizado') }}
+                    {{ Form::checkbox('validator2',1,$business->payments[2]["validator"]) }}
+                </div>
+            </section>
+        @endif
 
-        <section class="payment-input hidden">
-            <div>
-                {{ Form::label('second_payment', 'Segundo pago') }}
-                {{Form::input('date','second_payment',$business->payment["second_payment"])}}
-                {{$errors->first('second_payment')}}
-            </div>
 
-            <div>
-                {{ Form::label('second_validator', 'Pago realizado') }}
-                {{ Form::checkbox('second_validator',1,$business->payment["second_validator"]) }}
-                {{$errors->first('second_validator')}}
-            </div>
-        </section>
-
-        <section class="payment-input hidden">
-            <div>
-                {{ Form::label('third_payment', 'Tercer pago') }}
-                {{Form::input('date','third_payment',$business->payment["third_payment"])}}
-                {{$errors->first('third_payment')}}
-            </div>
-
-            <div>
-                {{ Form::label('third_validator', 'Pago realizado') }}
-                {{ Form::checkbox('third_validator',1,$business->payment["third_validator"]) }}
-                {{$errors->first('third_validator')}}
-            </div>
-        </section>
 
         {{ Form::submit('Guardar Cambios') }}
 
         {{ Form::close() }}
 
+    </div>
+    <div>
+        {{ Form::label('type', 'Općiones') }}
+
+        {{$errors->first('type')}}
+        {{ Form::select('type', $option, $business->payments[0]["type"], array('id' => 'payment-option')) }}
     </div>
 
 @stop

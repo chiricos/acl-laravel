@@ -16,10 +16,9 @@ class CreatePaymentsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->integer('business_id');
-			$table->string('name');
-			$table->string('first_payment');
-			$table->string('second_payment');
-			$table->string('third_payment');
+			$table->integer('type');
+			$table->string('payment');
+			$table->integer('validator');
 			$table->timestamps();
 		});
 	}

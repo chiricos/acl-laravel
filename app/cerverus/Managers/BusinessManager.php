@@ -73,11 +73,11 @@ class BusinessManager extends BaseManager
         $this->entity->save();
         if(isset($data["payment_date"]))
         {
-            $payment=new Payment(['first_payment'=>$data["payment_date"]]);
+            $payment=new Payment(['payment'=>$data["payment_date"]]+['type'=>'1']);
         }else{
             $payment=new Payment();
         }
-        $this->entity->payment()->save($payment);
+        $this->entity->payments()->save($payment);
         if($this->entity->record()->save(new Record()))
         {
             if($data["type"]==1)

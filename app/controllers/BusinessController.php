@@ -3,7 +3,6 @@
 use cerverus\Entities\Business;
 use cerverus\Entities\User;
 use cerverus\Entities\Contact;
-use cerverus\Entities\Charge;
 use cerverus\Managers\BusinessManager;
 use cerverus\Managers\UpdateBusinessManager;
 use cerverus\Repositories\UserRepo;
@@ -104,7 +103,6 @@ class BusinessController extends BaseController
         $businessRepo=new BusinessRepo();
         $state=$businessRepo->getState($business->type,$business->state);
         $contacts=Contact::where('business_id', '=', $id)->get();
-        $charges=Charge::all();
         return View::make('front.business.stateBusiness',compact('total','business','manager','state','contacts','charges'));
     }
 
@@ -153,28 +151,35 @@ class BusinessController extends BaseController
 
     public function updatePayment($id)
     {
-        $business=Business::find($id);
-        $business->payment["name"]=Input::get("name");
-        $business->payment["first_payment"]=Input::get("first_payment");
-        $business->payment["second_payment"]=Input::get("second_payment");
-        $business->payment["third_payment"]=Input::get("third_payment");
-        $business->payment["first_validator"]=Input::get("first_validator");
-        $business->payment["second_validator"]=Input::get("second_validator");
-        $business->payment["third_validator"]=Input::get("third_validator");
 
-        if($business->payment->save())
+        $business=Business::find($id);
+        for($i=0;$i<3;$i++)
         {
-            new LogRepo(
-                [
-                    'responsible'=> Auth::user()->user_name,
-                    'responsible_id'=> Auth::user()->id,
-                    'action' => 'ha modificado los pagos de la empresa ',
-                    'affected_entity'=> $business->name,
-                ]
-            );
-            return Redirect::route('paymentBusiness',$id)->with('message','se guardaron los cambios correctamente');
-        }else{
-            return Redirect::route('paymentBusiness',$id)->with('message_error','no se guardaron los cambios correctamente');
+            $ids='id'.$i;
+            $validator='validator'.$i;
+            if(isset($business->payments[$i]))
+            {
+                if($business->payments[$i]['id']==Input::get($ids) )
+                {
+                    $business->payments[$i]['validator']=Input::get($validator);
+                    if($business->payments[$i]->update())
+                    {
+
+                        new LogRepo(
+                            [
+                                'responsible'=> Auth::user()->user_name,
+                                'responsible_id'=> Auth::user()->id,
+                                'action' => 'ha modificado los pagos de la empresa '.$business->name,
+                                'affected_entity'=> $business->name,
+                            ]
+                        );
+                    }
+
+                }
+            }
+
         }
+
+        return Redirect::route('paymentBusiness',$id);
     }
 }

@@ -47,11 +47,7 @@
 
                         <p>Nombre: {{$contact->name}}</p>
                         <p>Apellido: {{$contact->last_name}}</p>
-                        @foreach($charges as $charge)
-                            @if($charge->id==$contact->charges_id)
-                                <p>Cargo: {{$charge->name}}</p>
-                            @endif
-                        @endforeach
+                        <p>Cargo: {{$contact->carge}}</p>
                         <p>E-mail: {{$contact->email}}</p>
                         <p>Telefono: {{$contact->phone}}</p>
                         <p>Celular: {{$contact->mobile_phone}}</p>

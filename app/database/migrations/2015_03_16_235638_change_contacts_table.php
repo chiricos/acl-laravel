@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddPaymentsTable extends Migration {
+class ChangeContactsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,11 +12,10 @@ class AddPaymentsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('payments',function($table)
+		Schema::table('contacts',function($table)
 		{
-			$table->integer('first_validator');
-			$table->integer('second_validator');
-			$table->integer('third_validator');
+			$table->dropColumn('charges_id');
+			$table->string('charge');
 		});
 	}
 
@@ -27,7 +26,7 @@ class AddPaymentsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('payments');
+		Schema::drop('contacts');
 	}
 
 }

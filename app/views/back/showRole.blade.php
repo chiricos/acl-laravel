@@ -16,8 +16,8 @@
         <table>
             <thead>
             <tr>
-                <th>Nombre</th>
-                <th>Ver permisos</th>
+                <th>Permisos</th>
+                <th>Acciones</th>
             </tr>
             </thead>
             <tbody>
