@@ -1,4 +1,4 @@
-/*$(document).on('ready',function()
+$(document).on('ready',function()
 {
     if($('#payment-option').val()==1)
     {
@@ -41,4 +41,4 @@
             $('.payment-input').eq(2).removeClass('hidden');
         }
     });
-});*/
+});

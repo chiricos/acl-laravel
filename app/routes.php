@@ -42,7 +42,7 @@ Route::group(array('before' => 'auth'), function()
         route::post('admin/verEmpresa/{id}', ['as' => 'seeBusiness', 'uses' => 'BusinessController@saveStates']);
         route::get('admin/pagos/{id}',['as'=>'paymentBusiness','uses'=>'BusinessController@showPayment']);
         route::post('admin/pagos/{id}',['as'=>'paymentBusiness','uses'=>'BusinessController@updatePayment']);
-
+        route::post('admin/crearPagos/{id}',['as'=>'createPaymentBusiness','uses'=>'BusinessController@cratePayment']);
     });
 
     Route::group(array('before'=>'contacts'),function(){
