@@ -2,13 +2,13 @@
 
 @section('content')
     <h2>
-        @if($permissions[0]->permissionRole["role_id"]==1)
+        @if($id==1)
             Super Administrador
         @endif
-        @if($permissions[0]->permissionRole["role_id"]==2)
+        @if($id==2)
             Administrador
         @endif
-        @if($permissions[0]->permissionRole["role_id"]==3)
+        @if($id==3)
             Vendedor
         @endif
     </h2>
@@ -36,6 +36,7 @@
 
             </tbody>
         </table>
+
         {{ Form::submit('Actualizar usuario') }}
 
         {{ Form::close() }}

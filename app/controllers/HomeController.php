@@ -29,31 +29,66 @@ class HomeController extends BaseController
 	{
 		$permiso =new Proceso();
 		$total=$permiso->filtrarPermisos();
-		return View::make('front.home',compact('total'));
+		$payments=Payment::all();
+		$business=Business::all();
+		foreach($payments as $payment)
+		{
+			if($this->dateState($payment->payment))
+			{
+				$client=Business::find($payment->business_id);
+				$client->state=3;
+				$client->update();
+			}
+			if($this->date($payment->payment))
+			{
+
+			}else{
+				$payment->type=0;
+
+			}
+
+		}
+
+
+		return View::make('front.home',compact('total','payments','business'));
 	}
 
 	public function date($date)
 	{
-		$created = new Carbon($date);
-		$now = Carbon::now();
-		$difference = ($created->diff($now)->days < 1)
-			? 'today'
-			: $created->diffForHumans($now);
-		$dates=explode(" ",$difference);
-		if(count($dates)>1)
+		$payment = new Carbon($date);
+
+		if($payment->diffInDays()<=5)
 		{
-			if($dates[1]=="month" or $dates[1]=="months" )
+
+			return true;
+		}
+
+		return false;
+
+		//echo $date->timespan();  // zondag 28 april 2013 21:58:16
+	}
+
+	public function dateState($date)
+	{
+		$payment= new Carbon($date);
+		$now=Carbon::now();
+		$difference = ($payment->diff($now)->days < 1)
+			? 'today'
+			: $payment->diffForHumans($now);
+
+		$dates=explode(" ",$difference);
+		if(count($dates)==1)
+		{
+			return true;
+		}else{
+			if($dates[2]=="after")
 			{
-				if($dates[0]>=1)
-				{
-					return true;
-				}
-			}else{
-				return false;
+				return true;
 			}
+			return false;
 		}
 		return false;
-		//echo $date->timespan();  // zondag 28 april 2013 21:58:16
+
 	}
 
 }
