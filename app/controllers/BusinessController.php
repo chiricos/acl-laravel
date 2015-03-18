@@ -3,7 +3,9 @@
 use cerverus\Entities\Business;
 use cerverus\Entities\User;
 use cerverus\Entities\Contact;
+use cerverus\Entities\Payment;
 use cerverus\Managers\BusinessManager;
+use cerverus\Managers\PaymentManager;
 use cerverus\Managers\UpdateBusinessManager;
 use cerverus\Repositories\UserRepo;
 use cerverus\Repositories\BusinessRepo;
@@ -181,5 +183,29 @@ class BusinessController extends BaseController
         }
 
         return Redirect::route('paymentBusiness',$id);
+    }
+
+    public function cratePayment($id)
+    {
+        $paymentManager=new PaymentManager(new Payment(),Input::all());
+        $paymentValidator=$paymentManager->isValid();
+        if($paymentValidator)
+        {
+            return Redirect::route('paymentBusiness',$id)->with('message_error','no se puede guardar por que los campos no estan llenos')->withErrors($paymentValidator)->withInput();
+        }
+        if($paymentManager->savePayment($id))
+        {
+            new LogRepo(
+            [
+                'responsible'=> Auth::user()->user_name,
+                'responsible_id'=> Auth::user()->id,
+                'action' => 'ha creado fechas de pacho de una empresa ',
+                'affected_entity'=> '',
+            ]
+            );
+            return Redirect::route('paymentBusiness',$id)->with('message','se han guardados las fechar correctamente');
+
+        }
+        return Redirect::route('paymentBusiness',$id)->with('message_error','No se pudo guardar las fechas');
     }
 }

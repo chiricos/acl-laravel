@@ -23,19 +23,21 @@ class UserController extends BaseController
     {
         $permiso =new Proceso();
         $total=$permiso->filtrarPermisos();
-        $managers = [ "0" => "selecione un encargado"]
-            +User::whereRaw('role_id=2')->lists('user_name','id');
         if(Auth::user()->role_id==1)
         {
             $charges= [ 'seleccione un role'=> "seleccione un role"]
                 +[ 3 => "vendedor"]
                 +[ 2 => "administrador"]
                 +[ 1 => "super administrador"];
+            $managers = [ "0" => "selecione un encargado"]
+                +User::whereRaw('role_id=2')->lists('user_name','id');
         }
         if(Auth::user()->role_id==2)
         {
             $charges= [ 'seleccione un role'=> "seleccione un role"]
                 +[ 3 => "vendedor"];
+            $managers = [ "0" => "selecione un encargado"]
+                +["".Auth::user()->id.""=>"".Auth::user()->user_name.""];
         }
 
         return View::make('front.accounts.create',compact('managers','charges','total'));
@@ -95,81 +97,90 @@ class UserController extends BaseController
 
     public function updateUser($id)
     {
-        $message="";
-        $user=User::find($id);
-        if(Input::get('role_id')!=$user->role_id)
+        if($id!=Auth::user()->id)
         {
-            if($user->role_id==2 )
+            $message="";
+            $user=User::find($id);
+            if(Input::get('role_id')!=$user->role_id)
             {
-                $sell=User::where('manager','=',$id)->first();
-                if($sell)
+                if($user->role_id==2 )
                 {
-                    $message='no puede cambiar de role, ya tiene vendedores a su cargo';
+                    $sell=User::where('manager','=',$id)->first();
+                    if($sell)
+                    {
+                        $message='no puede cambiar de role, ya tiene vendedores a su cargo';
+                    }
+                }
+                if($user->role_id==3 ){
+                    $business=Business::where('manager','=',$id)->first();
+                    if($business){
+                        $message='no puede cambiar de role, ya tiene empresas a su cargo';
+                    }
                 }
             }
-            if($user->role_id==3 ){
-                $business=Business::where('manager','=',$id)->first();
-                if($business){
-                    $message='no puede cambiar de role, ya tiene empresas a su cargo';
-                }
-            }
-        }
-        $userUpdate=new UpdateUserManager($user,Input::all());
-        $userValidator=$userUpdate->isValid();
-        $manager="";
-        if(Input::get('role_id')==3)
-        {
-            if(Input::get('manager')==0)
+            $userUpdate=new UpdateUserManager($user,Input::all());
+            $userValidator=$userUpdate->isValid();
+            $manager="";
+            if(Input::get('role_id')==3)
             {
-                $manager="seleccione un encargado";
+                if(Input::get('manager')==0)
+                {
+                    $manager="seleccione un encargado";
+                }
             }
-        }
-        if($userValidator or $manager!="" or $message)
-        {
-            return Redirect::route('updateUser',$id)->with('message_error',$message)->with('manager', $manager)->withErrors($userValidator)->withInput();
-        }
+            if($userValidator or $manager!="" or $message)
+            {
+                return Redirect::route('updateUser',$id)->with('message_error',$message)->with('manager', $manager)->withErrors($userValidator)->withInput();
+            }
 
-        $updateUser=$userUpdate->updateUser($id);
-        if($updateUser)
-        {
-            new LogRepo(
-                [
-                    'responsible'=> Auth::user()->user_name,
-                    'responsible_id'=> Auth::user()->id,
-                    'action' => 'ha actualizado una cuenta ',
-                    'affected_entity'=> $user->user_name,
-                    'affected_entity_id'=> $id,
-                ]
-            );
-            return Redirect::route('administrator')->with('message','el usuario fue actualizado exitosamente');
-        }
-        return Redirect::route('administrator')->with('message_error','el usuario no fue actualizado exitosamente');
-    }
-
-    public function deleteUser($id)
-    {
-        $user=User::find($id);
-        $business=Business::where('manager','=',$user->id)->get();
-        $manager=User::where('manager','=',$user->id)->get();
-        if($business or $manager)
-        {
-            return Redirect::route('administrator')->with('message_error','el usuario no fue eliminado exitosamente por que tiene vendedores a su cargo');
-        }else{
-            if($user->delete())
+            $updateUser=$userUpdate->updateUser($id);
+            if($updateUser)
             {
                 new LogRepo(
                     [
                         'responsible'=> Auth::user()->user_name,
                         'responsible_id'=> Auth::user()->id,
-                        'action' => 'ha eliminado una cuenta ',
+                        'action' => 'ha actualizado una cuenta ',
                         'affected_entity'=> $user->user_name,
                         'affected_entity_id'=> $id,
                     ]
                 );
-                return Redirect::route('administrator')->with('message','el usuario fue eliminado exitosamente');
+                return Redirect::route('administrator')->with('message','el usuario fue actualizado exitosamente');
+            }
+            return Redirect::route('administrator')->with('message_error','el usuario no fue actualizado exitosamente');
+        }
+        return Redirect::route('administrator')->with('message_error','el usuario no fue actualizado por que no puede modifcar su cuenta');
+
+    }
+
+    public function deleteUser($id)
+    {
+        if($id!=Auth::user()->id)
+        {
+            $business=Business::where('manager','=',$id)->first();
+            $manager=User::where('manager','=',$id)->first();
+            if(isset($business->id) or isset($manager->id))
+            {
+                return Redirect::route('administrator')->with('message_error','el usuario no fue eliminado exitosamente por que tiene vendedores a su cargo');
+            }else{
+
+                if(User::find($id)->delete())
+                {
+                    new LogRepo(
+                        [
+                            'responsible'=> Auth::user()->user_name,
+                            'responsible_id'=> Auth::user()->id,
+                            'action' => 'ha eliminado una cuenta ',
+                            'affected_entity'=> '',
+                            'affected_entity_id'=> $id,
+                        ]
+                    );
+                    return Redirect::route('administrator')->with('message','el usuario fue eliminado exitosamente');
+                }
             }
         }
 
+        return Redirect::route('administrator')->with('message_error','el usuario no puede eliminar su propia cuenta');
 
     }
 

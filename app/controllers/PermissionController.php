@@ -33,7 +33,8 @@ class PermissionController extends BaseController
         {
             PermissionRole::where('role_id', '=', $id)->delete();
             $permission=Permission::all();
-            for($i=0;$i<=count($permission);$i++)
+
+            for($i=1;$i<=count($permission);$i++)
             {
                 if(Input::get(''.$i.''))
                 {

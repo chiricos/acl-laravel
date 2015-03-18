@@ -66,7 +66,6 @@
                         <td><a href="{{route('showUser',$user->id)}}" class="icon-folder-open ">ver</a></td>
                         @endif
                     @endif
-                    @if($user->role_id>1)
                         @if(isset($total[6]))
                             @if($total[6]==1)
                                 <td><a href="{{route('updateUser',$user->id)}}" class="icon-folder-open ">actualizar</a></td>
@@ -77,7 +76,6 @@
                                 <td><a href="{{route('deleteUser',$user->id)}}" class="icon-folder-open ">eliminar</a></td>
                             @endif
                         @endif
-                    @endif
                 </tr>
             @endforeach
             </tbody>

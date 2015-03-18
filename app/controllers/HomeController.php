@@ -29,7 +29,6 @@ class HomeController extends BaseController
 	{
 		$permiso =new Proceso();
 		$total=$permiso->filtrarPermisos();
-		$business=Payment::where('first_payment','<=',new DateTime('today'))->get();
 		return View::make('front.home',compact('total'));
 	}
 
