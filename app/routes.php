@@ -85,6 +85,18 @@ Route::group(array('before' => 'auth'), function()
         route::get('admin/eliminarUsuario/{id}', ['as' => 'deleteUser', 'uses' => 'UserController@deleteUser']);
     });
 
+    Route::group(array('before'=>'contactAs'),function(){
+        route::get('admin/contactenos', ['as' => 'contactAs', 'uses' => 'UserController@showSend']);
+        route::post('admin/actualizarUsuario/{id}', ['as' => 'updateUser', 'uses' => 'UserController@updateUser']);
+    });
+
+    Route::get('mail','HomeController@email');
+
+    Route::get('contact',function()
+    {
+       return View::make('emails.contactAs');
+    });
+
 
 	// Esta ruta nos servirá para cerrar sesión.
 	Route::get('logout', 'AuthController@logOut');

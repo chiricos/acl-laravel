@@ -174,7 +174,7 @@ if(Auth::user()){
             return Redirect::to('Inicio');
         }
     });
-    Route::filter('permiso9', function(){
+    Route::filter('contactAs', function(){
         if (Auth::guest()) return Redirect::guest('/');
         $permiso =new Proceso();
         $total=$permiso->filtrarPermisos();

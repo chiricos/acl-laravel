@@ -41,7 +41,10 @@ class HomeController extends BaseController
 			}
 			if($this->date($payment->payment))
 			{
-
+				if($payment->validator==1)
+				{
+					$payment->type=0;
+				}
 			}else{
 				$payment->type=0;
 
@@ -80,13 +83,29 @@ class HomeController extends BaseController
 		{
 			return true;
 		}else{
-			if($dates[2]=="after")
+			if($dates[2]=="before")
 			{
 				return true;
 			}
 			return false;
 		}
 		return false;
+
+	}
+
+	public function email()
+	{
+		$data = ["link" => 1];
+		$emails=array(array('mail'=>'edwarddiaz92@gmail.com'),array('mail'=>'drawderiah@gmail.com'));
+		foreach($emails as $email)
+		{
+			$correo=$email["mail"];
+			Mail::send('emails.auth.reminder', $data, function ($message) use ($correo) {
+				$message->to($correo, 'creditos lilipink')->subject('su solicitud de credito esta siendo procesada');
+			});
+		}
+exit;
+
 
 	}
 

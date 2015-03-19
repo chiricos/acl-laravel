@@ -252,4 +252,9 @@ class UserController extends BaseController
 
         return Redirect::route('profile')->with(array('message' => 'Has cambiado la contraseña exitosamente'));
     }
+
+    public function showSend()
+    {
+        drawde("entro");
+    }
 }
