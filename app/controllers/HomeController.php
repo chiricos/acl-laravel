@@ -49,7 +49,6 @@ class HomeController extends BaseController
 
 		}
 
-
 		return View::make('front.home',compact('total','payments','business'));
 	}
 
