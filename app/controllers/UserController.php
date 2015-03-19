@@ -255,6 +255,27 @@ class UserController extends BaseController
 
     public function showSend()
     {
-        drawde("entro");
+        $permiso =new Proceso();
+        $total=$permiso->filtrarPermisos();
+        return View::make('back.contactAs',compact('total'));
+    }
+
+    public function sendContact()
+    {
+        if(Auth::user()->role_id==3)
+        {
+            $data=Input::all()+['name'=>Auth::user()->name]+['user_name'=>Auth::user()->user_name]+['email'=>Auth::user()->email];
+            $manager=User::find(Auth::user()->manager);
+            $email=$manager->email;
+            Mail::send('emails.contactAs', $data, function ($message) use ($email) {
+                $message->to('edwarddiaz92@gmail.com', 'cerveruss CRM')->subject('correo de contactenos');
+            });
+            return Redirect::route('contactAs')->with('message','El correo se envio correctamente al Administrador a su cargo');
+        }
+        if(Auth::user()->role_id==2)
+        {
+            drawde("administrador");
+        }
+        return Redirect::route('contactAs')->with('message_error','el Super Administrador no puede enviar correos');
     }
 }

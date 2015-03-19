@@ -87,8 +87,14 @@ Route::group(array('before' => 'auth'), function()
 
     Route::group(array('before'=>'contactAs'),function(){
         route::get('admin/contactenos', ['as' => 'contactAs', 'uses' => 'UserController@showSend']);
-        route::post('admin/actualizarUsuario/{id}', ['as' => 'updateUser', 'uses' => 'UserController@updateUser']);
+        route::post('admin/contactenos', ['as' => 'contactAs', 'uses' => 'UserController@sendContact']);
     });
+
+    Route::group(array('before'=>'product'),function(){
+        route::get('admin/product', ['as' => 'product', 'uses' => 'ProductController@product']);
+        route::post('admin/product', ['as' => 'product', 'uses' => 'UserController@sendContact']);
+    });
+
 
     Route::get('mail','HomeController@email');
 

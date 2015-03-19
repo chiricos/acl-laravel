@@ -183,7 +183,7 @@ if(Auth::user()){
             return Redirect::to('/');
         }
     });
-    Route::filter('permiso10', function(){
+    Route::filter('product', function(){
         if (Auth::guest()) return Redirect::guest('/');
         $permiso =new Proceso();
         $total=$permiso->filtrarPermisos();

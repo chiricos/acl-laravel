@@ -28,6 +28,11 @@
                 <a href="{{route('business')}}">Empresas</a>
             @endif
         @endif
+        @if(isset($total[10]))
+            @if($total[10]==1)
+                <a href="{{route('product')}}">Productos</a>
+            @endif
+        @endif
         @if(isset($total[2]))
             @if($total[2]==1)
                 <a href="{{route('contacts')}}">contactos</a>

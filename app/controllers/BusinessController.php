@@ -199,7 +199,7 @@ class BusinessController extends BaseController
             [
                 'responsible'=> Auth::user()->user_name,
                 'responsible_id'=> Auth::user()->id,
-                'action' => 'ha creado fechas de pacho de una empresa ',
+                'action' => 'ha creado fechas de pago de una empresa ',
                 'affected_entity'=> '',
             ]
             );
