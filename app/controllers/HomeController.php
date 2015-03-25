@@ -31,11 +31,11 @@ class HomeController extends BaseController
 		$total=$permiso->filtrarPermisos();
 		$payments=Payment::all();
 		$business=Business::all();
-		foreach($payments as $payment)
+		/*foreach($payments as $payment)
 		{
 			if($this->dateState($payment->payment))
 			{
-				$client=Business::find($payment->business_id);
+				$client=Business::find($payment->businessProduct_id);
 				$client->state=3;
 				$client->update();
 			}
@@ -51,7 +51,7 @@ class HomeController extends BaseController
 			}
 
 		}
-
+*/
 		return View::make('front.home',compact('total','payments','business'));
 	}
 
@@ -104,7 +104,6 @@ class HomeController extends BaseController
 				$message->to($correo, 'creditos lilipink')->subject('su solicitud de credito esta siendo procesada');
 			});
 		}
-exit;
 
 
 	}
