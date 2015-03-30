@@ -2,6 +2,7 @@
 
 use cerverus\Repositories\ProductRepo;
 use cerverus\Managers\ProductManager;
+use cerverus\Managers\CreateProductManager;
 use cerverus\Entities\Product;
 use cerverus\Repositories\LogRepo;
 
@@ -43,10 +44,18 @@ class ProductController extends BaseController
     {
         $permiso =new Proceso();
         $total=$permiso->filtrarPermisos();
-        $products=Product::all()->lists('id','name');
-        $product=new ProductRepo();
-        $services=$product->getServices();
-        return View::make('front.products.showProducts',compact('total','services'));
+        $products=[''=>'seleccione un producto']+Product::all()->lists('name','id');
+        return View::make('front.products.showProducts',compact('total','id','products'));
+    }
+
+    public function addProducts($id)
+    {
+        $productManager=new CreateProductManager(new Product(),Input::all());
+        $productValidator=$productManager->isValid();
+        if($productValidator)
+        {
+            return Redirect::route('createProducts',$id)->withErrors($productValidator)->withInput();
+        }
     }
 
 }

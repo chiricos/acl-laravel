@@ -2,15 +2,14 @@
 namespace cerverus\Managers;
 
 
-class ProductManager extends BaseManager
+class CreateProductManager extends BaseManager
 {
 
     public function getRules()
     {
         $rules=[
-            'id'                  => 'required|numeric|unique:products',
-            'dependency'          => 'required|numeric',
-            'name'                => 'required'
+            'product_id'                    => 'required|numeric',
+            'value'                         => 'required|numeric'
         ];
         return  $rules;
     }
