@@ -5,6 +5,7 @@ use cerverus\Managers\ProductManager;
 use cerverus\Managers\CreateProductManager;
 use cerverus\Entities\Product;
 use cerverus\Repositories\LogRepo;
+use cerverus\Entities\BusinessProduct;
 
 class ProductController extends BaseController
 {
@@ -50,12 +51,22 @@ class ProductController extends BaseController
 
     public function addProducts($id)
     {
-        $productManager=new CreateProductManager(new Product(),Input::all());
+        $productManager=new CreateProductManager(new BusinessProduct(),Input::all());
         $productValidator=$productManager->isValid();
         if($productValidator)
         {
             return Redirect::route('createProducts',$id)->withErrors($productValidator)->withInput();
         }
+        $productManager->saveProduct($id);
+        new LogRepo(
+            [
+                'responsible'=> Auth::user()->user_name,
+                'responsible_id'=> Auth::user()->id,
+                'action' => 'ha agregado un producto a una empresa ',
+                'affected_entity'=> '',
+            ]
+        );
+        return Redirect::route('createProducts',$id)->with('message','el producto fue creado correctamente');
     }
 
 }

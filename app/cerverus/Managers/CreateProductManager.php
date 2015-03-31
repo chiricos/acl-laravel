@@ -1,6 +1,7 @@
 <?php
 namespace cerverus\Managers;
 
+use cerverus\Entities\Payment;
 
 class CreateProductManager extends BaseManager
 {
@@ -24,10 +25,14 @@ class CreateProductManager extends BaseManager
         return $messages;
     }
 
-    public function saveProduct()
+    public function saveProduct($id)
     {
         $this->entity->fill($this->data);
+        $this->entity->business_id=$id;
         $this->entity->save();
+        $payment=new Payment();
+        $this->entity->payments()->save($payment);
+
 
     }
 
