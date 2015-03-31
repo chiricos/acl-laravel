@@ -29,10 +29,10 @@ class PaymentManager extends BaseManager
     public function savePayment($id)
     {
 
-        $payments=Payment::where('business_id','=',$id)->delete();
+        Payment::where('businessProduct_id','=',$id)->delete();
         for($i=0;$i<$this->data["type"];$i++)
         {
-            $newPayment=new Payment(['business_id'=>$id]+['type'=>$this->data["type"]]+['payment'=>$this->data[$i]]);
+            $newPayment=new Payment(['businessProduct_id'=>$id]+['type'=>$this->data["type"]]+['payment'=>$this->data[$i]]);
             $newPayment->save();
 
         }

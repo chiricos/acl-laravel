@@ -1,6 +1,7 @@
 <?php
 
 use cerverus\Entities\Business;
+use cerverus\Entities\BusinessProduct;
 use cerverus\Entities\User;
 use cerverus\Entities\Contact;
 use cerverus\Entities\Payment;
@@ -147,14 +148,14 @@ class BusinessController extends BaseController
         $option=["1"=>"Una sola cuota"]
                 +["2"=>"Dos cuotas"]
                 +["3"=>"Tres cuotas"];
-        $business=Business::find($id);
+        $business=BusinessProduct::find($id);
         return View::make('front.business.payment',compact('total','option','business'));
     }
 
     public function updatePayment($id)
     {
 
-        $business=Business::find($id);
+        $business=BusinessProduct::find($id);
         for($i=0;$i<3;$i++)
         {
             $ids='id'.$i;
@@ -172,7 +173,7 @@ class BusinessController extends BaseController
                                 'responsible'=> Auth::user()->user_name,
                                 'responsible_id'=> Auth::user()->id,
                                 'action' => 'ha modificado los pagos de la empresa '.$business->name,
-                                'affected_entity'=> $business->name,
+                                'affected_entity'=> '',
                             ]
                         );
                     }
@@ -182,7 +183,7 @@ class BusinessController extends BaseController
 
         }
 
-        return Redirect::route('paymentBusiness',$id);
+        return Redirect::route('paymentBusiness',$id)->with('message','se actualizo los pagos correctamente');
     }
 
     public function cratePayment($id)

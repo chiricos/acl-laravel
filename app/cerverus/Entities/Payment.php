@@ -3,5 +3,5 @@
 
 class Payment extends \Eloquent
 {
-    protected $fillable = array('id','business_id','type','payment','validator');
+    protected $fillable = array('id','businessProduct_id','type','payment','validator');
 }

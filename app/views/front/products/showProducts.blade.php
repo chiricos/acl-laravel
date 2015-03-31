@@ -25,4 +25,34 @@
 
         {{Form::close()}}
 
+    <div>
+        <section class="show">
+            <h2>Productos Adquiridos por {{$business->name}}</h2>
+            <table class=" ">
+                <thead>
+                <tr>
+                    <th>Nombre de la empresa </th>
+                    <th>Id del producto</th>
+                    <th>Producto</th>
+                    <th>Valor</th>
+                    <th>acciones</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($businessProducts as $businessProduct)
+                    <tr>
+                        <td>{{$business->name}}</td>
+                        <td>id del pr</td>
+                        <td>producto</td>
+                        <td>{{$businessProduct->value}}</td>
+
+                        <td><a href="{{route('paymentBusiness',$businessProduct->id)}}">+</a></td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
+
+        </section>
+    </div>
+
 @stop

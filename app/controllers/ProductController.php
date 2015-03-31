@@ -6,6 +6,7 @@ use cerverus\Managers\CreateProductManager;
 use cerverus\Entities\Product;
 use cerverus\Repositories\LogRepo;
 use cerverus\Entities\BusinessProduct;
+use cerverus\Entities\Business;
 
 class ProductController extends BaseController
 {
@@ -45,8 +46,10 @@ class ProductController extends BaseController
     {
         $permiso =new Proceso();
         $total=$permiso->filtrarPermisos();
+        $business=Business::find($id);
         $products=[''=>'seleccione un producto']+Product::all()->lists('name','id');
-        return View::make('front.products.showProducts',compact('total','id','products'));
+        $businessProducts=BusinessProduct::where('business_id','=',$id)->get();
+        return View::make('front.products.showProducts',compact('total','id','products','businessProducts','business'));
     }
 
     public function addProducts($id)
