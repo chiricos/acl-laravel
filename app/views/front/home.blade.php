@@ -13,7 +13,7 @@
                     @endif
                 @endforeach
                 <p>Fecha de Pago: {{$payment->payment}}</p>
-                <p><a href="{{route('paymentBusiness',$payment->business_id)}}">Validar el pago</a></p>
+                <p><a href="{{route('paymentBusiness',$payment->businessProduct_id)}}">Validar el pago</a></p>
 
             @endif
 
