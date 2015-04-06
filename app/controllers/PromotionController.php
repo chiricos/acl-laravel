@@ -7,7 +7,9 @@ class PromotionController extends BaseController
 
     public function show()
     {
-        return View::make('front.promotion.showPromotion');
+        $permiso =new Proceso();
+        $total=$permiso->filtrarPermisos();
+        return View::make('front.promotion.showPromotion',compact('total'));
     }
 
 }
