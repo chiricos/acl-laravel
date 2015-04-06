@@ -123,6 +123,13 @@
                     </div>
 
                     <div>
+                        {{ Form::label('maps', 'ubicacion') }}
+                        {{ Form::text('maps','',['id'=>'maps']) }}
+                        {{$errors->first('maps')}}
+                    </div>
+
+
+                    <div>
                         {{ Form::label('photo', 'Logo') }}
                         {{Form::file('photo')}}
                         {{$errors->first('photo')}}
@@ -237,6 +244,13 @@
                     </div>
 
                     <div>
+                        {{ Form::label('maps', 'ubicacion') }}
+                        {{ Form::text('maps','',['id'=>'map']) }}
+                        {{$errors->first('maps')}}
+                    </div>
+
+
+                    <div>
                         {{ Form::label('photo', 'Logo') }}
                         {{Form::file('photo')}}
                         {{$errors->first('photo')}}
@@ -248,6 +262,7 @@
 
                 </div>
             </section>
+            @include('layou.map')
             <section class="show-business">
                 <h2>Clientes</h2>
                 <table class=" ">

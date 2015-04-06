@@ -262,19 +262,33 @@ class UserController extends BaseController
 
     public function sendContact()
     {
+        $data=Input::all()
+            +['name'=>Auth::user()->name]
+            +['user_name'=>Auth::user()->user_name]
+            +['email'=>Auth::user()->email]
+            +['about'=>Input::get('about')]
+            +['text'=>Input::get('message')]
+            +['link'=>Auth::user()->id];
         if(Auth::user()->role_id==3)
         {
-            $data=Input::all()+['name'=>Auth::user()->name]+['user_name'=>Auth::user()->user_name]+['email'=>Auth::user()->email];
             $manager=User::find(Auth::user()->manager);
             $email=$manager->email;
             Mail::send('emails.contactAs', $data, function ($message) use ($email) {
-                $message->to('edwarddiaz92@gmail.com', 'cerveruss CRM')->subject('correo de contactenos');
+                $message->to($email, 'cerveruss CRM')->subject('correo de '.Auth::user()->user_name.'');
             });
             return Redirect::route('contactAs')->with('message','El correo se envio correctamente al Administrador a su cargo');
         }
         if(Auth::user()->role_id==2)
         {
-            drawde("administrador");
+            $users=User::where('role_id','=',1)->get();
+            foreach($users as $user)
+            {
+                $email=$user->email;
+                Mail::send('emails.contactAs', $data, function ($message) use ($email) {
+                    $message->to($email, 'cerveruss CRM')->subject('correo de '.Auth::user()->user_name.'');
+                });
+                return Redirect::route('contactAs')->with('message','El correo se envio correctamente a los super administradores');
+            }
         }
         return Redirect::route('contactAs')->with('message_error','el Super Administrador no puede enviar correos');
     }

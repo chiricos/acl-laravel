@@ -71,7 +71,8 @@ class BusinessManager extends BaseManager
         }
         $this->entity->fill($data);
         $this->entity->save();
-        if($this->entity->save())
+        $record=new Record();
+        if($this->entity->record()->save($record))
         {
             if($data["type"]==1)
             {

@@ -2,6 +2,7 @@
 
 
 @section('content')
+
     <h1>Empresas</h1>
     <div>
         <div>
@@ -121,6 +122,12 @@
                     </div>
 
                     <div>
+                        {{ Form::label('maps', 'ubicacion') }}
+                        {{ Form::text('maps','',['class'=>'maps']) }}
+                        {{$errors->first('maps')}}
+                    </div>
+
+                    <div>
                         {{ Form::label('photo', 'Logo') }}
                         {{Form::file('photo')}}
                         {{$errors->first('photo')}}
@@ -131,6 +138,7 @@
                     {{ Form::close() }}
 
                 </div>
+
             </section>
             <section class="business-two type-tow{{Session::get('type')}} hidden">
                 <h2>Crear Prospecto</h2>
@@ -234,17 +242,29 @@
                     </div>
 
                     <div>
+                        {{ Form::label('maps', 'ubicacion') }}
+                        {{ Form::text('maps','',['id'=>'map']) }}
+                        {{$errors->first('maps')}}
+                    </div>
+
+                    <div>
                         {{ Form::label('photo', 'Logo') }}
                         {{Form::file('photo')}}
                         {{$errors->first('photo')}}
                     </div>
+
 
                     {{ Form::submit('Crear Prospecto') }}
 
                     {{ Form::close() }}
 
                 </div>
+
             </section>
+
+
+            @include('layou.map')
+
             <section class="show-business">
                 <h2>Clientes</h2>
                         <table class=" ">

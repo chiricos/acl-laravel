@@ -102,6 +102,11 @@ Route::group(array('before' => 'auth'), function()
 
     Route::get('mail','HomeController@email');
 
+    Route::get('map',function()
+    {
+        return View::make('layou.map');
+    });
+
     Route::get('contact',function()
     {
        return View::make('emails.contactAs');

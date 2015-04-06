@@ -2,6 +2,33 @@
 
 
 @section('content')
+    {{ Form::text('maps',$business->maps,['id'=>'maps','class'=>'hidden']) }}
+
+    <script>
+
+
+            function initialize() {
+                var ubicacion=$('#maps').val();
+
+                var res = ubicacion.split(",");
+                console.log(res[0]+res[1]);
+                var myLatlng = new google.maps.LatLng(res[0],res[1]);
+                var mapOptions = {
+                    zoom: 12,
+                    center: myLatlng
+                }
+                var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+                var marker = new google.maps.Marker({
+                    position: myLatlng,
+                    map: map,
+                    title: 'Hello World!'
+                });
+            }
+
+            google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
+
     <div>
         <section>
             @if($business->type==1)
@@ -37,6 +64,7 @@
                 </section>
             </section>
         </section>
+        <div id="map-canvas"></div>
         <section>
             <div id="" class="">
                 <h2>Contactos</h2>

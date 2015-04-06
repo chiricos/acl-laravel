@@ -6,8 +6,8 @@
     <section>
         {{ Form::open(array('name'=>'form-update-permission','route' => 'contactAs', 'method' => 'POST')) }}
         <div>
-            {{Form::label('issue','Asunto:')}}
-            {{Form::text('issue')}}
+            {{Form::label('about','Asunto:')}}
+            {{Form::text('about')}}
         </div>
         <div>
             {{Form::label('message','Mensaje:')}}

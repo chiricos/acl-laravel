@@ -15,6 +15,7 @@
 
     <!-- Style <script src="{{asset('js/prefixfree.min.js')}}"></script>-->
     <script src="{{asset('js/jquery-1.11.2.min.js')}}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
     @yield('javascript')
 </head>
 <body>
