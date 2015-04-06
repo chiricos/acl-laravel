@@ -98,6 +98,11 @@ Route::group(array('before' => 'auth'), function()
         route::post('admin/agregarProductos/{id}',['as'=>'createProducts','uses'=>'ProductController@addProducts']);
     });
 
+    Route::group(array('before'=>'promotion'),function(){
+        route::get('admin/promocion', ['as' => 'promotion', 'uses' => 'PromotionController@show']);
+        route::post('admin/promocion', ['as' => 'promotion', 'uses' => 'PromotionController@saveProduct']);
+    });
+
 
 
     Route::get('mail','HomeController@email');

@@ -192,7 +192,7 @@ if(Auth::user()){
             return Redirect::to('/');
         }
     });
-    Route::filter('permiso11', function(){
+    Route::filter('promotion', function(){
         if (Auth::guest()) return Redirect::guest('/');
         $permiso =new Proceso();
         $total=$permiso->filtrarPermisos();

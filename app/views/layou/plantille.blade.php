@@ -49,6 +49,11 @@
                 <a href="{{route('roles')}}">Roles</a>
             @endif
         @endif
+        @if(isset($total[11]))
+            @if($total[11]==1)
+                <a href="{{route('promotion')}}">Promociones</a>
+            @endif
+        @endif
         @if(isset($total[9]))
             @if($total[9]==1)
                 <a href="{{route('contactAs')}}">Contactenos</a>
