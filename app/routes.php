@@ -100,7 +100,7 @@ Route::group(array('before' => 'auth'), function()
 
     Route::group(array('before'=>'promotion'),function(){
         route::get('admin/promocion', ['as' => 'promotion', 'uses' => 'PromotionController@show']);
-        route::post('admin/promocion', ['as' => 'promotion', 'uses' => 'PromotionController@saveProduct']);
+        route::post('admin/promocion', ['as' => 'promotion', 'uses' => 'PromotionController@sendPromotion']);
     });
 
 

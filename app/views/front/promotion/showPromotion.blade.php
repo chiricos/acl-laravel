@@ -5,7 +5,7 @@
     <h2>Promociones</h2>
 
     <section>
-        {{ Form::open(array('name'=>'form-see-business','route' => 'product', 'method' => 'POST','files'=>'true')) }}
+        {{ Form::open(array('name'=>'form-see-business','route' => 'promotion', 'method' => 'POST','files'=>'true')) }}
 
 
         <div>

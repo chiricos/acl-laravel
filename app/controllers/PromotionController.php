@@ -12,4 +12,9 @@ class PromotionController extends BaseController
         return View::make('front.promotion.showPromotion',compact('total'));
     }
 
+    public function sendPromotion()
+    {
+        drawde(Input::all());
+    }
+
 }
