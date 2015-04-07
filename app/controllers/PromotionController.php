@@ -1,5 +1,6 @@
 <?php
 
+use cerverus\Entities\Business;
 
 
 class PromotionController extends BaseController
@@ -14,7 +15,18 @@ class PromotionController extends BaseController
 
     public function sendPromotion()
     {
-        drawde(Input::all());
+        $business=Business::all();
+        $data=[];
+        foreach($business as $client)
+        {
+            $email=$client->email;
+            Mail::send('emails.auth.reminder', $data, function ($message) use ($email) {
+                $message->to($email, 'cerveruss CRM')->subject('correo de Mi-Martinez.com');
+            });
+        }
+
+        return Redirect::route('promotion')->with('message','los correos fueron enviados exitosamente');
+
     }
 
 }

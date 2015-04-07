@@ -8,7 +8,7 @@
 
 		<div>
 			To reset your password, complete this form: .<br/>
-			This link will expire in {{ Config::get('auth.reminder.expire', 60) }} minutes.
+			This link will expire in  minutes.
 		</div>
 	</body>
 </html>
