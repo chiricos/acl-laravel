@@ -2,8 +2,12 @@
 
 
 @section('content')
+    <h1>Contactos</h1>
+
+    <a class="icon-reply back" href="{{route('contacts')}}"></a>
+
     <div>
-        <h1>Contactos</h1>
+
         <div>
             {{ Form::open(array('name'=>'form-','to' => 'admin/actualizar/'.$contact->id, 'method' => 'POST')) }}
 
@@ -22,7 +26,7 @@
 
             <div>
                 {{ Form::label('charge', 'Cargo') }}
-                {{ Form::text('charge') }}
+                {{ Form::text('charge',$contact->charge) }}
                 {{$errors->first('charge')}}
             </div>
 
@@ -56,10 +60,11 @@
 
         </div>
 
-        <div>
-            <section class="show">
+        <div class="wrapperContent">
+            <section class="tableContent">
                 <h2>Contactos</h2>
                 <table class=" ">
+
                     <thead>
                     <tr>
                         <th>Nombre</th>
@@ -87,7 +92,7 @@
                                     <td>{{$businessContact->name}}</td>
                                 @endif
                             @endforeach
-                            <td><a href="{{route('updateContacts',$contact->id)}}">Actualizar</a></td>
+                            <td><a class="icon-ccw" href="{{route('updateContacts',$contact->id)}}"></a></td>
                         </tr>
                     @endforeach
                     </tbody>

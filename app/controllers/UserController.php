@@ -39,6 +39,12 @@ class UserController extends BaseController
             $managers = [ "0" => "selecione un encargado"]
                 +["".Auth::user()->id.""=>"".Auth::user()->user_name.""];
         }
+        if(Auth::user()->role_id==3)
+        {
+            $charges= [ 'seleccione un role'=> "seleccione un role"];
+            $managers = [ "0" => "selecione un encargado"];
+        }
+
 
         return View::make('front.accounts.create',compact('managers','charges','total'));
     }

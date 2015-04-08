@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h2>Productos</h2>
+    <h1>Productos</h1>
     <section>
         {{ Form::open(array('name'=>'form-update-permission','route' => 'product', 'method' => 'POST')) }}
         <div>
@@ -24,8 +24,8 @@
         {{Form::submit('guardar producto')}}
         {{Form::close()}}
     </section>
-    <div>
-        <section class="">
+    <div class="wrapperContent">
+        <section class="tableContent">
             <h2>BRANDING</h2>
             <table class=" ">
                 <thead>
@@ -50,9 +50,8 @@
             </table>
 
         </section>
-    </div>
-    <div>
-        <section class="">
+
+        <section class="tableContent">
             <h2>WEB Y APPS</h2>
             <table class=" ">
                 <thead>
@@ -77,9 +76,8 @@
             </table>
 
         </section>
-    </div>
-    <div>
-        <section class="">
+
+        <section class="tableContent">
             <h2>MARKETING</h2>
             <table class=" ">
                 <thead>
@@ -104,9 +102,8 @@
             </table>
 
         </section>
-    </div>
-    <div>
-        <section class="">
+
+        <section class="tableContent">
             <h2>PRODUCCIÓN AUDIOVISUAL</h2>
             <table class=" ">
                 <thead>
@@ -131,9 +128,8 @@
             </table>
 
         </section>
-    </div>
-    <div>
-        <section class="">
+
+        <section class="tableContent">
             <h2>ESTRATEGIA</h2>
             <table class=" ">
                 <thead>
@@ -158,10 +154,8 @@
             </table>
 
         </section>
-    </div>
 
-    <div>
-        <section class="">
+        <section class="tableContent">
             <h2>IMPRESIÓN</h2>
             <table class=" ">
                 <thead>

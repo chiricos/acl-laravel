@@ -82,7 +82,7 @@
                 @endif
             @endif
 
-
+            {{ HTML::link(URL::to('logout'), 'Cerrar Sessión',array('class'=>'')) }}
         </nav>
 
     </header>

@@ -2,10 +2,12 @@
 
 
 @section('content')
+    <h1>Datos del Usuario</h1>
             @if($user->role_id==3)
-            <section class="show-business">
+            <div class="wrapperContent">
+            <div class="tableContent ">
                 <h2>Clientes</h2>
-                <table class=" ">
+                <table class=" show-business">
                     <thead>
                     <tr>
                         <th>Foto</th>
@@ -37,8 +39,12 @@
                     @endforeach
                     </tbody>
                 </table>
-                <h2>Prospectos</h2>
-                <table class=" ">
+
+                </div>
+
+                <div class="tableContent">
+                    <h2>Prospectos</h2>
+                    <table class="show-business ">
                     <thead>
                     <tr>
                         <th>Foto</th>
@@ -69,7 +75,6 @@
                     @endforeach
                     </tbody>
                 </table>
-            </section>
 
         </div>
 

@@ -2,11 +2,11 @@
 
 
 @section('content')
-
+    <h1>Contactos</h1>
 <div>
     <p class="new-contact">nuevo contacto</p>
     <div class="content-contact hidden contact{{Session::get('see')}}">
-        <h1>Contactos</h1>
+
         {{ Form::open(array('name'=>'form-create-contacts','route' => 'contacts', 'method' => 'POST')) }}
 
         <div>
@@ -57,10 +57,11 @@
 
     </div>
 
-    <div>
-        <section class="show">
+    <div class=" wrapperContent">
+        <div class="tableContent">
             <h2>Contactos</h2>
             <table class=" ">
+
                 <thead>
                 <tr>
                     <th>Nombre</th>
@@ -89,13 +90,13 @@
                                 <td>{{$businessContact->name}}</td>
                             @endif
                         @endforeach
-                        <td><a href="{{route('updateContacts',$contact->id)}}">Actualizar</a></td>
+                        <td><a class="icon-ccw" href="{{route('updateContacts',$contact->id)}}"></a></td>
                     </tr>
                 @endforeach
                 </tbody>
             </table>
 
-        </section>
+        </div>
     </div>
 </div>
 

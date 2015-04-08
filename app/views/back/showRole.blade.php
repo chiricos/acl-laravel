@@ -1,7 +1,7 @@
 @extends('layou/plantille')
 
 @section('content')
-    <h2>
+    <h1>
         @if($id==1)
             Super Administrador
         @endif
@@ -11,32 +11,35 @@
         @if($id==3)
             Vendedor
         @endif
-    </h2>
-    <div>
-        <table>
-            <thead>
-            <tr>
-                <th>Permisos</th>
-                <th>Acciones</th>
-            </tr>
-            </thead>
-            <tbody>
-            {{ Form::open(array('name'=>'form-update-permission','url' => 'admin/actualizarPermisos/'.$id, 'method' => 'POST')) }}
-                @foreach($permissions as $permission)
+    </h1>
+    <div class="wrapperContent">
+        <div class="tableContent">
+            <table>
+                <thead>
                 <tr>
-                    <td>{{$permission->name}}</td>
-                    @if($permission->permissionRole)
-                        <td>{{ Form::checkbox(''.$permission->id.'',$permission->id,$permission->id) }}</td>
-                    @else
-                        <td>{{ Form::checkbox(''.$permission->id.'',$permission->id) }}</td>
-                    @endif
-
+                    <th>Permisos</th>
+                    <th>Acciones</th>
                 </tr>
-                @endforeach
+                </thead>
+                <tbody>
+                {{ Form::open(array('name'=>'form-update-permission','url' => 'admin/actualizarPermisos/'.$id, 'method' => 'POST')) }}
+                    @foreach($permissions as $permission)
+                    <tr>
+                        <td>{{$permission->name}}</td>
+                        @if($permission->permissionRole)
+                            <td>{{ Form::checkbox(''.$permission->id.'',$permission->id,$permission->id) }}</td>
+                        @else
+                            <td>{{ Form::checkbox(''.$permission->id.'',$permission->id) }}</td>
+                        @endif
 
-            </tbody>
-        </table>
+                    </tr>
+                    @endforeach
 
+                </tbody>
+            </table>
+
+
+        </div>
         {{ Form::submit('Actualizar usuario') }}
 
         {{ Form::close() }}

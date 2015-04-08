@@ -25,8 +25,8 @@
 
         {{Form::close()}}
 
-    <div>
-        <section class="show">
+    <div class="wrapperContent">
+        <div class="tableContent">
             <h2>Productos Adquiridos por {{$business->name}}</h2>
             <table class=" ">
                 <thead>
@@ -46,13 +46,13 @@
                         <td>producto</td>
                         <td>{{$businessProduct->value}}</td>
 
-                        <td><a href="{{route('paymentBusiness',$businessProduct->id)}}">+</a></td>
+                        <td><a class="icon-folder-open" href="{{route('paymentBusiness',$businessProduct->id)}}"></a></td>
                     </tr>
                 @endforeach
                 </tbody>
             </table>
 
-        </section>
+        </div>
     </div>
 
 @stop

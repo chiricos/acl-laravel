@@ -3,7 +3,7 @@
 
 @section('content')
     <h1>users</h1>
-    <a href="{{route('administrator')}}">volver</a>
+    <a class="icon-reply back" href="{{route('administrator')}}"></a>
     <div>
         {{ Form::open(array('name'=>'form-create-user','route' => 'createUser', 'method' => 'POST')) }}
         <div>

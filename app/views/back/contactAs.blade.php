@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h2>Contactenos</h2>
+    <h1>Contactenos</h1>
     <section>
         {{ Form::open(array('name'=>'form-update-permission','route' => 'contactAs', 'method' => 'POST')) }}
         <div>

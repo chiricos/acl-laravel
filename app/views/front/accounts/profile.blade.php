@@ -1,19 +1,9 @@
 @extends('layou.plantille')
 
 @section('content')
-    <div>
-        <h2>
-            {{$user->user_name}}
-            @if($user->role_id==1)
-                <span>super administrador</span>
-            @endif
-            @if($user->role_id==2)
-                <span>administrador</span>
-            @endif
-            @if($user->role_id==3)
-                <span>vendedor</span>
-            @endif
-        </h2>
+
+        <h1>Perfil</h1>
+        <div>
         <section>
             <figure>
                 {{ HTML::image('user/'.$user->photo,'',array('id'=>'')) }}

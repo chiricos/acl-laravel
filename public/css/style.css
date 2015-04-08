@@ -87,6 +87,16 @@
 .icon-reply:before { content: '\e822'; } /* '' */
 .icon-logout-1:before { content: '\e823'; } /* '' */
 
+/********************************* DEFAULT ******************************/
+
+.back{
+    color: #07b4e3;
+}
+
+h2{
+    font-weight: 400;
+}
+
 /******************************* MAPS ************************************/
 
 #map-canvas {
@@ -122,7 +132,6 @@ a{
 .message,.messageError{
     display: inline-block;
     font-size: 18px;
-    margin-top: 15px;
     text-align: center;
     vertical-align: top;
     width: 90%;
@@ -209,7 +218,7 @@ header nav a:hover{
     background: #F3F3F4;
     border: 1px solid #E7EAEC ;
     display: block;
-    height: 64px;
+    height: 30px;
     left: 220px;
     width: 100%;
 
@@ -217,7 +226,7 @@ header nav a:hover{
 
 .rowContent{
     left: 220px;
-    height: 64px;
+    height: 30px;
     position: absolute;
     width: 80%;
 
@@ -228,8 +237,11 @@ header nav a:hover{
     display: inline-block;
     font-size: 20px;
     float: right;
-    margin-top: 15px;
     vertical-align: top;
+}
+
+.rowContent a:hover{
+    color:#07b4e3;
 }
 
 .wrapper{
@@ -241,5 +253,71 @@ header nav a:hover{
 
 .wrapper{
     width: 100%;
-    background: center;
+}
+
+h1{
+    background: white;
+    border-bottom: 1px solid #E7EAEC;
+    color: rgba(0, 0, 0, 0.57);
+    display: block;
+    font-weight: normal;
+    height: 62px;
+    margin: 0 0 20px;
+    padding-left: 10px;
+    padding-top: 18px;
+    text-align: justify;
+    width: 100%;
+}
+
+.wrapperContent{
+    background: white;
+    border-top: 4px solid rgba(111, 111, 111, 0.39);
+    border-radius: 3px;
+    margin-left:40px;
+    padding-bottom: 1px;
+    width: 975px;
+
+}
+
+/*************************************** TABLE ***************************************/
+
+.tableContent{
+    box-shadow: 0 1px 5px 0;
+    max-width: 900px;
+    margin: 37px;
+    overflow: auto;
+    text-align: center;
+}
+
+table{
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+}
+
+th,td {
+    border-top: 1px solid #ddd;
+    padding: 16px;
+
+}
+
+th{
+    font-weight: 500;
+}
+
+td{
+    font-weight: 100;
+}
+
+.tableContent a{
+    color:#07b4e3;
+}
+
+.tableContent img{
+    border-radius: 50%;
+    height: 40px;
+    width: 40px !important;
 }

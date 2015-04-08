@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h2>Promociones</h2>
+    <h1>Promociones</h1>
 
     <section>
         {{ Form::open(array('name'=>'form-see-business','route' => 'promotion', 'method' => 'POST','files'=>'true')) }}

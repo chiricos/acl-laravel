@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h2>Pagos Pendientes</h2>
+    <h1>Pagos Pendientes</h1>
     <div>
         @foreach($payments as $payment)
             --------
