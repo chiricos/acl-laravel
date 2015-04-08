@@ -9,6 +9,7 @@
 </head>
 <body>
 <div class="danger">{{ Session::get('mensaje_error') }}</div>
+<div class="message">{{ Session::get('mensaje') }}</div>
 <div id ="ima">
     <img src="img/logo.png" />
 </div>

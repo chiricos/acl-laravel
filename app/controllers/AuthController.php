@@ -61,7 +61,7 @@ class AuthController extends BaseController {
                 'action' => 'ha solicitado restaurar la contraseña',
             ]
         );
-        return Redirect::to('login')->with('mensaje_error','El correo fue enviado con exito')->withInput();
+        return Redirect::to('login')->with('mensaje','El correo fue enviado con exito')->withInput();
     }
 
     public function restorePassword($restore_password)

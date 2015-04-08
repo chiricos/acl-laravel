@@ -1,4 +1,93 @@
-/** MAPS **/
+@font-face {
+    font-family: 'cerveruus';
+    src: url('font/cerveruus.eot?85087402');
+    src: url('font/cerveruus.eot?85087402#iefix') format('embedded-opentype'),
+    url('font/cerveruus.woff?85087402') format('woff'),
+    url('font/cerveruus.ttf?85087402') format('truetype'),
+    url('font/cerveruus.svg?85087402#cerveruus') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'cerveruus';
+    src: url('../font/cerveruus.svg?85087402#cerveruus') format('svg');
+  }
+}
+*/
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+    font-family: "cerveruus";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    /* opacity: .8; */
+
+    /* For safety - reset parent styles, that can break glyph codes*/
+    font-variant: normal;
+    text-transform: none;
+
+    /* fix buttons height, for twitter bootstrap */
+    line-height: 1em;
+
+    /* Animation center compensation - margins should be symmetric */
+    /* remove if not needed */
+    margin-left: .2em;
+
+    /* you can be more comfortable with increased icons size */
+    /* font-size: 120%; */
+
+    /* Uncomment for 3D effect */
+    /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-mail-alt:before { content: '\e800'; } /* '' */
+.icon-cancel-circled:before { content: '\e801'; } /* '' */
+.icon-minus-circled:before { content: '\e802'; } /* '' */
+.icon-plus-squared:before { content: '\e803'; } /* '' */
+.icon-plus-circled:before { content: '\e804'; } /* '' */
+.icon-folder-open:before { content: '\e805'; } /* '' */
+.icon-folder:before { content: '\e806'; } /* '' */
+.icon-cog:before { content: '\e807'; } /* '' */
+.icon-cog-alt:before { content: '\e808'; } /* '' */
+.icon-wrench:before { content: '\e809'; } /* '' */
+.icon-calendar:before { content: '\e80a'; } /* '' */
+.icon-logout:before { content: '\e80b'; } /* '' */
+.icon-login:before { content: '\e80c'; } /* '' */
+.icon-ccw:before { content: '\e80d'; } /* '' */
+.icon-arrows-cw:before { content: '\e80e'; } /* '' */
+.icon-camera:before { content: '\e80f'; } /* '' */
+.icon-users:before { content: '\e810'; } /* '' */
+.icon-bell-alt:before { content: '\e811'; } /* '' */
+.icon-bell-off-empty:before { content: '\e812'; } /* '' */
+.icon-lock:before { content: '\e813'; } /* '' */
+.icon-lock-open-alt:before { content: '\e814'; } /* '' */
+.icon-home:before { content: '\e815'; } /* '' */
+.icon-print:before { content: '\e816'; } /* '' */
+.icon-book-open:before { content: '\e817'; } /* '' */
+.icon-trash:before { content: '\e818'; } /* '' */
+.icon-archive:before { content: '\e819'; } /* '' */
+.icon-monitor:before { content: '\e81a'; } /* '' */
+.icon-briefcase:before { content: '\e81b'; } /* '' */
+.icon-suitcase:before { content: '\e81c'; } /* '' */
+.icon-chart-area:before { content: '\e81d'; } /* '' */
+.icon-user:before { content: '\e81e'; } /* '' */
+.icon-trash-1:before { content: '\e81f'; } /* '' */
+.icon-mail:before { content: '\e820'; } /* '' */
+.icon-reply-all:before { content: '\e821'; } /* '' */
+.icon-reply:before { content: '\e822'; } /* '' */
+.icon-logout-1:before { content: '\e823'; } /* '' */
+
+/******************************* MAPS ************************************/
 
 #map-canvas {
     height: 400px;
@@ -14,4 +103,143 @@
 
 .hidden,#hidden{
     display: none;
+}
+
+body, html{
+    background: #F3F3F4;
+    font-size: 13px;
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+/***************************** MESSAGES ******************************/
+
+.message,.messageError{
+    display: inline-block;
+    font-size: 18px;
+    margin-top: 15px;
+    text-align: center;
+    vertical-align: top;
+    width: 90%;
+}
+
+.message{
+    color: rgba(0, 128, 0, 0.4);
+}
+
+.messageError{
+    color: rgba(255, 29, 0, 0.44);
+}
+
+/****************************** HEADER *******************************/
+
+header, .wrapper{
+    display: inline-block;
+    vertical-align: top;
+}
+
+header{
+    background: #233645;
+    height: 100%;
+    position: fixed;
+    width: 220px;
+}
+
+#logo{
+    margin: 10px 0;
+    width: 100%;
+}
+
+.headerProfile{
+    background: rgba(16, 15, 15, 0.23);
+    color:white;
+}
+
+.headerProfile figure{
+    height: 150px;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.headerProfile figure img{
+    border-radius: 50%;
+    height: 70px;
+    margin-top: 15px;
+    width: 70px;
+}
+
+.headerProfile figure div p{
+    font-weight: 400;
+}
+
+.headerProfile figure div span{
+    display: block;
+    color: rgba(255, 255, 255, 0.52);
+    font-size: 11px;
+    font-weight: 100;
+    margin-top: -16px;
+}
+
+header nav{
+    background: rgba(0, 0, 0, 0.12);
+    height: 100%;
+}
+
+header nav a {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+    color: rgba(255, 255, 255, 0.72);
+    display: block;
+    font-size: 14px;
+    font-weight: inherit;
+    padding: 13px;
+    width: 194px;
+}
+
+header nav a:hover{
+    background: rgba(0, 0, 0, 0.36);
+}
+
+.row {
+    background: #F3F3F4;
+    border: 1px solid #E7EAEC ;
+    display: block;
+    height: 64px;
+    left: 220px;
+    width: 100%;
+
+}
+
+.rowContent{
+    left: 220px;
+    height: 64px;
+    position: absolute;
+    width: 80%;
+
+}
+
+.rowContent a{
+    color: rgba(0, 0, 0, 0.37);
+    display: inline-block;
+    font-size: 20px;
+    float: right;
+    margin-top: 15px;
+    vertical-align: top;
+}
+
+.wrapper{
+    left: 220px;
+    position: absolute;
+}
+
+/****************************************** WRAPPER O CUERPO ***********************/
+
+.wrapper{
+    width: 100%;
+    background: center;
 }

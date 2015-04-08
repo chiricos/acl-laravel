@@ -36,6 +36,19 @@ section {
     position:fixed;
 
 }
+.message{
+    background: green;
+    font-size: 20px;
+    color: #ffffff;
+    font-family: 'Questrial', sans-serif;
+    text-align: center;
+    margin-top:-90px;
+    padding-top: 2px;
+    width:100%;
+    z-index:4;
+    position:fixed;
+
+}
 
 .panel-body {
     padding: 0;
