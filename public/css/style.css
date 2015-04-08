@@ -220,6 +220,7 @@ header nav a:hover{
     display: block;
     height: 30px;
     left: 220px;
+    margin-left: -2px;
     width: 100%;
 
 }
@@ -251,9 +252,6 @@ header nav a:hover{
 
 /****************************************** WRAPPER O CUERPO ***********************/
 
-.wrapper{
-    width: 82%;
-}
 
 h1{
     background: white;
@@ -262,8 +260,8 @@ h1{
     display: block;
     font-weight: normal;
     height: 62px;
-    margin: 0 0 20px;
-    padding-left: 10px;
+    margin: 0 1px 12px;
+    padding-left: 35px;
     padding-top: 18px;
     text-align: justify;
     width: 100%;
