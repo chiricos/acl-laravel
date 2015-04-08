@@ -2,8 +2,10 @@
 
 @section('content')
 
-    <h1>Pagos Pendientes</h1>
+        <h1>Pagos Pendientes</h1>
+
     <div>
+
         @foreach($payments as $payment)
             --------
             @if($payment->type>0)
