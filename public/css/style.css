@@ -139,18 +139,16 @@ a{
 
 .message{
     color: rgba(0, 128, 0, 0.4);
+    padding-left: 8%;
 }
 
 .messageError{
     color: rgba(255, 29, 0, 0.44);
+    padding-left: 8%;
 }
 
 /****************************** HEADER *******************************/
 
-header, .wrapper{
-    display: inline-block;
-    vertical-align: top;
-}
 
 header{
     background: #233645;
@@ -160,8 +158,8 @@ header{
 }
 
 #logo{
-    margin: 10px 0;
-    width: 100%;
+    margin: 10px 10px;
+    width: 180px;
 }
 
 .headerProfile{
@@ -212,24 +210,41 @@ header nav a {
 
 header nav a:hover{
     background: rgba(0, 0, 0, 0.36);
+    opacity: 0.6;
+}
+
+/**************************************** HEADER DEL WRAPPER *********************/
+
+.wrapper{
+    width: 100%;
+}
+
+.wrapperBody, .wrapperBody1{
+    display: inline-block;
+    vertical-align: top;
+}
+
+.wrapperBody{
+    width: 17.1875%;
+    max-width: 220px;
+    margin-right: -4px;
+}
+
+.wrapperBody1{
+    width: 82.8125%;
+    margin-right: -4px;
 }
 
 .row {
-    background: #F3F3F4;
-    border: 1px solid #E7EAEC ;
-    display: block;
-    height: 30px;
-    left: 220px;
-    margin-left: -2px;
+    border-bottom: 1px solid rgba(172, 177, 181, 0.65);
+    height: 34px;
     width: 100%;
-
 }
 
 .rowContent{
-    left: 220px;
     height: 30px;
-    position: absolute;
-    width: 80%;
+    position: inherit;
+    width: 98%;
 
 }
 
@@ -245,11 +260,6 @@ header nav a:hover{
     color:#07b4e3;
 }
 
-.wrapper{
-    left: 220px;
-    position: absolute;
-}
-
 /****************************************** WRAPPER O CUERPO ***********************/
 
 
@@ -257,12 +267,15 @@ h1{
     background: white;
     border-bottom: 1px solid #E7EAEC;
     color: rgba(0, 0, 0, 0.57);
-    display: block;
     font-weight: normal;
     height: 62px;
     margin: 0 1px 12px;
-    padding-left: 35px;
     padding-top: 18px;
+    text-align: center;
+    width: 100%;
+}
+
+.working{
     width: 100%;
 }
 
@@ -272,7 +285,7 @@ h1{
     border-radius: 3px;
     margin-left:40px;
     padding-bottom: 1px;
-    width: 975px;
+    width: 100%;
 
 }
 
@@ -280,8 +293,6 @@ h1{
 
 .tableContent{
     box-shadow: 0 1px 5px 0;
-    max-width: 900px;
-    margin: 37px;
     overflow: auto;
     text-align: center;
 }
@@ -289,7 +300,6 @@ h1{
 table{
     background-color: #ffffff;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
-    max-width: 1000px;
     margin: 0 auto;
     text-align: center;
     width: 100%;
@@ -310,7 +320,7 @@ td{
 }
 
 .tableContent a{
-    color:#07b4e3;
+    color:rgba(7, 180, 227, 0.46);
 }
 
 .tableContent img{

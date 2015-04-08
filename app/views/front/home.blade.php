@@ -1,8 +1,12 @@
 @extends('layou/plantille')
 
+@section('titleContent')
+    <h1>Pagos Pendientes</h1>
+@stop
+
 @section('content')
 
-        <h1>Pagos Pendientes</h1>
+
 
     <div>
 

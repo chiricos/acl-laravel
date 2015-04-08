@@ -1,9 +1,11 @@
 @extends('layou.plantille')
 
+@section('titleContent')
+    <h1>Empresas</h1>
+@stop
 
 @section('content')
 
-    <h1>Empresas</h1>
     <div>
         <div>
             <a href="{{route('business')}}" class="business-fixed">Crear</a>

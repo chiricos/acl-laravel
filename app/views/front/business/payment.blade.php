@@ -1,8 +1,10 @@
 @extends('layou.plantille')
 
+@section('titleContent')
+    <h1>Pagos De La Empresa {{$business->name}}</h1>
+@stop
 
 @section('content')
-    <h1>Pagos de la empresa {{$business->name}}</h1>
     <div>
         {{ Form::open(array('name'=>'form-create-user','url' => 'admin/pagos/'.$business->id, 'method' => 'POST')) }}
 

@@ -1,8 +1,11 @@
 @extends('layou.plantille')
 
+@section('titleContent')
+    <h1>Usuarios</h1>
+@stop
 
 @section('content')
-    <h1>users</h1>
+
     @if(isset($total[4])==1)
         @if($total[4]==1)
             <a href="{{route('createUser')}}">crear usuario</a>

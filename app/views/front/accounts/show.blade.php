@@ -1,8 +1,12 @@
 @extends('layou.plantille')
 
+@section('titleContent')
+    <h1>Datos Del Usuario</h1>
+@stop
 
 @section('content')
-    <h1>Datos del Usuario</h1>
+
+    <a class="icon-reply back" href="{{route('administrator')}}"></a>
             @if($user->role_id==3)
             <div class="wrapperContent">
             <div class="tableContent ">
@@ -33,7 +37,7 @@
                                 <td>{{$businessClient->mobile_phone}}</td>
                                 <td>{{$user->user_name}}</td>
 
-                                <td><a href="{{route('seeBusiness',$businessClient->id)}}">+</a><a href=" {{route('business')}}">E</a> <a href="{{route('updateBusiness',$businessClient->id)}}">a</a></td>
+                                <td><a class="icon-folder-open" href="{{route('seeBusiness',$businessClient->id)}}"></a> <a href="{{route('updateBusiness',$businessClient->id)}}" class="icon-ccw "></a><a class="icon-plus-circled" href="{{route('createProducts',$businessClient->id)}}"></a></td>
                             </tr>
                         @endif
                     @endforeach
@@ -69,7 +73,7 @@
                                 <td>{{$businessClient->email}}</td>
                                 <td>{{$businessClient->mobile_phone}}</td>
                                 <td>{{$user->user_name}}</td>
-                                <td><a href="{{route('seeBusiness',$businessClient->id)}}">+</a><a href=" {{route('business')}}">E</a> <a href="{{route('updateBusiness',$businessClient->id)}}">a</a></td>
+                                <td><a class="icon-folder-open" href="{{route('seeBusiness',$businessClient->id)}}"></a> <a href="{{route('updateBusiness',$businessClient->id)}}" class="icon-ccw "></a><a class="icon-plus-circled" href="{{route('createProducts',$businessClient->id)}}"></a></td>
                             </tr>
                         @endif
                     @endforeach

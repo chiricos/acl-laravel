@@ -1,8 +1,10 @@
 @extends('layou.plantille')
 
+@section('titleContent')
+    <h1>Contactos</h1>
+@stop
 
 @section('content')
-    <h1>Contactos</h1>
 <div>
     <p class="new-contact">nuevo contacto</p>
     <div class="content-contact hidden contact{{Session::get('see')}}">

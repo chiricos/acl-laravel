@@ -1,8 +1,10 @@
 @extends('layou.plantille')
 
+@section('titleContent')
+    <h1>Usuarios</h1>
+@stop
 
 @section('content')
-    <h1>users</h1>
     <a class="icon-reply back" href="{{route('administrator')}}"></a>
     <div>
         {{ Form::open(array('name'=>'form-create-user','route' => 'createUser', 'method' => 'POST')) }}

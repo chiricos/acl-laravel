@@ -1,8 +1,9 @@
 @extends('layou/plantille')
+@section('titleContent')
+    <h1>Promociones</h1>
+@stop
 
 @section('content')
-
-    <h1>Promociones</h1>
 
     <section>
         {{ Form::open(array('name'=>'form-see-business','route' => 'promotion', 'method' => 'POST','files'=>'true')) }}

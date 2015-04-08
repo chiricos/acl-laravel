@@ -1,8 +1,11 @@
 @extends('layou.plantille')
 
+@section('titleContent')
+    <h1>Perfil</h1>
+@stop
+
 @section('content')
 
-        <h1>Perfil</h1>
         <div>
         <section>
             <figure>

@@ -1,8 +1,11 @@
 @extends('layou/plantille')
 
+@section('titleContent')
+    <h1>Productos</h1>
+@stop
+
 @section('content')
 
-    <h1>Productos</h1>
     <section>
         {{ Form::open(array('name'=>'form-update-permission','route' => 'product', 'method' => 'POST')) }}
         <div>

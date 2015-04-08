@@ -1,6 +1,6 @@
 @extends('layou/plantille')
 
-@section('content')
+@section('titleContent')
     <h1>
         @if($id==1)
             Super Administrador
@@ -12,6 +12,10 @@
             Vendedor
         @endif
     </h1>
+@stop
+
+@section('content')
+
     <div class="wrapperContent">
         <div class="tableContent">
             <table>

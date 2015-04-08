@@ -1,5 +1,12 @@
 @extends('layou/plantille')
 
+@section('titleContent')
+    @if($business->type==1)
+        <h1>Infomarción del Cliente</h1>
+    @else
+        <h1>Infomarción del Prospecto</h1>
+    @endif
+@stop
 
 @section('content')
     {{ Form::text('maps',$business->maps,['id'=>'maps','class'=>'hidden']) }}
@@ -31,11 +38,7 @@
 
     <div>
         <section>
-            @if($business->type==1)
-                <h1>Infomarción del Cliente</h1>
-            @else
-                <h1>Infomarción del Prospecto</h1>
-            @endif
+
             <section>
                 <figure>
                     {{ HTML::image('business/'.$business->photo,'',array('style'=>'width: 100px;')) }}

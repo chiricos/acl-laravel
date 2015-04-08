@@ -1,8 +1,10 @@
 @extends('layou.plantille')
 
+@section('titleContent')
+    <h1>Contactos</h1>
+@stop
 
 @section('content')
-    <h1>Contactos</h1>
 
     <a class="icon-reply back" href="{{route('contacts')}}"></a>
 

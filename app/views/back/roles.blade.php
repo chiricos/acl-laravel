@@ -1,7 +1,11 @@
 @extends('layou/plantille')
 
-@section('content')
+@section('titleContent')
     <h1>Roles</h1>
+@stop
+
+@section('content')
+
     <div class="wrapperContent">
         <div class="tableContent">
             <table>

@@ -1,9 +1,11 @@
 @extends('layou.plantille')
 
+@section('titleContent')
+    <h1>Empresas</h1>
+@stop
 
 @section('content')
 
-    <h1>Empresas</h1>
     <div>
         <div>
             <p class="business-fixed">Crear Empresa</p>
