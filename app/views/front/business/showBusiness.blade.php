@@ -12,7 +12,7 @@
             <p class="business">Crear Prospecto</p>
             <section class="business-one type{{Session::get('type')}}  hidden ">
                 <h2>Crear Cliente</h2>
-                <div>
+                <div class="formContent">
                     {{ Form::open(array('name'=>'form-show-business','route' => 'business','files'=>true, 'method' => 'POST')) }}
                     {{ Form::text('type','',['class'=>'hidden business1']) }}
                     <div>
@@ -304,6 +304,8 @@
                             </tbody>
                         </table>
             </section>
+            </div>
+            <div class="wrapperContent">
                 <section class="tableContent">
                 <h2>Prospectos</h2>
                 <table class=" ">

@@ -6,7 +6,7 @@
 
 @section('content')
 
-    <section>
+    <section class="formContent">
         {{ Form::open(array('name'=>'form-update-permission','route' => 'product', 'method' => 'POST')) }}
         <div>
             {{Form::label('id','Id del producto:')}}
@@ -53,7 +53,8 @@
             </table>
 
         </section>
-
+        </div>
+        <div class="wrapperContent">
         <section class="tableContent">
             <h2>WEB Y APPS</h2>
             <table class=" ">
@@ -79,7 +80,8 @@
             </table>
 
         </section>
-
+        </div>
+    <div class="wrapperContent">
         <section class="tableContent">
             <h2>MARKETING</h2>
             <table class=" ">
@@ -105,7 +107,8 @@
             </table>
 
         </section>
-
+    </div>
+    <div class="wrapperContent">
         <section class="tableContent">
             <h2>PRODUCCIÓN AUDIOVISUAL</h2>
             <table class=" ">
@@ -131,7 +134,8 @@
             </table>
 
         </section>
-
+    </div>
+    <div class="wrapperContent">
         <section class="tableContent">
             <h2>ESTRATEGIA</h2>
             <table class=" ">
@@ -157,7 +161,8 @@
             </table>
 
         </section>
-
+    </div>
+    <div class="wrapperContent">
         <section class="tableContent">
             <h2>IMPRESIÓN</h2>
             <table class=" ">

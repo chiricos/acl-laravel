@@ -6,7 +6,7 @@
 
 @section('content')
     <a class="icon-reply back" href="{{route('administrator')}}"></a>
-    <div>
+    <div class="formContent">
         {{ Form::open(array('name'=>'form-create-user','route' => 'createUser', 'method' => 'POST')) }}
         <div>
             {{ Form::label('user_name', 'Username') }}
@@ -56,13 +56,13 @@
             {{$errors->first('address')}}
         </div>
 
-        <div>
+        <div >
             {{ Form::label('role_id', 'Role') }}
             {{ Form::select('role_id', $charges, null, array('id' => 'role_id')) }}
             {{$errors->first('role_id')}}
         </div>
 
-        <div class="create-manager">
+        <div class="create-manager ">
             {{Form::label('manager','Encargado','',array('id'=>'manager'))}}
             {{ Form::select('manager', $managers, null, array('id' => 'manager')) }}
             {{ Session::get('manager','',array('id'=>'manager')) }}

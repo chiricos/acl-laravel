@@ -6,7 +6,7 @@
 
 @section('content')
 
-
+<div class="formContent">
     {{ Form::open(array('name'=>'form-update-permission','to' => 'agregarProductos/'.$id, 'method' => 'POST')) }}
 
     <div>
@@ -26,7 +26,7 @@
     </div>
 
         {{Form::close()}}
-
+</div>
     <div class="wrapperContent">
         <div class="tableContent">
             <h2>Productos Adquiridos por {{$business->name}}</h2>

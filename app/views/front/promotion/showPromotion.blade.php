@@ -5,7 +5,7 @@
 
 @section('content')
 
-    <section>
+    <section class="formContent">
         {{ Form::open(array('name'=>'form-see-business','route' => 'promotion', 'method' => 'POST','files'=>'true')) }}
 
 

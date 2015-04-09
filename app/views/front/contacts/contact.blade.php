@@ -7,7 +7,7 @@
 @section('content')
 <div>
     <p class="new-contact">nuevo contacto</p>
-    <div class="content-contact hidden contact{{Session::get('see')}}">
+    <div class="content-contact hidden contact{{Session::get('see')}} formContent">
 
         {{ Form::open(array('name'=>'form-create-contacts','route' => 'contacts', 'method' => 'POST')) }}
 

@@ -45,6 +45,8 @@
                 </table>
 
                 </div>
+                </div>
+            <div class="wrapperContent">
 
                 <div class="tableContent">
                     <h2>Prospectos</h2>

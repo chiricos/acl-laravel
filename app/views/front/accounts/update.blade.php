@@ -7,7 +7,7 @@
 @section('content')
 
     <a class="icon-reply back" href="{{route('administrator')}}"></a>
-    <div>
+    <div class="formContent">
         {{ Form::open(array('name'=>'form-create-user','to' => 'admin/actualizarUsuario/'.$user->id, 'method' => 'POST')) }}
 
         {{ Form::text('id',$user->id,['id'=>'hidden']) }}

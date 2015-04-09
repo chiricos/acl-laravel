@@ -11,7 +11,7 @@
             <a href="{{route('business')}}" class="business-fixed">Crear</a>
             <section class="business-one type hidden ">
                 <h2>Actualizar Cliente</h2>
-                <div>
+                <div class="formContent">
                     {{ Form::open(array('name'=>'form-show-business','url' => 'admin/actualizarEmpresa/'.$updateBusiness->id,'files'=>true, 'method' => 'POST')) }}
                     {{ Form::text('type',$updateBusiness->type,['class'=>'hidden  update-business']) }}
                     {{ Form::text('id',$updateBusiness->id,['class'=>'hidden ']) }}
@@ -305,6 +305,8 @@
 
                 </table>
                 </section>
+                </div>
+            <div class="wrapperContent">
                 <section class="tableContent">
                 <h2>Prospectos</h2>
                 <table class=" ">

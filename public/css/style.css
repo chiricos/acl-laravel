@@ -90,6 +90,13 @@
 /********************************* DEFAULT ******************************/
 
 .back{
+    color: rgba(0, 0, 0, 0.37);
+    display: block;
+    font-size: 25px;
+    padding: 10px 0px;
+}
+
+.back:hover{
     color: #07b4e3;
 }
 
@@ -225,9 +232,8 @@ header nav a:hover{
 }
 
 .wrapperBody{
-    width: 17.1875%;
-    max-width: 220px;
     margin-right: -4px;
+    width: 220px;
 }
 
 .wrapperBody1{
@@ -265,7 +271,7 @@ header nav a:hover{
 
 h1{
     background: white;
-    border-bottom: 1px solid #E7EAEC;
+    border-bottom: 1px solid rgba(172, 177, 181, 0.65);
     color: rgba(0, 0, 0, 0.57);
     font-weight: normal;
     height: 62px;
@@ -276,14 +282,15 @@ h1{
 }
 
 .working{
-    width: 100%;
+    margin: auto;
+    width: 90%;
 }
 
 .wrapperContent{
     background: white;
     border-top: 4px solid rgba(111, 111, 111, 0.39);
     border-radius: 3px;
-    margin-left:40px;
+    margin-bottom: 30px;
     padding-bottom: 1px;
     width: 100%;
 
@@ -301,6 +308,7 @@ table{
     background-color: #ffffff;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
     margin: 0 auto;
+    overflow: auto;
     text-align: center;
     width: 100%;
 }
@@ -320,7 +328,11 @@ td{
 }
 
 .tableContent a{
-    color:rgba(7, 180, 227, 0.46);
+    color: rgba(0, 0, 0, 0.37);
+}
+
+.tableContent a:hover{
+    color: #07b4e3;
 }
 
 .tableContent img{
@@ -328,3 +340,64 @@ td{
     height: 40px;
     width: 40px !important;
 }
+
+/************************************ FORM *************************************************/
+
+.formContent{
+    background: white;
+    box-shadow: 0 1px 5px 0;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    padding: 30px;
+}
+
+form{
+    border-radius: 15px;
+    font-weight: 100;
+    margin: 16px auto;
+    width: 90%;
+}
+
+
+form div label{
+    display: block;
+    padding: 20px 10%;
+    width: 100%;
+}
+
+
+
+form div input, form div select{
+    background: white;
+    border-radius: 15px;
+    height: 30px;
+    margin: 0px 10%;
+    padding-left: 20px;
+    width: 80%;
+}
+
+form div select{
+    width: 83%;
+}
+
+input[type=submit]{
+    background: rgba(29, 44, 56, 0.99);
+    border: 1px solid rgba(29, 44, 56, 0.99);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    height: 50px;
+    margin: 45px 0;
+    width: 100%;
+}
+
+ textarea{
+    background: white;
+    border-radius: 15px;
+    height: 200px;
+    margin: 0px 10%;
+    padding-left: 20px;
+    width: 80%;
+}
+
+

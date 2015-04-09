@@ -8,9 +8,9 @@
 
     <a class="icon-reply back" href="{{route('contacts')}}"></a>
 
-    <div>
 
-        <div>
+
+        <div class="formContent">
             {{ Form::open(array('name'=>'form-','to' => 'admin/actualizar/'.$contact->id, 'method' => 'POST')) }}
 
                 {{ Form::text('id',$contact->id,['id'=>'hidden']) }}
@@ -103,7 +103,6 @@
             </section>
         </div>
 
-    </div>
 
 
 

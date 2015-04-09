@@ -6,7 +6,7 @@
 
 @section('content')
 
-    <section>
+    <section class="formContent">
         {{ Form::open(array('name'=>'form-update-permission','route' => 'contactAs', 'method' => 'POST')) }}
         <div>
             {{Form::label('about','Asunto:')}}
