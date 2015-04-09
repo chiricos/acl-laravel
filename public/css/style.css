@@ -146,11 +146,13 @@ a{
 
 .message{
     color: rgba(0, 128, 0, 0.4);
+    margin-right: -10px;
     padding-left: 8%;
 }
 
 .messageError{
     color: rgba(255, 29, 0, 0.44);
+    margin-right: -10px;
     padding-left: 8%;
 }
 

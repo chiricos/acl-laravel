@@ -90,7 +90,7 @@
         <section class="business-states">
             <p class="get-type hidden">{{$business->type}}</p>
             <p class="get-state hidden">{{$business->state}}</p>
-            <div>
+            <div class="formContent">
                 <h2>Estado</h2>
                 {{ Form::open(array('name'=>'form-see-business','url' => 'admin/verEmpresa/'.$business->id, 'method' => 'POST')) }}
                 <details class="state-input hidden">

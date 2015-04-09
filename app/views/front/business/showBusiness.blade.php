@@ -144,6 +144,7 @@
             </section>
             <section class="business-two type-tow{{Session::get('type')}} hidden">
                 <h2>Crear Prospecto</h2>
+                <div class="formContent">
                 <div>
                     {{ Form::open(array('name'=>'form-show-business-two','route' => 'business','files'=>true, 'method' => 'POST')) }}
                     {{ Form::text('type','',['class'=>'hidden business2']) }}
@@ -261,7 +262,7 @@
                     {{ Form::close() }}
 
                 </div>
-
+</div>
             </section>
 
 

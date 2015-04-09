@@ -25,6 +25,7 @@
         </section>
         <button onclick="showForm();">Actualizar Datos</button>
         <section class="profileUpdate hidden{{ Session::get('upload') }}">
+            <div class="formContent">
             {{ Form::open(array('name'=>'form-create-user','route' => 'updateProfile', 'method' => 'POST')) }}
             {{ Form::text('id',$user->id,['id'=>'hidden']) }}
 
@@ -68,13 +69,14 @@
             {{ Form::submit('Actualizar usuario') }}
 
             {{ Form::close() }}
+                </div>
         </section>
     </div>
 
     <div>
         <h2 class="changePassword">Cambiar Contraseña</h2>
         <section class="profilePassword hidden{{ Session::get('password') }}">
-
+            <div class="formContent">
             {{ Form::open(array('route' => 'changePassword','class'=>'')) }}
             <div class="material-input">
                 {{Form::label('password','Password')}}
@@ -88,11 +90,14 @@
                 {{$errors->first('confirmar_password')}}
             </div>
 
-            <button class="u-button">
-                Cambiar Contraseña
-            </button>
+
+            <div>
+                {{Form::submit('Cambiar Contraseña')}}
+            </div>
+
 
             {{ Form::close() }}
+                </div >
         </section>
     </div>
 
