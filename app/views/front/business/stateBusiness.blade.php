@@ -100,7 +100,7 @@
                 </details>
                 <details class="state-input hidden">
                     <summary><h3>Portafolio y propuesta</h3></summary>
-                    <p class="state-p1">Comentarios: {{$business->record["state_two "]}}</p>
+                    <p class="state-p1">Comentarios: {{$business->record["state_two"]}}</p>
                     {{ Form::textarea('state_two',$business->record["state_two"], ['class' => 'state1 ','id'=>'hidden']) }}
                 </details>
                 <details class="state-input hidden">

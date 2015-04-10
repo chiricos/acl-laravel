@@ -145,7 +145,7 @@
             </section>
             <section class="business-two  hidden">
                 <h2>Actualizar Prospecto</h2>
-                <div>
+                <div class="formContent">
                     {{ Form::open(array('name'=>'form-show-business-two','url' => 'admin/actualizarEmpresa/'.$updateBusiness->id,'files'=>true, 'method' => 'POST')) }}
                     {{ Form::text('type',$updateBusiness->type,['class'=>'hidden  update-business']) }}
                     {{ Form::text('id',$updateBusiness->id,['class'=>'hidden ']) }}
@@ -338,7 +338,7 @@
                                         <td>{{$user->user_name}}</td>
                                     @endif
                                 @endforeach
-                                <td><a class="icon-folder-open" href="{{route('seeBusiness',$businessClient->id)}}"></a> <a href="{{route('updateBusiness',$businessClient->id)}}" class="icon-ccw "></a><a class="icon-plus-circled" href="{{route('createProducts',$businessClient->id)}}"></a></td>
+                                <td><a class="icon-folder-open" href="{{route('seeBusiness',$businessClient->id)}}"></a> <a href="{{route('updateBusiness',$businessClient->id)}}" class="icon-ccw "></a></td>
                             </tr>
                         @endif
                     @endforeach
