@@ -1,6 +1,7 @@
 <?php
 
 use cerverus\Entities\Business;
+use cerverus\Entities\Product;
 use cerverus\Entities\BusinessProduct;
 use cerverus\Entities\Payment;
 use Carbon\Carbon;
@@ -31,8 +32,9 @@ class HomeController extends BaseController
 		$permiso =new Proceso();
 		$total=$permiso->filtrarPermisos();
 		$payments=Payment::all();
-
+        $businessProducts=BusinessProduct::all();
 		$business=Business::all();
+        $products=Product::all();
 		foreach($payments as $payment)
 		{
 			if($this->dateState($payment->payment))
@@ -55,7 +57,7 @@ class HomeController extends BaseController
 
 		}
 
-		return View::make('front.home',compact('total','payments','business'));
+		return View::make('front.home',compact('total','payments','business','businessProducts','products'));
 	}
 
 	public function date($date)

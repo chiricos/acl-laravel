@@ -411,7 +411,10 @@ input[type=submit]{
     display: block;
     font-size: 16px;
     font-weight: 900;
+    margin-bottom: 20px;
     padding: 10px 0px;
+    text-align: center;
+
 }
 
 .buttonA:hover{
@@ -421,6 +424,7 @@ input[type=submit]{
 .business, .business-fixed{
     display: inline-block;
     vertical-align: top;
+    width: 49%;
 }
 
 .business{

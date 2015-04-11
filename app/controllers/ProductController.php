@@ -4,6 +4,7 @@ use cerverus\Repositories\ProductRepo;
 use cerverus\Managers\ProductManager;
 use cerverus\Managers\CreateProductManager;
 use cerverus\Entities\Product;
+use cerverus\Entities\Payment;
 use cerverus\Repositories\LogRepo;
 use cerverus\Entities\BusinessProduct;
 use cerverus\Entities\Business;
@@ -47,9 +48,10 @@ class ProductController extends BaseController
         $permiso =new Proceso();
         $total=$permiso->filtrarPermisos();
         $business=Business::find($id);
+        $showProducts=Product::all();
         $products=[''=>'seleccione un producto']+Product::all()->lists('name','id');
         $businessProducts=BusinessProduct::where('business_id','=',$id)->get();
-        return View::make('front.products.showProducts',compact('total','id','products','businessProducts','business'));
+        return View::make('front.products.showProducts',compact('total','id','products','businessProducts','business','showProducts'));
     }
 
     public function addProducts($id)
@@ -70,6 +72,27 @@ class ProductController extends BaseController
             ]
         );
         return Redirect::route('createProducts',$id)->with('message','el producto fue creado correctamente');
+    }
+
+    public function delete($id)
+    {
+
+        $product=BusinessProduct::find($id);
+        $ids=Business::find($product->business_id)->lists('id');
+        $payment=Payment::where('businessProduct_id','=',$id);
+        if($product->delete() and $payment->delete())
+        {
+            new LogRepo(
+                [
+                    'responsible'=> Auth::user()->user_name,
+                    'responsible_id'=> Auth::user()->id,
+                    'action' => 'ha eliminado un producto de una empresa ',
+                    'affected_entity'=> '',
+                ]
+            );
+            return Redirect::route('createProducts',$ids)->with('message','El producto fue eliminado correctamente');
+        }
+        return Redirect::route('createProducts',$ids)->with('message_error','El producto no fue eliminado correctamente');
     }
 
 }

@@ -43,7 +43,7 @@ Route::group(array('before' => 'auth'), function()
         route::get('admin/pagos/{id}',['as'=>'paymentBusiness','uses'=>'BusinessController@showPayment']);
         route::post('admin/pagos/{id}',['as'=>'paymentBusiness','uses'=>'BusinessController@updatePayment']);
         route::post('admin/crearPagos/{id}',['as'=>'createPaymentBusiness','uses'=>'BusinessController@cratePayment']);
-
+        route::get('admin/eliminarProducto/{id}',['as'=>'deleteProduct','uses'=>'ProductController@delete']);
     });
 
     Route::group(array('before'=>'contacts'),function(){

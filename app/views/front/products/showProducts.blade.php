@@ -44,11 +44,20 @@
                 @foreach($businessProducts as $businessProduct)
                     <tr>
                         <td>{{$business->name}}</td>
-                        <td>id del pr</td>
-                        <td>producto</td>
+                        <td>{{$businessProduct->product_id}}</td>
+                        @foreach($showProducts as $product)
+
+                            @if($product->id==$businessProduct->product_id)
+
+                                <td>{{$product->name}}</td>
+                            @endif
+                        @endforeach
                         <td>{{$businessProduct->value}}</td>
 
-                        <td><a class="icon-folder-open" href="{{route('paymentBusiness',$businessProduct->id)}}"></a></td>
+                        <td>
+                            <a class="icon-folder-open" href="{{route('paymentBusiness',$businessProduct->id)}}"></a>
+                            <a class="icon-trash " href="{{route('deleteProduct',$businessProduct->id)}}"></a>
+                        </td>
                     </tr>
                 @endforeach
                 </tbody>
