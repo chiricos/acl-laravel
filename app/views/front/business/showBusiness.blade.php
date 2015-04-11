@@ -8,8 +8,8 @@
 
     <div>
         <div>
-            <p class="business-fixed">Crear Empresa</p>
-            <p class="business">Crear Prospecto</p>
+            <p class="business-fixed buttonA">Crear Empresa</p>
+            <p class="business buttonA">Crear Prospecto</p>
             <section class="business-one type{{Session::get('type')}}  hidden ">
                 <h2>Crear Cliente</h2>
                 <div class="formContent">

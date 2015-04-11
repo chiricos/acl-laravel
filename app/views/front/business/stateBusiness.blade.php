@@ -68,6 +68,7 @@
             </section>
         </section>
         <div id="map-canvas"></div>
+        <a href="{{route('contacts')}} " class="buttonA">Crear Contacto</a>
         <section>
             <div id="" class="">
                 <h2>Contactos</h2>
@@ -84,9 +85,10 @@
                         <p>Celular: {{$contact->mobile_phone}}</p>
                     </details>
                 @endforeach
-                <a href="{{route('contacts')}}">Crear Contacto</a>
             </div>
+
         </section>
+
         <section class="business-states">
             <p class="get-type hidden">{{$business->type}}</p>
             <p class="get-state hidden">{{$business->state}}</p>

@@ -8,7 +8,7 @@
 
     <div>
         <div>
-            <a href="{{route('business')}}" class="business-fixed">Crear</a>
+            <a href="{{route('business')}}" class="business-fixed buttonA">Crear</a>
             <section class="business-one type hidden ">
                 <h2>Actualizar Cliente</h2>
                 <div class="formContent">

@@ -8,7 +8,7 @@
 
     @if(isset($total[4])==1)
         @if($total[4]==1)
-            <a href="{{route('createUser')}}">crear usuario</a>
+            <a class="buttonA" href="{{route('createUser')}}">crear usuario</a>
         @endif
     @endif
     <div class="wrapperContent">

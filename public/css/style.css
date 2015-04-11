@@ -402,4 +402,27 @@ input[type=submit]{
     width: 80%;
 }
 
+/*********************************** BUTTON A ****************************/
 
+.buttonA{
+    border-bottom: 2px solid ;
+    color: rgb(159, 159, 160);
+    cursor: pointer;
+    display: block;
+    font-size: 16px;
+    font-weight: 900;
+    padding: 10px 0px;
+}
+
+.buttonA:hover{
+    color: #07b4e3;
+}
+
+.business, .business-fixed{
+    display: inline-block;
+    vertical-align: top;
+}
+
+.business{
+    margin-left: 10px;
+}
