@@ -415,6 +415,11 @@ input[type=submit]{
     width: 80%;
 }
 
+.formErrors{
+    color: red;
+    margin: 10px 10% 0px;
+}
+
 /*********************************** BUTTON A ****************************/
 
 .buttonA{
@@ -447,9 +452,13 @@ input[type=submit]{
 
 /*************************************** MOVIMIENTOS *****************************/
 
+.showMove{
+    cursor: pointer;
+}
+
 .showMove:hover{
 
-
+    color: #07b4e3;
 }
 
 /*************************************** PROFILE *******************************/

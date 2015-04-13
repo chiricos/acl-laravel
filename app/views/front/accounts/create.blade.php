@@ -11,62 +11,112 @@
         <div>
             {{ Form::label('user_name', 'Username') }}
             {{ Form::text('user_name') }}
-            {{$errors->first('user_name')}}
         </div>
+
+        @if($errors->first('user_name'))
+            <div class="formErrors">
+                *{{$errors->first('user_name')}}
+            </div>
+        @endif
 
         <div>
             {{ Form::label('name', 'Nombre') }}
             {{ Form::text('name') }}
-            {{$errors->first('name')}}
         </div>
+
+        @if($errors->first('name'))
+            <div class="formErrors">
+                *{{$errors->first('name')}}
+            </div>
+        @endif
 
         <div>
             {{ Form::label('last_name', 'apellido') }}
             {{ Form::text('last_name') }}
-            {{$errors->first('last_name')}}
         </div>
+
+        @if($errors->first('last_name'))
+            <div class="formErrors">
+                *{{$errors->first('last_name')}}
+            </div>
+        @endif
 
         <div>
             {{ Form::label('email', 'E-mail') }}
             {{ Form::text('email') }}
-            {{$errors->first('email')}}
         </div>
+
+        @if($errors->first('email'))
+            <div class="formErrors">
+                *{{$errors->first('email')}}
+            </div>
+        @endif
 
         <div>
             {{ Form::label('password') }}
             {{ Form::password('password') }}
-            {{$errors->first('password')}}
         </div>
+
+        @if($errors->first('password'))
+            <div class="formErrors">
+                *{{$errors->first('password')}}
+            </div>
+        @endif
 
         <div>
             {{ Form::label('confirmation_password','confirmar password') }}
             {{ Form::password('confirmation_password') }}
-            {{$errors->first('confirmation_password')}}
         </div>
+
+        @if($errors->first('confirmation_password'))
+            <div class="formErrors">
+                *{{$errors->first('confirmation_password')}}
+            </div>
+        @endif
 
         <div>
             {{ Form::label( 'phone','Telefono') }}
             {{ Form::text('phone') }}
-            {{$errors->first('phone')}}
         </div>
+
+        @if($errors->first('phone'))
+            <div class="formErrors">
+                *{{$errors->first('phone')}}
+            </div>
+        @endif
 
         <div>
             {{ Form::label('address', 'Direccion') }}
             {{ Form::text('address') }}
-            {{$errors->first('address')}}
         </div>
+
+        @if($errors->first('address'))
+            <div class="formErrors">
+                *{{$errors->first('address')}}
+            </div>
+        @endif
 
         <div >
             {{ Form::label('role_id', 'Role') }}
             {{ Form::select('role_id', $charges, null, array('id' => 'role_id')) }}
-            {{$errors->first('role_id')}}
         </div>
+
+        @if($errors->first('role_id'))
+            <div class="formErrors">
+                *{{$errors->first('role_id')}}
+            </div>
+        @endif
 
         <div class="create-manager ">
             {{Form::label('manager','Encargado','',array('id'=>'manager'))}}
             {{ Form::select('manager', $managers, null, array('id' => 'manager')) }}
-            {{ Session::get('manager','',array('id'=>'manager')) }}
         </div>
+
+        @if(Session::get('manager','',array('id'=>'manager')))
+            <div class="formErrors">
+                *{{Session::get('manager','',array('id'=>'manager'))}}
+            </div>
+        @endif
 
         {{ Form::submit('Crear usuario') }}
 

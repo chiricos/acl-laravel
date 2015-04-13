@@ -11,9 +11,9 @@ class PaymentManager extends BaseManager
     {
         $rules=[
             'type'              => 'required',
-            '0'                 => 'required_if:type,1|required_if:type,2|required_if:type,3',
-            '1'                 => 'required_if:type,2|required_if:type,3',
-            '2'                 => 'required_if:type,3'
+            '0'                 => 'required_if:type,1|required_if:type,2|required_if:type,3|date',
+            '1'                 => 'required_if:type,2|required_if:type,3|date',
+            '2'                 => 'required_if:type,3|date'
         ];
         return  $rules;
     }

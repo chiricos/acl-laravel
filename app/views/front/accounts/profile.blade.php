@@ -11,7 +11,7 @@
                 <section class="datesProfile">
                     <figure>
                         {{ HTML::image('user/'.$user->photo,'',array('id'=>'')) }}
-                        <a class="icon-camera"></a>
+                        <a class="icon-camera" href="{{route('image',$user->id)}}"></a>
                     </figure>
                     <p>Username: {{$user->user_name}}</p>
                     <p>Nombre: {{$user->name}}</p>
@@ -36,38 +36,68 @@
             <div>
                 {{ Form::label('user_name', 'Username') }}
                 {{ Form::text('user_name',$user->user_name) }}
-                {{$errors->first('user_name')}}
             </div>
+
+            @if($errors->first('user_name'))
+                <div class="formErrors">
+                    *{{$errors->first('user_name')}}
+                </div>
+            @endif
 
             <div>
                 {{ Form::label('name', 'Nombre') }}
                 {{ Form::text('name',$user->name) }}
-                {{$errors->first('name')}}
             </div>
+
+            @if($errors->first('name'))
+                <div class="formErrors">
+                    *{{$errors->first('name')}}
+                </div>
+            @endif
 
             <div>
                 {{ Form::label('last_name', 'apellido') }}
                 {{ Form::text('last_name',$user->last_name) }}
-                {{$errors->first('last_name')}}
             </div>
+
+            @if($errors->first('last_name'))
+                <div class="formErrors">
+                    *{{$errors->first('last_name')}}
+                </div>
+            @endif
 
             <div>
                 {{ Form::label('email', 'E-mail') }}
                 {{ Form::text('email',$user->email) }}
-                {{$errors->first('email')}}
             </div>
+
+            @if($errors->first('email'))
+                <div class="formErrors">
+                    *{{$errors->first('email')}}
+                </div>
+            @endif
 
             <div>
                 {{ Form::label( 'phone','Telefono') }}
                 {{ Form::text('phone',$user->phone) }}
-                {{$errors->first('phone')}}
             </div>
+
+            @if($errors->first('phone'))
+                <div class="formErrors">
+                    *{{$errors->first('phone')}}
+                </div>
+            @endif
 
             <div>
                 {{ Form::label('address', 'Direccion') }}
                 {{ Form::text('address',$user->address) }}
-                {{$errors->first('address')}}
             </div>
+
+            @if($errors->first('address'))
+                <div class="formErrors">
+                    *{{$errors->first('address')}}
+                </div>
+            @endif
 
 
             {{ Form::submit('Actualizar usuario') }}
@@ -85,15 +115,24 @@
             <div class="material-input">
                 {{Form::label('password','Password')}}
                 {{Form::password('password','',['id' => 'password'])}}
-                {{$errors->first('password')}}
             </div>
+
+            @if($errors->first('password'))
+                <div class="formErrors">
+                    *{{$errors->first('password')}}
+                </div>
+            @endif
 
             <div class="material-input">
                 {{Form::label('confirmar_password','Confirmar Password')}}
                 {{Form::password('confirmar_password','',['id' => 'confirmar_password'])}}
-                {{$errors->first('confirmar_password')}}
             </div>
 
+            @if($errors->first('confirmar_password'))
+                <div class="formErrors">
+                    *{{$errors->first('confirmar_password')}}
+                </div>
+            @endif
 
             <div>
                 {{Form::submit('Cambiar Contraseña')}}

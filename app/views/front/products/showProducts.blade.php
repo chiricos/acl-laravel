@@ -12,14 +12,24 @@
     <div>
         {{Form::label('product_id','Producto:')}}
         {{ Form::select('product_id',$products) }}
-        {{$errors->first('product_id')}}
     </div>
+
+    @if($errors->first('product_id'))
+        <div class="formErrors">
+            *{{$errors->first('product_id')}}
+        </div>
+    @endif
 
     <div>
         {{Form::label('value','Valor:')}}
         {{ Form::text('value') }}
-        {{$errors->first('value')}}
     </div>
+
+    @if($errors->first('value'))
+        <div class="formErrors">
+            *{{$errors->first('value')}}
+        </div>
+    @endif
 
     <div>
         {{Form::submit('Crear Producto')}}
@@ -56,7 +66,7 @@
 
                         <td>
                             <a class="icon-folder-open" href="{{route('paymentBusiness',$businessProduct->id)}}"></a>
-                            <a class="icon-trash " href="{{route('deleteProduct',$businessProduct->id)}}"></a>
+                            <a class="icon-trash " href="{{route('deleteProducts',$businessProduct->id)}}"></a>
                         </td>
                     </tr>
                 @endforeach

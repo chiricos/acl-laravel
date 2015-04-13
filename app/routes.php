@@ -31,7 +31,7 @@ Route::group(array('before' => 'auth'), function()
 
     route::get('perfil', ['as' => 'profile', 'uses' => 'UserController@showProfile']);
 
-    route::post('saveImage', ['as' => 'changePassword', 'uses' => 'UserController@changePassword']);
+    route::get('saveImage/{id}', ['as' => 'image', 'uses' => 'UserController@changeImage']);
 
     route::post('actualizardatos', ['as' => 'updateProfile', 'uses' => 'UserController@updateProfile']);
     route::post('cambiarContraseña', ['as' => 'changePassword', 'uses' => 'UserController@changePassword']);
@@ -46,7 +46,7 @@ Route::group(array('before' => 'auth'), function()
         route::get('admin/pagos/{id}',['as'=>'paymentBusiness','uses'=>'BusinessController@showPayment']);
         route::post('admin/pagos/{id}',['as'=>'paymentBusiness','uses'=>'BusinessController@updatePayment']);
         route::post('admin/crearPagos/{id}',['as'=>'createPaymentBusiness','uses'=>'BusinessController@cratePayment']);
-        route::get('admin/eliminarProducto/{id}',['as'=>'deleteProduct','uses'=>'ProductController@delete']);
+        route::get('admin/eliminarProducto/{id}',['as'=>'deleteProducts','uses'=>'ProductController@delete']);
     });
 
     Route::group(array('before'=>'contacts'),function(){

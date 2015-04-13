@@ -77,9 +77,7 @@ class ProductController extends BaseController
 
     public function delete($id)
     {
-
         $product=BusinessProduct::find($id);
-        $ids=Business::find($product->business_id)->lists('id');
         $payment=Payment::where('businessProduct_id','=',$id);
         if($product->delete() and $payment->delete())
         {
@@ -91,9 +89,9 @@ class ProductController extends BaseController
                     'affected_entity'=> '',
                 ]
             );
-            return Redirect::route('createProducts',$ids)->with('message','El producto fue eliminado correctamente');
+            return Redirect::back()->with('message','El producto fue eliminado correctamente');
         }
-        return Redirect::route('createProducts',$ids)->with('message_error','El producto no fue eliminado correctamente');
+        return Redirect::back()->with('message_error','El producto no fue eliminado correctamente');
     }
 
     public function update($id)

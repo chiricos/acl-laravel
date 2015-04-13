@@ -5,6 +5,7 @@ use cerverus\Entities\Business;
 use cerverus\Entities\Log;
 use cerverus\Managers\CreateUserManager;
 use cerverus\Managers\UpdateUserManager;
+use cerverus\Managers\ChangeImageManager;
 use cerverus\Managers\UpdateProfileManager;
 use cerverus\Managers\UserManager;
 use cerverus\Repositories\LogRepo;
@@ -297,5 +298,12 @@ class UserController extends BaseController
             }
         }
         return Redirect::route('contactAs')->with('message_error','el Super Administrador no puede enviar correos');
+    }
+
+    public function changeImage($id)
+    {
+        $imageManager=new ChangeImageManager(new User(),Input::all());
+        $imageValidator=$imageManager->isValid();
+        drawde('flata por terminar por que me di cuenta que faltan cosas');
     }
 }

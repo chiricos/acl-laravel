@@ -42,7 +42,7 @@
 
             <section class="datesProfile">
                 <figure>
-                    {{ HTML::image('business/'.$business->photo,'',array('style'=>'width: 100px;')) }}
+                    {{ HTML::image('business/'.$business->photo,'') }}
                 </figure>
                 <section>
                     <p>Nombre: {{$business->name}}</p>
