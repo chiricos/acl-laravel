@@ -10,6 +10,7 @@
 
 @section('content')
     {{ Form::text('maps',$business->maps,['id'=>'maps','class'=>'hidden']) }}
+    <div class="formContent">
 
     <script>
 
@@ -39,7 +40,7 @@
     <div>
         <section>
 
-            <section>
+            <section class="datesProfile">
                 <figure>
                     {{ HTML::image('business/'.$business->photo,'',array('style'=>'width: 100px;')) }}
                 </figure>
@@ -68,10 +69,15 @@
             </section>
         </section>
         <div id="map-canvas"></div>
-        <a href="{{route('contacts')}} " class="buttonA">Crear Contacto</a>
+        </div>
+    </div>
+
+    <div class="formContent">
+
         <section>
             <div id="" class="">
                 <h2>Contactos</h2>
+                <a href="{{route('contacts')}} " class="buttonMaps">Crear Contacto</a>
                 @foreach($contacts as $contact)
 
                     <details>
@@ -79,7 +85,7 @@
 
                         <p>Nombre: {{$contact->name}}</p>
                         <p>Apellido: {{$contact->last_name}}</p>
-                        <p>Cargo: {{$contact->carge}}</p>
+                        <p>Cargo: {{$contact->charge}}</p>
                         <p>E-mail: {{$contact->email}}</p>
                         <p>Telefono: {{$contact->phone}}</p>
                         <p>Celular: {{$contact->mobile_phone}}</p>
@@ -88,6 +94,7 @@
             </div>
 
         </section>
+    </div>
 
         <section class="business-states">
             <p class="get-type hidden">{{$business->type}}</p>
@@ -151,7 +158,7 @@
                 {{ Form::close() }}
             </div>
         </section>
-    </div>
+
 
 @stop
 

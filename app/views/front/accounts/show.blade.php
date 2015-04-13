@@ -86,6 +86,7 @@
 
     </div>
     @endif
+    <div class="formContent">
             <div>
                 @if(count($logs)>0)
                     <h2 class="showMove">Movimientos</h2>
@@ -104,6 +105,7 @@
 
                 @endif
             </div>
+    </div>
 
 @stop
 

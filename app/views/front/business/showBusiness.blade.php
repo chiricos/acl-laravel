@@ -10,12 +10,18 @@
         <div>
             <p class="business-fixed buttonA">Crear Empresa</p>
             <p class="business buttonA">Crear Prospecto</p>
+            <div class="formContent">
+
+
             <section class="business-one type{{Session::get('type')}}  hidden ">
                 <h2>Crear Cliente</h2>
+
                 <div class="formContent">
+
                     {{ Form::open(array('name'=>'form-show-business','route' => 'business','files'=>true, 'method' => 'POST')) }}
                     {{ Form::text('type','',['class'=>'hidden business1']) }}
                     <div>
+
                         {{Form::label('manager','Encargado','',array('id'=>'manager'))}}
                         {{ Form::select('manager', $managers, null, array('id' => 'manager')) }}
                         {{$errors->first('manager')}}
@@ -123,7 +129,7 @@
                         {{$errors->first('expedition_date')}}
                     </div>
 
-                    <div>
+                    <div style="display: none">
                         {{ Form::label('maps', 'ubicacion') }}
                         {{ Form::text('maps','',['class'=>'maps']) }}
                         {{$errors->first('maps')}}
@@ -142,10 +148,10 @@
                 </div>
 
             </section>
+
             <section class="business-two type-tow{{Session::get('type')}} hidden">
                 <h2>Crear Prospecto</h2>
                 <div class="formContent">
-                <div>
                     {{ Form::open(array('name'=>'form-show-business-two','route' => 'business','files'=>true, 'method' => 'POST')) }}
                     {{ Form::text('type','',['class'=>'hidden business2']) }}
                     <div>
@@ -244,7 +250,7 @@
                         {{$errors->first('source')}}
                     </div>
 
-                    <div>
+                    <div style="display: none">
                         {{ Form::label('maps', 'ubicacion') }}
                         {{ Form::text('maps','',['id'=>'map']) }}
                         {{$errors->first('maps')}}
@@ -262,11 +268,15 @@
                     {{ Form::close() }}
 
                 </div>
-</div>
             </section>
+                <section class="">
+                    @include('layou.map')
+                </section>
+
+            </div>
 
 
-            @include('layou.map')
+
         <div class="wrapperContent">
             <section class="tableContent">
                 <h2>Clientes</h2>
@@ -356,4 +366,5 @@
 
 @section('javascript')
     {{ HTML::script('js/business.js'); }}
+    {{ HTML::script('js/maps.js'); }}
 @stop

@@ -107,16 +107,29 @@ h2{
 /******************************* MAPS ************************************/
 
 #map-canvas {
-    height: 400px;
-    width: 500px;
+    height: 300px;
+    margin: auto;
+    width: 100%;
 
 }
-#panel {
-    z-index: 5;
-    padding: 5px;
-    border: 1px solid #999;
+
+.titleMaps{
+    width: 100%;
+    text-align: center;
 }
 
+.buttonMaps{
+    color: rgba(0, 0, 0, 0.37);
+    display: block;
+    width: 100%;
+}
+
+.buttonMaps:hover{
+    color: #07b4e3;
+    cursor:pointer;
+}
+
+/********************************** hidden ***************************************/
 
 .hidden,#hidden{
     display: none;
@@ -357,7 +370,7 @@ form{
     border-radius: 15px;
     font-weight: 100;
     margin: 16px auto;
-    width: 90%;
+    width: 75%;
 }
 
 
@@ -414,6 +427,7 @@ input[type=submit]{
     margin-bottom: 20px;
     padding: 10px 0px;
     text-align: center;
+    width: 100%;
 
 }
 
@@ -430,3 +444,48 @@ input[type=submit]{
 .business{
     margin-left: 10px;
 }
+
+/*************************************** MOVIMIENTOS *****************************/
+
+.showMove:hover{
+
+
+}
+
+/*************************************** PROFILE *******************************/
+
+.datesProfile{
+    border: 1px dotted rgb(159, 159, 160);
+    font-weight: 100;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.datesProfile figure{
+    margin: auto;
+    position: relative;
+    width: 170px;
+}
+
+.datesProfile img{
+    border: 0;
+    box-shadow: 0 1px 5px 0;
+    width: 170px;
+}
+
+.datesProfile a{
+    color: rgba(197, 200, 203, 0.99);
+    cursor: pointer;
+    display: block;
+    font-size: 20px;
+    margin: -32px 0px;
+    position: absolute;
+    text-align: justify;
+    width: 100%;
+}
+
+.datesProfile a:hover{
+    color: #07b4e3;
+}
+
+

@@ -15,14 +15,16 @@
 @stop
 
 @section('content')
-
+<div class="formContent">
     <div class="wrapperContent">
         <div class="tableContent">
             <table>
                 <thead>
                 <tr>
                     <th>Permisos</th>
+                    @if($id>1)
                     <th>Acciones</th>
+                    @endif
                 </tr>
                 </thead>
                 <tbody>
@@ -30,10 +32,12 @@
                     @foreach($permissions as $permission)
                     <tr>
                         <td>{{$permission->name}}</td>
-                        @if($permission->permissionRole)
-                            <td>{{ Form::checkbox(''.$permission->id.'',$permission->id,$permission->id) }}</td>
-                        @else
-                            <td>{{ Form::checkbox(''.$permission->id.'',$permission->id) }}</td>
+                        @if($id>1)
+                            @if($permission->permissionRole)
+                                <td>{{ Form::checkbox(''.$permission->id.'',$permission->id,$permission->id) }}</td>
+                            @else
+                                <td>{{ Form::checkbox(''.$permission->id.'',$permission->id) }}</td>
+                            @endif
                         @endif
 
                     </tr>
@@ -44,8 +48,12 @@
 
 
         </div>
-        {{ Form::submit('Actualizar usuario') }}
 
-        {{ Form::close() }}
     </div>
+    @if($id>1)
+    {{ Form::submit('Actualizar usuario') }}
+
+    {{ Form::close() }}
+    @endif
+</div>
 @stop

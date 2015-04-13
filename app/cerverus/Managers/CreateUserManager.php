@@ -15,7 +15,7 @@ class CreateUserManager extends BaseManager
             'email'                 => 'required|email|unique:users',
             'password'              => 'required',
             'confirmation_password' => 'required|same:password',
-            'phone'                 => 'required|numeric',
+            'phone'                 => 'required|numeric|digits_between:6,11',
             'address'               => 'required',
             'role_id'               => 'required|numeric',
             'manager'               => 'required|numeric'
@@ -26,7 +26,14 @@ class CreateUserManager extends BaseManager
     public function getMessage()
     {
         $messages = [
-
+            'required'              => 'El campo es requerido',
+            'unique'                => 'El campo ya se encuentra registrado',
+            'numeric'               => 'El campo tiene que ir en numeros',
+            'digits_between'        => 'El campo esta muy corto o muy largo',
+            'email'                 => 'El campo debe ir con el formatio de correo',
+            'image'                 => 'El archivo debe ser una imagen',
+            'date'                  => 'El campo va en formato de Fecha dd-mm-aa',
+            'same'      => 'Las contraseñas deben ser iguales'
         ];
         return $messages;
     }

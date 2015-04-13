@@ -30,6 +30,9 @@ Route::group(array('before' => 'auth'), function()
     route::get('Inicio', ['as' => 'home', 'uses' => 'HomeController@index']);
 
     route::get('perfil', ['as' => 'profile', 'uses' => 'UserController@showProfile']);
+
+    route::post('saveImage', ['as' => 'changePassword', 'uses' => 'UserController@changePassword']);
+
     route::post('actualizardatos', ['as' => 'updateProfile', 'uses' => 'UserController@updateProfile']);
     route::post('cambiarContraseña', ['as' => 'changePassword', 'uses' => 'UserController@changePassword']);
 
@@ -96,6 +99,10 @@ Route::group(array('before' => 'auth'), function()
         route::post('admin/product', ['as' => 'product', 'uses' => 'ProductController@saveProduct']);
         route::get('admin/agregarProductos/{id}',['as'=>'createProducts','uses'=>'ProductController@showProducts']);
         route::post('admin/agregarProductos/{id}',['as'=>'createProducts','uses'=>'ProductController@addProducts']);
+        route::get('admin/actualizarProductos/{id}',['as'=>'updateProduct','uses'=>'ProductController@update']);
+        route::post('admin/actualizarProductos/{id}',['as'=>'updateProduct','uses'=>'ProductController@updateSave']);
+        route::get('admin/eliminarProductos/{id}',['as'=>'deleteProduct','uses'=>'ProductController@deleteProduct']);
+        route::post('admin/eliminarProductos/{id}',['as'=>'deleteProduct','uses'=>'ProductController@deleteProduct']);
     });
 
     Route::group(array('before'=>'promotion'),function(){

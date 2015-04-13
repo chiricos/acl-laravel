@@ -5,26 +5,25 @@
 @stop
 
 @section('content')
-
     <section class="formContent">
-        {{ Form::open(array('name'=>'form-update-permission','route' => 'product', 'method' => 'POST')) }}
+        {{ Form::open(array('name'=>'form-update-permission','url' => 'admin/actualizarProductos/'.$updateProduct->id, 'method' => 'POST')) }}
         <div>
             {{Form::label('id','Id del producto:')}}
-            {{Form::text('id')}}
+            {{Form::text('id',$updateProduct->id)}}
             {{$errors->first('id')}}
         </div>
         <div>
             {{Form::label('dependency','dependencia:')}}
-            {{ Form::select('dependency',$services) }}
+            {{ Form::select('dependency',$services,$updateProduct->dependency) }}
             {{$errors->first('dependency')}}
         </div>
 
         <div>
             {{Form::label('name','Nombre:')}}
-            {{ Form::text('name') }}
+            {{ Form::text('name',$updateProduct->name) }}
             {{$errors->first('name')}}
         </div>
-        {{Form::submit('guardar producto')}}
+        {{Form::submit('Actualizar Producto')}}
         {{Form::close()}}
     </section>
     <div class="wrapperContent">
@@ -42,19 +41,19 @@
 
                 @foreach($products as $product)
                     @if($product->dependency==1)
-                    <tr>
-                        <td>{{$product->id}}</td>
-                        <td>{{$product->name}}</td>
-                        <td><a class="icon-ccw " href="{{route('updateProduct',$product->id)}}"></a><a  class="icon-trash " href="{{route('deleteProduct',$product->id)}}"></a></td>
-                    </tr>
+                        <tr>
+                            <td>{{$product->id}}</td>
+                            <td>{{$product->name}}</td>
+                            <td><a class="icon-ccw " href="{{route('updateProduct',$product->id)}}"></a><a  class="icon-trash " href="{{route('deleteProduct',$product->id)}}"></a></td>
+                        </tr>
                     @endif
                 @endforeach
                 </tbody>
             </table>
 
         </section>
-        </div>
-        <div class="wrapperContent">
+    </div>
+    <div class="wrapperContent">
         <section class="tableContent">
             <h2>WEB Y APPS</h2>
             <table class=" ">
@@ -80,7 +79,7 @@
             </table>
 
         </section>
-        </div>
+    </div>
     <div class="wrapperContent">
         <section class="tableContent">
             <h2>MARKETING</h2>

@@ -2,6 +2,7 @@
 
 use cerverus\Repositories\ProductRepo;
 use cerverus\Managers\ProductManager;
+use cerverus\Managers\UpdateProductManager;
 use cerverus\Managers\CreateProductManager;
 use cerverus\Entities\Product;
 use cerverus\Entities\Payment;
@@ -93,6 +94,61 @@ class ProductController extends BaseController
             return Redirect::route('createProducts',$ids)->with('message','El producto fue eliminado correctamente');
         }
         return Redirect::route('createProducts',$ids)->with('message_error','El producto no fue eliminado correctamente');
+    }
+
+    public function update($id)
+    {
+        $permiso =new Proceso();
+        $total=$permiso->filtrarPermisos();
+        $product=new ProductRepo();
+        $services=$product->getServices();
+        $products=Product::all();
+        $updateProduct=Product::find($id);
+        return View::make('back.updateProduct',compact('total','services','products','updateProduct'));
+    }
+
+    public function updateSave($id)
+    {
+        $updateProduct=new UpdateProductManager(new Product(),Input::all());
+        $productValidator=$updateProduct->isValid();
+        if($productValidator){
+            return Redirect::route('updateProduct',$id)->withErrors($productValidator)->withInput();
+        }
+        $update=$updateProduct->updateProduct($id);
+
+        if($update)
+        {
+            new LogRepo(
+                [
+                    'responsible'=> Auth::user()->user_name,
+                    'responsible_id'=> Auth::user()->id,
+                    'action' => 'ha actualizado un producto ',
+                    'affected_entity'=> '',
+                ]
+            );
+            return Redirect::route('updateProduct',Input::get('id'))->with('message','el producto se actualizo correctamente');
+        }
+        return Redirect::route('updateProduct',$id)->with('message_error','el producto no se actualizo porque el id ya esta siendo utilizado');
+    }
+
+    public function deleteProduct($id)
+    {
+        $businessProduct=BusinessProduct::where('product_id','=',$id)->first();
+        if($businessProduct)
+        {
+            return Redirect::route('product')->with('message_error','El producto no se puede eliminar por que esta siendo utilizado');
+        }
+        $product=Product::find($id);
+        $product->delete();
+        new LogRepo(
+            [
+                'responsible'=> Auth::user()->user_name,
+                'responsible_id'=> Auth::user()->id,
+                'action' => 'ha eliminado un producto ',
+                'affected_entity'=> '',
+            ]
+        );
+        return Redirect::route('product')->with('message','El producto fue eliminado correctamente');
     }
 
 }

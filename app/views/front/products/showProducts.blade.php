@@ -67,3 +67,6 @@
     </div>
 
 @stop
+@section('javascript')
+    {{ HTML::script('js/business.js'); }}
+@stop

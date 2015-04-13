@@ -1,21 +1,17 @@
 <?php
 namespace cerverus\Managers;
 
-use cerverus\Entities\Contact;
+use cerverus\Entities\Product;
 
-class UpdateContactManager extends BaseManager
+class UpdateProductManager extends BaseManager
 {
 
     public function getRules()
     {
         $rules=[
-            'name'                  => 'required|unique:contacts,name,'.$this->data["id"],'',
-            'last_name'             => 'required',
-            'email'                 => 'required|email|unique:contacts,email,'.$this->data["id"],'',
-            'phone'                 => 'required|numeric|digits_between:6,11',
-            'mobile_phone'          => 'required|numeric|digits_between:6,11',
-            'charge'               => 'required',
-            'business_id'           => 'required|numeric'
+            'id'                  => 'required|numeric|unique:products,id,'.$this->data["id"],'',
+            'dependency'          => 'required|numeric',
+            'name'                => 'required'
         ];
         return  $rules;
     }
@@ -34,14 +30,18 @@ class UpdateContactManager extends BaseManager
         return $messages;
     }
 
-    public function updateContact($id)
+    public function updateProduct($id)
     {
-        $contact=Contact::find($id);
-        if($contact->update($this->data))
+
+        if($id!=$this->data['id'])
+        {
+            return false;
+        }
+        $product=Product::find($id);
+
+        if( $product->update($this->data))
         {
             return true;
-        }else{
-            return false;
         }
 
     }

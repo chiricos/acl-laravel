@@ -7,23 +7,27 @@
 @section('content')
 
         <div>
-        <section>
-            <figure>
-                {{ HTML::image('user/'.$user->photo,'',array('id'=>'')) }}
-            </figure>
-            <p>Username: {{$user->user_name}}</p>
-            <p>Nombre: {{$user->name}}</p>
-            <p>Apellido: {{$user->last_name}}</p>
-            <p>E-mail:  {{$user->email}}</p>
-            <p>Telefono: {{$user->phone}}</p>
-            <p>Dirección: {{$user->address}}</p>
-            <p>
-                @if($user->role_id==3)
-                    A cargo de :{{$manager->user_name}}
-                @endif
-            </p>
-        </section>
-        <button onclick="showForm();">Actualizar Datos</button>
+            <div class="formContent">
+                <section class="datesProfile">
+                    <figure>
+                        {{ HTML::image('user/'.$user->photo,'',array('id'=>'')) }}
+                        <a class="icon-camera"></a>
+                    </figure>
+                    <p>Username: {{$user->user_name}}</p>
+                    <p>Nombre: {{$user->name}}</p>
+                    <p>Apellido: {{$user->last_name}}</p>
+                    <p>E-mail:  {{$user->email}}</p>
+                    <p>Telefono: {{$user->phone}}</p>
+                    <p>Dirección: {{$user->address}}</p>
+                    <p>
+                        @if($user->role_id==3)
+                            A cargo de :{{$manager->user_name}}
+                        @endif
+                    </p>
+                </section>
+                <a class="buttonMaps" onclick="showForm();">Actualizar Datos</a>
+                <a class="changePassword buttonMaps" class="" >Cambiar Contraseña</a>
+        </div>
         <section class="profileUpdate hidden{{ Session::get('upload') }}">
             <div class="formContent">
             {{ Form::open(array('name'=>'form-create-user','route' => 'updateProfile', 'method' => 'POST')) }}
@@ -74,7 +78,7 @@
     </div>
 
     <div>
-        <h2 class="changePassword">Cambiar Contraseña</h2>
+
         <section class="profilePassword hidden{{ Session::get('password') }}">
             <div class="formContent">
             {{ Form::open(array('route' => 'changePassword','class'=>'')) }}
@@ -100,23 +104,24 @@
                 </div >
         </section>
     </div>
+    <div class="formContent">
+        <div>
+            @if(count($logs)>0)
+                <h2 class="showMove">Movimientos</h2>
+                <section class="profileLogs hidden">
+                    @foreach($logs as $log)
+                        <p>
+                            has {{$log->action}}
+                            @if($log->affected_entity)
+                                de {{$log->affected_entity}}
+                            @endif
+                            el {{$log->created_at}}
+                        </p>
+                    @endforeach
+                </section>
 
-    <div>
-        @if(count($logs)>0)
-            <h2 class="showMove">Movimientos</h2>
-            <section class="profileLogs hidden">
-                @foreach($logs as $log)
-                    <p>
-                        has {{$log->action}}
-                        @if($log->affected_entity)
-                            de {{$log->affected_entity}}
-                        @endif
-                        el {{$log->created_at}}
-                    </p>
-                @endforeach
-            </section>
-
-        @endif
+            @endif
+        </div>
     </div>
 
 @stop

@@ -21,8 +21,14 @@ class PaymentManager extends BaseManager
     public function getMessage()
     {
         $messages = [
-            'required_if' =>'el campo es requerido'
-        ];
+            'required_if' =>'el campo es requerido',
+            'required'              => 'El campo es requerido',
+            'unique'                => 'El campo ya se encuentra registrado',
+            'numeric'               => 'El campo tiene que ir en numeros',
+            'digits_between'        => 'El campo esta muy corto o muy largo',
+            'email'                 => 'El campo debe ir con el formatio de correo',
+            'image'                 => 'El archivo debe ser una imagen',
+            'date'                  => 'El campo va en formato de Fecha dd-mm-aa'        ];
         return $messages;
     }
 

@@ -12,15 +12,15 @@ class UpdateBusinessManager extends BaseManager
                 'name'                  => 'required|unique:business,name,'.$this->data["id"].'',
                 'state'                 => 'required|numeric',
                 'nit'                   => 'numeric',
-                'phone'                 => 'numeric',
+                'phone'                 => 'numeric|digits_between:6,11',
                 'ext'                   => 'numeric',
                 'email'                 => 'required|email|unique:business,email,'.$this->data["id"].'',
                 'second_email'          => 'email|unique:business,email,'.$this->data["id"].'',
-                'mobile_phone'          => 'required|numeric',
+                'mobile_phone'          => 'required|numeric|digits_between:6,11',
                 'manager'               => 'required|numeric',
                 'fax'                   => 'numeric',
-                'payment_date'          => 'required',
-                'expedition_date'       => 'required',
+                'payment_date'          => 'required|date',
+                'expedition_date'       => 'required|date',
                 'photo'                 => 'image'
             ];
         }else{
@@ -29,11 +29,11 @@ class UpdateBusinessManager extends BaseManager
                 'name'                  => 'required|unique:business,name,'.$this->data["id"].'',
                 'state'                 => 'required|numeric',
                 'nit'                   => 'numeric',
-                'phone'                 => 'numeric',
+                'phone'                 => 'numeric|digits_between:6,11',
                 'ext'                   => 'numeric',
                 'email'                 => 'required|email|unique:business,email,'.$this->data["id"].'',
                 'second_email'          => 'email|unique:business,email,'.$this->data["id"].'',
-                'mobile_phone'          => 'required|numeric',
+                'mobile_phone'          => 'required|numeric|digits_between:6,11',
                 'manager'               => 'required|numeric',
                 'fax'                   => 'numeric',
                 'photo'                 => 'image'
@@ -46,6 +46,13 @@ class UpdateBusinessManager extends BaseManager
     public function getMessage()
     {
         $messages = [
+            'required'              => 'El campo es requerido',
+            'unique'                => 'El campo ya se encuentra registrado',
+            'numeric'               => 'El campo tiene que ir en numeros',
+            'digits_between'        => 'El campo esta muy corto o muy largo',
+            'email'                 => 'El campo debe ir con el formatio de correo',
+            'image'                 => 'El archivo debe ser una imagen',
+            'date'                  => 'El campo va en formato de Fecha dd-mm-aa'
 
         ];
         return $messages;

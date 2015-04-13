@@ -1,4 +1,12 @@
 $(document).on('ready', function() {
+    $('#value').on('change',function()
+    {
+       if(this.value<1)
+       {
+           alert('El valor debe ser positivo');
+           this.value='';
+       }
+    });
     $('.type1').removeClass('hidden');
     $('.type-tow2').removeClass('hidden');
     var i= 0,j=0;
@@ -117,5 +125,5 @@ $(document).on('ready', function() {
         $(this).addClass('hidden');
     });
 
-
 });
+

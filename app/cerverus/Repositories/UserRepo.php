@@ -39,14 +39,14 @@ class UserRepo extends BaseRepo
 
     public function getManager($id,$role_id,$user_name)
     {
-        $users=['seleccione un encargado'=>'seleccione un encargado'];
+        $users=[''=>'seleccione un encargado'];
         if($role_id==1)
         {
-            $users=['seleccione un encargado'=>'seleccione un encargado']+User::whereRaw('role_id=3')->lists('user_name','id');
+            $users=[''=>'seleccione un encargado']+User::whereRaw('role_id=3')->lists('user_name','id');
         }
         if($role_id==2)
         {
-            $users=['seleccione un encargado'=>'seleccione un encargado']+User::whereRaw('manager='.$id)->lists('user_name','id');
+            $users=[''=>'seleccione un encargado']+User::whereRaw('manager='.$id)->lists('user_name','id');
         }
         if($role_id==3)
         {
@@ -56,7 +56,7 @@ class UserRepo extends BaseRepo
     }
     public function getState()
     {
-        return ['seleccione un estado'=>'seleccione un estado']
+        return [''=>'seleccione un estado']
         +['1'=>'Activo']
         +['2'=>'Mensual']
         +['3'=>'Moroso']
@@ -65,7 +65,7 @@ class UserRepo extends BaseRepo
 
     public function getStates()
     {
-        return ['seleccione un estado'=>'seleccione un estado']
+        return [''=>'seleccione un estado']
         +['1'=>'Cotizacion ordinaria y anexo']
         +['2'=>'Portafolio y propuesta']
         +['3'=>'Primera llamada']

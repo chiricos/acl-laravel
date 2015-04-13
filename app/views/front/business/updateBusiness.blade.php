@@ -6,9 +6,11 @@
 
 @section('content')
 
+
     <div>
         <div>
-            <a href="{{route('business')}}" class="business-fixed buttonA">Crear</a>
+            <a href="{{route('business')}}" class=" buttonA">Crear</a>
+            <div class="formContent">
             <section class="business-one type hidden ">
                 <h2>Actualizar Cliente</h2>
                 <div class="formContent">
@@ -124,7 +126,7 @@
                         {{$errors->first('expedition_date')}}
                     </div>
 
-                    <div>
+                    <div style="display: none">
                         {{ Form::label('maps', 'ubicacion') }}
                         {{ Form::text('maps','',['id'=>'maps']) }}
                         {{$errors->first('maps')}}
@@ -245,7 +247,7 @@
                         {{$errors->first('source')}}
                     </div>
 
-                    <div>
+                    <div style="display: none">
                         {{ Form::label('maps', 'ubicacion') }}
                         {{ Form::text('maps','',['id'=>'map']) }}
                         {{$errors->first('maps')}}
@@ -264,7 +266,10 @@
 
                 </div>
             </section>
-            @include('layou.map')
+                <section class="">
+                    @include('layou.map')
+                </section>
+            </div>
             <div class="wrapperContent">
                 <section class="tableContent">
                 <h2>Clientes</h2>
@@ -355,4 +360,5 @@
 
 @section('javascript')
     {{ HTML::script('js/updateBusiness.js'); }}
+    {{ HTML::script('js/maps.js'); }}
 @stop

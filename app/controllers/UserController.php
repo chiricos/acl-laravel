@@ -25,7 +25,7 @@ class UserController extends BaseController
         $total=$permiso->filtrarPermisos();
         if(Auth::user()->role_id==1)
         {
-            $charges= [ 'seleccione un role'=> "seleccione un role"]
+            $charges= [ ''=> "seleccione un role"]
                 +[ 3 => "vendedor"]
                 +[ 2 => "administrador"]
                 +[ 1 => "super administrador"];
@@ -34,7 +34,7 @@ class UserController extends BaseController
         }
         if(Auth::user()->role_id==2)
         {
-            $charges= [ 'seleccione un role'=> "seleccione un role"]
+            $charges= [ ''=> "seleccione un role"]
                 +[ 3 => "vendedor"];
             $managers = [ "0" => "selecione un encargado"]
                 +["".Auth::user()->id.""=>"".Auth::user()->user_name.""];
