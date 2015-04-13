@@ -12,7 +12,7 @@ class UpdateProfileManager extends BaseManager
             'user_name'             => 'required|unique:users,user_name,'.$this->data["id"].'',
             'name'                  => 'required',
             'last_name'             => 'required',
-            'email'                 => 'required|unique:users,email,'.$this->data["id"].'',
+            'email'                 => 'required|email|unique:users,email,'.$this->data["id"].'',
             'phone'                 => 'required|numeric|digits_between:6,11',
             'address'               => 'required'
         ];
