@@ -420,6 +420,17 @@ input[type=submit]{
     margin: 10px 10% 0px;
 }
 
+.formPayments label{
+    text-align: center;
+    padding: 20px 0;
+}
+
+.formPayments p{
+    text-align: center;
+    font-weight: 600;
+}
+
+
 /*********************************** BUTTON A ****************************/
 
 .buttonA{
@@ -493,8 +504,65 @@ input[type=submit]{
     width: 100%;
 }
 
+
+
 .datesProfile a:hover{
     color: #07b4e3;
 }
 
+/************************************* pop up **************************************/
 
+.popUp{
+    background: rgba(0, 0, 0, 0.76);
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.popUpContent{
+    height: 100%;
+    margin: 100px auto;
+    width: 60%;
+    z-index: 10;
+}
+
+.close-popUp {
+    color: rgb(159, 159, 160);
+    cursor: pointer;
+    float: right;
+    font-size: 30px;
+    margin: 10px;
+}
+
+.close-popUp:hover{
+    color: #07b4e3;
+}
+
+.profileFile input[type=file]{
+    border-radius: 0px;
+    cursor: pointer;
+    display: block;
+    height: 130px;
+    margin-top: -143px;
+    margin-left: 0;
+    margin-right: 0;
+    opacity: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+.profilePhoto{
+
+}
+
+.profileP{
+    border: 1px dashed rgba(0, 0, 0, 0.4);
+    font-size: 18px;
+    font-weight: inherit;
+    height: 85px;
+    padding-top: 40px;
+    text-align: center;
+    width: 100%;
+}

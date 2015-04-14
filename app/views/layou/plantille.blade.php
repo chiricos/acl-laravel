@@ -48,7 +48,7 @@
             <a href="{{route('home')}}">Inicio</a>
             @if(isset($total[1]) )
                 @if($total[1]==1)
-                    <a href="{{route('business')}}">Empresas</a>
+                    <a href="{{route('business')}}">Clientes</a>
                 @endif
             @endif
             @if(isset($total[10]))

@@ -9,6 +9,7 @@ use cerverus\Managers\ChangeImageManager;
 use cerverus\Managers\UpdateProfileManager;
 use cerverus\Managers\UserManager;
 use cerverus\Repositories\LogRepo;
+use cerverus\Managers\EmailManager;
 
 class UserController extends BaseController
 {
@@ -269,6 +270,13 @@ class UserController extends BaseController
 
     public function sendContact()
     {
+
+        $sendManager=new EmailManager('',Input::all());
+        $sendValidator=$sendManager->isValid();
+        if($sendValidator)
+        {
+            return Redirect::route('contactAs')->withErrors($sendValidator)->withInput();
+        }
         $data=Input::all()
             +['name'=>Auth::user()->name]
             +['user_name'=>Auth::user()->user_name]
@@ -297,6 +305,7 @@ class UserController extends BaseController
                 return Redirect::route('contactAs')->with('message','El correo se envio correctamente a los super administradores');
             }
         }
+
         return Redirect::route('contactAs')->with('message_error','el Super Administrador no puede enviar correos');
     }
 

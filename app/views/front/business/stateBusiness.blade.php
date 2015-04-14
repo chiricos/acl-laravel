@@ -67,17 +67,23 @@
                     @endif
                 </section>
             </section>
+
+
         </section>
+        @if($business->maps!='')
         <div id="map-canvas"></div>
+        @endif
+        <a class=" icon-users" ></a>
         </div>
+
     </div>
 
-    <div class="formContent">
+    <div class="formContent hidden" id="businessContacts">
 
         <section>
             <div id="" class="">
                 <h2>Contactos</h2>
-                <a href="{{route('contacts')}} " class="buttonMaps">Crear Contacto</a>
+
                 @foreach($contacts as $contact)
 
                     <details>
@@ -91,6 +97,12 @@
                         <p>Celular: {{$contact->mobile_phone}}</p>
                     </details>
                 @endforeach
+                {{ Form::open(array('name'=>'','route' => 'contacts', 'method' => 'POST')) }}
+                <div class="hidden">
+                    {{Form::text('business_id',$business->id)}}
+                </div>
+                {{form::submit('crear contacto')}}
+                {{form::close()}}
             </div>
 
         </section>
@@ -100,7 +112,7 @@
             <p class="get-type hidden">{{$business->type}}</p>
             <p class="get-state hidden">{{$business->state}}</p>
             <div class="formContent">
-                <h2>Estado</h2>
+                <h2>Estado del cliente</h2>
                 {{ Form::open(array('name'=>'form-see-business','url' => 'admin/verEmpresa/'.$business->id, 'method' => 'POST')) }}
                 <details class="state-input hidden">
                     <summary><h3>cotizacion oridnaria</h3></summary>

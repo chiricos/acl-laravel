@@ -1,5 +1,6 @@
 
 
+
 $(document).on('ready', function() {
     if($('#role_id').val()<3)
     {
@@ -54,4 +55,17 @@ var i=0;
             i=0;
         }
     }
+
+$(document).on('ready',function()
+{
+
+    $('.icon-camera').on('click',function()
+    {
+       $('.popUp').removeClass('hidden');
+    });
+    $('.close-popUp').on('click',function()
+    {
+        $('.popUp').addClass('hidden');
+    });
+});
 

@@ -1,6 +1,8 @@
 <?php
 
 use cerverus\Entities\Business;
+use cerverus\Managers\EmailManager;
+use cerverus\Repositories\LogRepo;
 
 
 class PromotionController extends BaseController
@@ -15,6 +17,11 @@ class PromotionController extends BaseController
 
     public function sendPromotion()
     {
+        $promotionManager=new EmailManager('',Input::all());
+        $promotionValidator=$promotionManager->isValid();
+        if($promotionValidator) {
+            return Redirect::route('promotion')->withErrors($promotionValidator)->withInput();
+        }
         $business=Business::all();
         $data=[];
         foreach($business as $client)
@@ -25,6 +32,14 @@ class PromotionController extends BaseController
             });
         }
 
+        new LogRepo(
+            [
+                'responsible'=> Auth::user()->user_name,
+                'responsible_id'=> Auth::user()->id,
+                'action' => 'se ha enviado correos masivos de promocion ',
+                'affected_entity'=> '',
+            ]
+        );
         return Redirect::route('promotion')->with('message','los correos fueron enviados exitosamente');
 
     }

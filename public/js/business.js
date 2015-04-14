@@ -7,6 +7,19 @@ $(document).on('ready', function() {
            this.value='';
        }
     });
+    var b=0;
+    $('.icon-users').on('click',function()
+    {
+        if(b==0)
+        {
+            $('#businessContacts').removeClass('hidden');
+            b++;
+        }else{
+            $('#businessContacts').addClass('hidden');
+            b=0;
+        }
+
+    });
     $('.type1').removeClass('hidden');
     $('.type-tow2').removeClass('hidden');
     var i= 0,j=0;

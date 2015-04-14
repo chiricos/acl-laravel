@@ -6,32 +6,33 @@
 
 @section('content')
     <div class="formContent">
-        {{ Form::open(array('name'=>'form-create-user','url' => 'admin/pagos/'.$business->id, 'method' => 'POST')) }}
-
         <div>
             @if(count($business->payments)==1)
-                <p>Una Cuota</p>
+                <h2>Una Cuota</h2>
             @endif
             @if(count($business->payments)==2)
-                <p>Dos Cuotas</p>
+                <h2>Dos Cuotas</h2>
             @endif
             @if(count($business->payments)==3)
-                <p>Tres Cuotas</p>
+                <h2>Tres Cuotas</h2>
             @endif
         </div>
+        {{ Form::open(array('name'=>'form-create-user','url' => 'admin/pagos/'.$business->id, 'method' => 'POST')) }}
+
+
         @if(count($business->payments)>=1)
 
-        <section class="">
+        <section class="formPayments">
             <div >
                 {{ Form::text('id0',$business->payments[0]["id"],["class"=>"hidden"]) }}
-                <p>Primer Pago: {{$business->payments[0]["payment"]}}</p>
+                <p >Primer Pago: {{$business->payments[0]["payment"]}}</p>
                 {{ Form::label('validator0', 'Pago realizado') }}
                 {{ Form::checkbox('validator0',1,$business->payments[0]["validator"]) }}
             </div>
         </section>
         @endif
         @if(count($business->payments)>=2)
-            <section class=" ">
+            <section class="formPayments ">
                 <div >
                     {{ Form::text('id1',$business->payments[1]["id"],["class"=>"hidden"]) }}
                     <p>Primer Pago: {{$business->payments[1]["payment"]}}</p>
@@ -41,7 +42,7 @@
             </section>
         @endif
         @if(count($business->payments)==3)
-            <section class=" ">
+            <section class=" formPayments">
                 <div >
                     {{ Form::text('id2',$business->payments[2]["id"],["class"=>"hidden"]) }}
                     <p>Primer Pago: {{$business->payments[2]["payment"]}}</p>
@@ -70,14 +71,25 @@
         <div>
             {{Form::label('payment','Primer Pago')}}
             {{Form::input('date','0',$business->payments[0]["payment"])}}
-            {{$errors->first('0')}}
         </div>
+
+                @if($errors->first('0'))
+                    <div class="formErrors">
+                        *{{$errors->first('0')}}
+                    </div>
+                @endif
         @else
         <div>
             {{Form::label('payment','Primer Pago')}}
             {{Form::input('date','0')}}
-            {{$errors->first('0')}}
         </div>
+
+                @if($errors->first('0'))
+                    <div class="formErrors">
+                        *{{$errors->first('0')}}
+                    </div>
+                @endif
+
         @endif
         </section>
         <section class="payment-input">
@@ -85,14 +97,22 @@
         <div>
             {{Form::label('payment','Segundo Pago')}}
             {{Form::input('date','1',$business->payments[1]["payment"])}}
-            {{$errors->first('1')}}
         </div>
+                @if($errors->first('1'))
+                    <div class="formErrors">
+                        *{{$errors->first('1')}}
+                    </div>
+                @endif
         @else
         <div>
             {{Form::label('payment','Segundo Pago')}}
             {{Form::input('date','1')}}
-            {{$errors->first('1')}}
         </div>
+                @if($errors->first('1'))
+                    <div class="formErrors">
+                        *{{$errors->first('1')}}
+                    </div>
+                @endif
         @endif
         </section>
         <section class="payment-input">
@@ -100,14 +120,22 @@
         <div>
             {{Form::label('payment','Tercer Pago')}}
             {{Form::input('date','2',$business->payments[2]["payment"])}}
-            {{$errors->first('2')}}
         </div>
+                @if($errors->first('2'))
+                    <div class="formErrors">
+                        *{{$errors->first('2')}}
+                    </div>
+                @endif
         @else
         <div>
             {{Form::label('payment','Tercer Pago')}}
             {{Form::input('date','2')}}
-            {{$errors->first('2')}}
         </div>
+                @if($errors->first('2'))
+                    <div class="formErrors">
+                        *{{$errors->first('2')}}
+                    </div>
+                @endif
         @endif
         </section>
         {{ Form::submit('Guardar Cambios') }}

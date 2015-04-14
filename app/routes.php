@@ -31,7 +31,7 @@ Route::group(array('before' => 'auth'), function()
 
     route::get('perfil', ['as' => 'profile', 'uses' => 'UserController@showProfile']);
 
-    route::get('saveImage/{id}', ['as' => 'image', 'uses' => 'UserController@changeImage']);
+    route::post('saveImage/{id}', ['as' => 'image', 'uses' => 'UserController@changeImage']);
 
     route::post('actualizardatos', ['as' => 'updateProfile', 'uses' => 'UserController@updateProfile']);
     route::post('cambiarContraseña', ['as' => 'changePassword', 'uses' => 'UserController@changePassword']);
@@ -47,6 +47,8 @@ Route::group(array('before' => 'auth'), function()
         route::post('admin/pagos/{id}',['as'=>'paymentBusiness','uses'=>'BusinessController@updatePayment']);
         route::post('admin/crearPagos/{id}',['as'=>'createPaymentBusiness','uses'=>'BusinessController@cratePayment']);
         route::get('admin/eliminarProducto/{id}',['as'=>'deleteProducts','uses'=>'ProductController@delete']);
+        route::get('admin/agregarProductos/{id}',['as'=>'createProducts','uses'=>'ProductController@showProducts']);
+        route::post('admin/agregarProductos/{id}',['as'=>'createProducts','uses'=>'ProductController@addProducts']);
     });
 
     Route::group(array('before'=>'contacts'),function(){
@@ -97,8 +99,6 @@ Route::group(array('before' => 'auth'), function()
     Route::group(array('before'=>'product'),function(){
         route::get('admin/product', ['as' => 'product', 'uses' => 'ProductController@product']);
         route::post('admin/product', ['as' => 'product', 'uses' => 'ProductController@saveProduct']);
-        route::get('admin/agregarProductos/{id}',['as'=>'createProducts','uses'=>'ProductController@showProducts']);
-        route::post('admin/agregarProductos/{id}',['as'=>'createProducts','uses'=>'ProductController@addProducts']);
         route::get('admin/actualizarProductos/{id}',['as'=>'updateProduct','uses'=>'ProductController@update']);
         route::post('admin/actualizarProductos/{id}',['as'=>'updateProduct','uses'=>'ProductController@updateSave']);
         route::get('admin/eliminarProductos/{id}',['as'=>'deleteProduct','uses'=>'ProductController@deleteProduct']);

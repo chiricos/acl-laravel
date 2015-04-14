@@ -15,7 +15,7 @@ class ContactController extends BaseController
         $total=$permiso->filtrarPermisos();
         $contacts=Contact::all();
         $business=Business::all();
-        $business_id=["seleccione una empresa"=>"seleccione una empresa"]+Business::all()->lists('name','id');
+        $business_id=[""=>"seleccione una empresa"]+Business::all()->lists('name','id');
         return View::make('front.contacts.contact',compact('business_id','total','contacts','charges','business'));
     }
 
@@ -52,7 +52,7 @@ class ContactController extends BaseController
         $total=$permiso->filtrarPermisos();
         $contacts=Contact::all();
         $business=Business::all();
-        $business_id=["seleccione una empresa"=>"seleccione una empresa"]+Business::all()->lists('name','id');
+        $business_id=[""=>"seleccione una empresa"]+Business::all()->lists('name','id');
         return View::make('front.contacts.updateContact',compact('business_id','total','contacts','charges','business','contact'));
     }
 

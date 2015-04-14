@@ -11,7 +11,7 @@
                 <section class="datesProfile">
                     <figure>
                         {{ HTML::image('user/'.$user->photo,'',array('id'=>'')) }}
-                        <a class="icon-camera" href="{{route('image',$user->id)}}"></a>
+                        <a class="icon-camera" ></a>
                     </figure>
                     <p>Username: {{$user->user_name}}</p>
                     <p>Nombre: {{$user->name}}</p>
@@ -28,6 +28,23 @@
                 <a class="buttonMaps" onclick="showForm();">Actualizar Datos</a>
                 <a class="changePassword buttonMaps" class="" >Cambiar Contraseña</a>
         </div>
+        <section class="popUp hidden">
+            <div class="popUpContent">
+                <div class="icon-cancel-circled close-popUp">
+                </div>
+                <section class="formContent">
+                    {{ Form::open(array('name'=>'form-create-user','url' => 'saveImage/'.$user->id, 'method' => 'POST')) }}
+                    <div class="profileFile">
+                        <p class="profileP">Sube tu foto</p>
+                        {{Form::file('photo',['class'=>'profilePhoto']+['id'=>'photo'])}}
+
+                    </div>
+                    <div id="request-image" > </div>
+                    {{Form::submit('Actualizar Imagen')}}
+                    {{Form::close()}}
+                </section>
+            </div>
+        </section>
         <section class="profileUpdate hidden{{ Session::get('upload') }}">
             <div class="formContent">
             {{ Form::open(array('name'=>'form-create-user','route' => 'updateProfile', 'method' => 'POST')) }}

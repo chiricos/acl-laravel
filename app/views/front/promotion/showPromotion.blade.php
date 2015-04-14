@@ -14,15 +14,33 @@
             {{Form::Text('about')}}
         </div>
 
+        @if($errors->first('about'))
+            <div class="formErrors">
+                *{{$errors->first('about')}}
+            </div>
+        @endif
+
         <div>
-            {{Form::label('text','Mensaje:')}}
-            {{Form::textarea('text')}}
+            {{Form::label('message','Mensaje:')}}
+            {{Form::textarea('message')}}
         </div>
+
+        @if($errors->first('message'))
+            <div class="formErrors">
+                *{{$errors->first('message')}}
+            </div>
+        @endif
 
         <div>
             {{Form::label('image','Imagen:')}}
             {{Form::file('image')}}
         </div>
+
+        @if($errors->first('image'))
+            <div class="formErrors">
+                *{{$errors->first('image')}}
+            </div>
+        @endif
 
         <div>
             {{Form::submit('Enviar correo a las empresas')}}

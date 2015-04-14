@@ -1,7 +1,7 @@
 @extends('layou.plantille')
 
 @section('titleContent')
-    <h1>Empresas</h1>
+    <h1>CLIENTES</h1>
 @stop
 
 @section('content')
@@ -284,7 +284,7 @@
 
                     <div>
                         {{ Form::label('state', 'Estado') }}
-                        {{ Form::select('state', $state, $updateBusiness->state) }}
+                        {{ Form::select('state', $states, $updateBusiness->state) }}
                     </div>
 
                     @if($errors->first('state'))
@@ -475,84 +475,84 @@
             </div>
             <div class="wrapperContent">
                 <section class="tableContent">
-                <h2>Clientes</h2>
-                <table class=" ">
-                    <thead>
-                    <tr>
-                        <th>Foto</th>
-                        <th>Nombre</th>
-                        <th>Estado</th>
-                        <th>Direccion</th>
-                        <th>E-mail</th>
-                        <th>Celular</th>
-                        <th>Encargado</th>
-                        <th>Acciones</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach($business as $businessClient)
-                        @if($businessClient->type==1)
-
-                            <tr>
-                                <td>{{ HTML::image('business/'.$businessClient->photo,'',array('style'=>'width: 100px;')) }}</td>
-                                <td>{{$businessClient->name}}</td>
-                                <td>{{$businessClient->state}}</td>
-                                <td>{{$businessClient->address}}</td>
-                                <td>{{$businessClient->email}}</td>
-                                <td>{{$businessClient->mobile_phone}}</td>
-                                @foreach($users as $user)
-                                    @if($user->id==$businessClient->manager)
-                                        <td>{{$user->user_name}}</td>
-                                    @endif
-                                @endforeach
-                                <td><a class="icon-folder-open" href="{{route('seeBusiness',$businessClient->id)}}"></a> <a href="{{route('updateBusiness',$businessClient->id)}}" class="icon-ccw "></a><a class="icon-plus-circled" href="{{route('createProducts',$businessClient->id)}}"></a></td>
-                            </tr>
-                        @endif
-                    @endforeach
-                    </tbody>
-
-                </table>
+                    <h2>Lista de Clientes</h2>
+                    <table class=" ">
+                        <thead>
+                        <tr>
+                            <th>Foto</th>
+                            <th>Nombre</th>
+                            <th>Estado</th>
+                            <th>Direccion</th>
+                            <th>E-mail</th>
+                            <th>Celular</th>
+                            <th>Encargado</th>
+                            <th>Acciones</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($business as $businessClient)
+                            @if($businessClient->type==1)
+                                <tr>
+                                    <td>{{ HTML::image('business/'.$businessClient->photo,'',array('style'=>'width: 100px;')) }}</td>
+                                    <td>{{$businessClient->name}}</td>
+                                    <td>{{$businessClient->state}}</td>
+                                    <td>{{$businessClient->address}}</td>
+                                    <td>{{$businessClient->email}}</td>
+                                    <td>{{$businessClient->mobile_phone}}</td>
+                                    @foreach($users as $user)
+                                        @if($user->id==$businessClient->manager)
+                                            <td>{{$user->user_name}}</td>
+                                        @endif
+                                    @endforeach
+                                    <td><a class="icon-folder-open" href="{{route('seeBusiness',$businessClient->id)}}"></a> <a href="{{route('updateBusiness',$businessClient->id)}}" class="icon-ccw "></a><a class="icon-plus-circled" href="{{route('createProducts',$businessClient->id)}}"></a></td>
+                                </tr>
+                            @endif
+                        @endforeach
+                        </tbody>
+                    </table>
                 </section>
-                </div>
+            </div>
             <div class="wrapperContent">
                 <section class="tableContent">
-                <h2>Prospectos</h2>
-                <table class=" ">
-                    <thead>
-                    <tr>
-                        <th>Foto</th>
-                        <th>Nombre</th>
-                        <th>Estado</th>
-                        <th>Direccion</th>
-                        <th>E-mail</th>
-                        <th>Celular</th>
-                        <th>Encargado</th>
-                        <th>Acciones</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach($business as $businessClient)
-                        @if($businessClient->type==2)
+                    <h2>Lista de prospectos Prospectos-Cotizacion</h2>
+                    <table class=" ">
+                        <thead>
+                        <tr>
+                            <th>Foto</th>
+                            <th>Nombre</th>
+                            <th>Estado</th>
+                            <th>Direccion</th>
+                            <th>E-mail</th>
+                            <th>Celular</th>
+                            <th>Encargado</th>
+                            <th>Acciones</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($business as $businessClient)
+                            @if($businessClient->type==2)
 
-                            <tr>
-                                <td>{{ HTML::image('business/'.$businessClient->photo,'',array('style'=>'width: 100px;')) }}</td>
-                                <td>{{$businessClient->name}}</td>
-                                <td>{{$businessClient->state}}</td>
-                                <td>{{$businessClient->address}}</td>
-                                <td>{{$businessClient->email}}</td>
-                                <td>{{$businessClient->mobile_phone}}</td>
-                                @foreach($users as $user)
-                                    @if($user->id==$businessClient->manager)
-                                        <td>{{$user->user_name}}</td>
-                                    @endif
-                                @endforeach
-                                <td><a class="icon-folder-open" href="{{route('seeBusiness',$businessClient->id)}}"></a> <a href="{{route('updateBusiness',$businessClient->id)}}" class="icon-ccw "></a></td>
-                            </tr>
-                        @endif
-                    @endforeach
-                    </tbody>
-                </table>
-            </section>
+                                <tr>
+                                    <td>{{ HTML::image('business/'.$businessClient->photo,'',array('style'=>'width: 100px;')) }}</td>
+                                    <td>{{$businessClient->name}}</td>
+                                    <td>{{$businessClient->state}}</td>
+                                    <td>{{$businessClient->address}}</td>
+                                    <td>{{$businessClient->email}}</td>
+                                    <td>{{$businessClient->mobile_phone}}</td>
+                                    @foreach($users as $user)
+                                        @if($user->id==$businessClient->manager)
+                                            <td>{{$user->user_name}}</td>
+                                        @endif
+                                    @endforeach
+                                    <td><a class="icon-folder-open" href="{{route('seeBusiness',$businessClient->id)}}"></a> <a href="{{route('updateBusiness',$businessClient->id)}}" class="icon-ccw "></a></td>
+                                </tr>
+                            @endif
+                        @endforeach
+                        </tbody>
+                    </table>
+
+                </section>
+
             </div>
 
         </div>

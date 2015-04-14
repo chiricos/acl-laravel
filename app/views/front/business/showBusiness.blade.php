@@ -1,7 +1,8 @@
+
 @extends('layou.plantille')
 
 @section('titleContent')
-    <h1>Empresas</h1>
+    <h1>CLIENTES</h1>
 @stop
 
 @section('content')
@@ -275,7 +276,7 @@
 
                     <div>
                         {{ Form::label('state', 'Estado') }}
-                        {{ Form::select('state', $state, null) }}
+                        {{ Form::select('state', $states, null) }}
                     </div>
 
                     @if($errors->first('state'))
@@ -465,7 +466,7 @@
 
         <div class="wrapperContent">
             <section class="tableContent">
-                <h2>Clientes</h2>
+                <h2>Lista de Clientes</h2>
                         <table class=" ">
                             <thead>
                                 <tr>
@@ -504,7 +505,7 @@
             </div>
             <div class="wrapperContent">
                 <section class="tableContent">
-                <h2>Prospectos</h2>
+                <h2>Lista de prospectos Prospectos-Cotizacion</h2>
                 <table class=" ">
                     <thead>
                     <tr>
