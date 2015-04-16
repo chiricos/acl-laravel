@@ -33,12 +33,16 @@
                 <div class="icon-cancel-circled close-popUp">
                 </div>
                 <section class="formContent">
-                    {{ Form::open(array('name'=>'form-create-user','url' => 'saveImage/'.$user->id, 'method' => 'POST')) }}
+                    {{ Form::open(array('name'=>'form-create-user','url' => 'saveImage/'.$user->id, 'method' => 'POST','files'=>true)) }}
                     <div class="profileFile">
                         <p class="profileP">Sube tu foto</p>
                         {{Form::file('photo',['class'=>'profilePhoto']+['id'=>'photo'])}}
-
                     </div>
+                    @if($errors->first('photo'))
+                        <div class="formErrors">
+                            *{{$errors->first('photo')}}
+                        </div>
+                    @endif
                     <div id="request-image" > </div>
                     {{Form::submit('Actualizar Imagen')}}
                     {{Form::close()}}

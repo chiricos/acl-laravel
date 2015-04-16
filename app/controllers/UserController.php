@@ -313,6 +313,22 @@ class UserController extends BaseController
     {
         $imageManager=new ChangeImageManager(new User(),Input::all());
         $imageValidator=$imageManager->isValid();
-        drawde('flata por terminar por que me di cuenta que faltan cosas');
+        if($imageValidator)
+        {
+            return Redirect::back()->with('message_error','no se pudo actualizar la foto')->withInput();
+        }
+        $img=$imageManager->changeImage($id);
+        if($img)
+        {
+            new LogRepo(
+                [
+                    'responsible'=> Auth::user()->user_name,
+                    'responsible_id'=> Auth::user()->id,
+                    'action' => 'ha actualizado su foto de perfil',
+                ]
+            );
+            return Redirect::back()->with('message','la foto se guardo correctamente');
+        }
+        return Redirect::back()->with('message_error','la foto no se guardo correctamente');
     }
 }

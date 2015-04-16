@@ -11,6 +11,17 @@
             <a class="buttonA" href="{{route('createUser')}}">crear usuario</a>
         @endif
     @endif
+    <div>
+        {{ Form::open(array('name'=>'form-update-permission','route' => 'product', 'method' => 'POST')) }}
+        <div>
+
+            {{Form::text('search')}}
+            <button>
+                {{ HTML::image('img/search.png','',array('id'=>'')) }}
+            </button>
+            {{Form::close()}}
+        </div>
+    </div>
     <div class="wrapperContent">
     @if(Auth::user()->role_id==1)
         <table class="tableContent">

@@ -1,6 +1,8 @@
 <?php
 namespace cerverus\Managers;
 
+use cerverus\Entities\User;
+
 class ChangeImageManager extends BaseManager
 {
 
@@ -8,7 +10,7 @@ class ChangeImageManager extends BaseManager
     {
             $rules=[
 
-                'photo'                 => 'require|image'
+                'photo'                 => 'image'
             ];
         return  $rules;
     }
@@ -28,26 +30,23 @@ class ChangeImageManager extends BaseManager
         return $messages;
     }
 
-    public function changeImage()
+    public function changeImage($id)
     {
+        $user=User::find($id);
         $file=$this->data["photo"];
         if($this->data["photo"]=="")
         {
-            $this->data["photo"]=$this->entity->photo;
+            $this->data['photo']=$user->photo;
         }else{
             $before = str_random(15);
-            $destinationPath="business";
+            $destinationPath="user";
             $this->data["photo"]=$before.$file->getClientOriginalName();
             $file->move($destinationPath, $before.$file->getClientOriginalName());
         }
-        $this->entity->fill($this->data);
-        if($this->entity->update($this->data))
+        $user->fill($this->data);
+        if($user->update($this->data))
         {
-            if($this->data["type"]==1)
-            {
-                return "Cliente";
-            }
-            return "Prospecto";
+            return true;
         }
         return false;
     }
