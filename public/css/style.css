@@ -578,3 +578,14 @@ input[type=submit]{
     text-align: center;
     width: 100%;
 }
+
+
+/********************************* BUTTON SEARCH ********************************/
+
+.buttonSearch{
+    width: 200px;
+}
+
+.buttonSearch img{
+    width: 20px;
+}

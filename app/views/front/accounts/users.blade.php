@@ -13,12 +13,11 @@
     @endif
     <div>
         {{ Form::open(array('name'=>'form-update-permission','route' => 'product', 'method' => 'POST')) }}
-        <div>
-
-            {{Form::text('search')}}
-            <button>
+        <div class="buttonSearch">
+            <div>
+                {{Form::text('search')}}
+            </div>
                 {{ HTML::image('img/search.png','',array('id'=>'')) }}
-            </button>
             {{Form::close()}}
         </div>
     </div>
