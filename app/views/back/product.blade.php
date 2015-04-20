@@ -5,48 +5,70 @@
 @stop
 
 @section('content')
+    <div  class="" >
+        <a href="{{route('createProduct')}}">Crear producto</a>
+        <a class="seeCategory">Ver por categorias</a>
+    </div>
 
-    <section class="formContent">
-        <a class="icon-lock"></a>
-        {{ Form::open(array('name'=>'form-update-permission','route' => 'product', 'method' => 'POST')) }}
-        <h2>Crear Productos</h2>
-        <div>
-            {{Form::label('id','Id del producto:')}}
-            {{Form::text('id')}}
-        </div>
-
-        @if($errors->first('id'))
-            <div class="formErrors">
-                *{{$errors->first('id')}}
+    <div class="">
+        {{ Form::open(array('name'=>'form','route' => 'productSearch', 'method' => 'POST','class'=>'formSearch')) }}
+        <div class="buttonSearch">
+            <div>
+                {{Form::text('search')}}
             </div>
-        @endif
 
-        <div>
-            {{Form::label('dependency','dependencia:')}}
-            {{ Form::select('dependency',$services) }}
+            <button>{{ HTML::image('img/search.png','',array('id'=>'')) }}</button>
+            {{Form::close()}}
         </div>
+    </div>
 
-        @if($errors->first('dependency'))
-            <div class="formErrors">
-                *{{$errors->first('dependency')}}
-            </div>
-        @endif
+    <div class="wrapperContent ">
+        <section class="tableContent">
+            <h2>Productos</h2>
+            <table class=" ">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Seccion</th>
+                    <th>Acciones</th>
+                </tr>
+                </thead>
+                <tbody>
 
-        <div>
-            {{Form::label('name','Nombre:')}}
-            {{ Form::text('name') }}
-        </div>
+                @foreach($products as $product)
+                        <tr>
+                            <td>{{$product->id}}</td>
+                            <td>{{$product->name}}</td>
+                            @if($product->dependency==1)
+                                <td>Branding</td>
+                            @endif
+                            @if($product->dependency==2)
+                                <td>Web y App</td>
+                            @endif
+                            @if($product->dependency==3)
+                                <td>Marketing</td>
+                            @endif
+                            @if($product->dependency==4)
+                                <td>Produccion Audiovisual</td>
+                            @endif
+                            @if($product->dependency==5)
+                                <td>Estrategia</td>
+                            @endif
+                            @if($product->dependency==6)
+                                <td>Impresion</td>
+                            @endif
+                            <td><a class="icon-ccw " href="{{route('updateProduct',$product->id)}}"></a><a  class="icon-trash " href="{{route('deleteProduct',$product->id)}}"></a></td>
+                        </tr>
 
-        @if($errors->first('name'))
-            <div class="formErrors">
-                *{{$errors->first('name')}}
-            </div>
-        @endif
+                @endforeach
+                </tbody>
+            </table>
 
-        {{Form::submit('guardar producto')}}
-        {{Form::close()}}
-    </section>
-    <div class="wrapperContent">
+        </section>
+    </div>
+<section class="category hidden">
+    <div class="wrapperContent ">
         <section class="tableContent">
             <h2>BRANDING</h2>
             <table class=" ">
@@ -208,5 +230,5 @@
 
         </section>
     </div>
-
+</section>
 @stop

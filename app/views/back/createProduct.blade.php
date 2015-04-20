@@ -5,11 +5,13 @@
 @stop
 
 @section('content')
+
     <section class="formContent">
-        {{ Form::open(array('name'=>'form-update-permission','url' => 'admin/actualizarProductos/'.$updateProduct->id, 'method' => 'POST')) }}
+        {{ Form::open(array('name'=>'form-update-permission','route' => 'createProduct', 'method' => 'POST')) }}
+        <h2>Crear Productos</h2>
         <div>
             {{Form::label('id','Id del producto:')}}
-            {{Form::text('id',$updateProduct->id)}}
+            {{Form::text('id')}}
         </div>
 
         @if($errors->first('id'))
@@ -20,7 +22,7 @@
 
         <div>
             {{Form::label('dependency','dependencia:')}}
-            {{ Form::select('dependency',$services,$updateProduct->dependency) }}
+            {{ Form::select('dependency',$services) }}
         </div>
 
         @if($errors->first('dependency'))
@@ -31,7 +33,7 @@
 
         <div>
             {{Form::label('name','Nombre:')}}
-            {{ Form::text('name',$updateProduct->name) }}
+            {{ Form::text('name') }}
         </div>
 
         @if($errors->first('name'))
@@ -40,7 +42,7 @@
             </div>
         @endif
 
-        {{Form::submit('Actualizar Producto')}}
+        {{Form::submit('guardar producto')}}
         {{Form::close()}}
     </section>
 

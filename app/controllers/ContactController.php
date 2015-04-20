@@ -43,7 +43,26 @@ class ContactController extends BaseController
         return Redirect::route('contacts')->with('message_error','el contacto fue creado correctamente');
     }
 
-
+    public function searchContacts()
+    {
+        $permiso =new Proceso();
+        $total=$permiso->filtrarPermisos();
+        $contacts= DB::table('contacts')
+            ->where('name', 'LIKE', "%".Input::get('search')."%")
+            ->orWhere('last_name', 'LIKE', "%".Input::get('search')."%")
+            ->orWhere('phone', 'LIKE', "%".Input::get('search')."%")
+            ->orWhere('mobile_phone', 'LIKE', "%".Input::get('search')."%")
+            ->orWhere('email', 'LIKE', "%".Input::get('search')."%")
+            ->orWhere('charge', 'LIKE', "%".Input::get('search')."%")
+            ->get();
+        if(Input::get('search')=="")
+        {
+            $contacts=Contact::all();
+        }
+        $business=Business::all();
+        $business_id=[""=>"seleccione una empresa"]+Business::all()->lists('name','id');
+        return View::make('front.contacts.contact',compact('business_id','total','contacts','charges','business'));
+    }
 
     public function showUpdateContact($id)
     {

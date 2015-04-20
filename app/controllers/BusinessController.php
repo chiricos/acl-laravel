@@ -34,6 +34,45 @@ class BusinessController extends BaseController
 
     }
 
+    public function createBusiness()
+    {
+        $permiso =new Proceso();
+        $total=$permiso->filtrarPermisos();
+        if(Auth::user()->role_id==3)
+        {
+            $business=Business::where('manager','=',Auth::user()->id)->get();
+        }else{
+            $business=Business::all();
+        }
+        $users=User::all();
+        $userRepo=new UserRepo();
+        $managers=$userRepo->getManager(Auth::user()->id,Auth::user()->role_id,Auth::user()->user_name);
+        $state=$userRepo->getState();
+        $states=$userRepo->getStates();
+        return View::make('front.business.createBusiness',compact('business','total','managers','state','states','users'));
+    }
+
+    public function searchBusiness()
+    {
+        $permiso =new Proceso();
+        $total=$permiso->filtrarPermisos();
+        $userRepo=new UserRepo();
+        $managers=$userRepo->getManager(Auth::user()->id,Auth::user()->role_id,Auth::user()->user_name);
+        $state=$userRepo->getState();
+        $states=$userRepo->getStates();
+        $users=User::all();
+        $business= DB::table('business')
+            ->where('name', 'LIKE', "%".Input::get('search')."%")
+            ->orWhere('email', 'LIKE', "%".Input::get('search')."%")
+            ->orWhere('mobile_phone', 'LIKE', "%".Input::get('search')."%")
+            ->get();
+        if(Input::get('search')=="")
+        {
+                $business=Business::all();
+        }
+        return View::make('front.business.showBusiness',compact('business','total','managers','state','states','users'));
+    }
+
     public function saveBusiness()
     {
 
@@ -41,7 +80,7 @@ class BusinessController extends BaseController
         $businessValidator=$businessManager->isValid();
         if($businessValidator)
         {
-            return Redirect::route('business')->with('type', Input::get('type'))->withErrors($businessValidator)->withInput();
+            return Redirect::route('createBusiness')->with('type', Input::get('type'))->withErrors($businessValidator)->withInput();
         }
         $businessName=$businessManager->saveBusiness();
         if($businessName){

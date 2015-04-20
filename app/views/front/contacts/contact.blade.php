@@ -5,7 +5,10 @@
 @stop
 
 @section('content')
+
     <p class="new-contact buttonA">nuevo contacto</p>
+
+
 <div>
 
     <div class="content-contact hidden contact{{Session::get('see')}} formContent">
@@ -94,7 +97,17 @@
         {{ Form::close() }}
 
     </div>
+    <div class="">
+        {{ Form::open(array('name'=>'form','route' => 'searchContacts', 'method' => 'POST','class'=>'formSearch')) }}
+        <div class="buttonSearch">
+            <div>
+                {{Form::text('search')}}
+            </div>
 
+            <button>{{ HTML::image('img/search.png','',array('id'=>'')) }}</button>
+            {{Form::close()}}
+        </div>
+    </div>
     <div class=" wrapperContent">
         <div class="tableContent">
             <h2>Contactos</h2>

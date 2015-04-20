@@ -10,6 +10,7 @@ use cerverus\Managers\UpdateProfileManager;
 use cerverus\Managers\UserManager;
 use cerverus\Repositories\LogRepo;
 use cerverus\Managers\EmailManager;
+use cerverus\Repositories\UserRepo;
 
 class UserController extends BaseController
 {
@@ -18,6 +19,25 @@ class UserController extends BaseController
         $permiso =new Proceso();
         $total=$permiso->filtrarPermisos();
         $users=User::all();
+        return View::make('front.accounts.users',compact('users','total'));
+    }
+
+    public function userSearch()
+    {
+        $permiso =new Proceso();
+        $total=$permiso->filtrarPermisos();
+        $userRepo=new UserRepo();
+        $users= DB::table('users')
+            ->where('name', 'LIKE', "%".Input::get('search')."%")
+            ->orWhere('last_name', 'LIKE', "%".Input::get('search')."%")
+            ->orWhere('user_name', 'LIKE', "%".Input::get('search')."%")
+            ->orWhere('email', 'LIKE', "%".Input::get('search')."%")
+            ->orWhere('role_id', '=',$userRepo->changeString(Input::get('search')))
+            ->get();
+        if(Input::get('search')=="")
+        {
+            $users=User::all();
+        }
         return View::make('front.accounts.users',compact('users','total'));
     }
 

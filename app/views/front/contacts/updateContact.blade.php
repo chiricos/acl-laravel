@@ -97,46 +97,7 @@
 
         </div>
 
-        <div class="wrapperContent">
-            <section class="tableContent">
-                <h2>Contactos</h2>
-                <table class=" ">
 
-                    <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Telefono</th>
-                        <th>Celular</th>
-                        <th>E-mail</th>
-                        <th>Cargo</th>
-                        <th>Empresa</th>
-                        <th>Actualizar</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    @foreach($contacts as $contact)
-                        <tr>
-                            <td>{{$contact->name}}</td>
-                            <td>{{$contact->last_name}}</td>
-                            <td>{{$contact->phone}}</td>
-                            <td>{{$contact->mobile_phone}}</td>
-                            <td>{{$contact->email}}</td>
-                            <td>{{$contact->charge}}</td>
-
-                            @foreach($business as $businessContact)
-                                @if($businessContact->id==$contact->business_id)
-                                    <td>{{$businessContact->name}}</td>
-                                @endif
-                            @endforeach
-                            <td><a class="icon-ccw" href="{{route('updateContacts',$contact->id)}}"></a></td>
-                        </tr>
-                    @endforeach
-                    </tbody>
-                </table>
-
-            </section>
-        </div>
 
 
 

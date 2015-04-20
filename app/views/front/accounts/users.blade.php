@@ -11,13 +11,14 @@
             <a class="buttonA" href="{{route('createUser')}}">crear usuario</a>
         @endif
     @endif
-    <div>
-        {{ Form::open(array('name'=>'form-update-permission','route' => 'product', 'method' => 'POST')) }}
+    <div class="">
+        {{ Form::open(array('name'=>'form','route' => 'administrator', 'method' => 'POST','class'=>'formSearch')) }}
         <div class="buttonSearch">
             <div>
                 {{Form::text('search')}}
             </div>
-                {{ HTML::image('img/search.png','',array('id'=>'')) }}
+
+                <button>{{ HTML::image('img/search.png','',array('id'=>'')) }}</button>
             {{Form::close()}}
         </div>
     </div>

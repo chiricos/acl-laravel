@@ -73,4 +73,20 @@ class UserRepo extends BaseRepo
         +['5'=>'Segunda llamada']
         +['6'=>'Negociacion'];
     }
+
+    public function changeString($number)
+    {
+        if($number=="super administrador" or $number=="Super Administrador")
+        {
+            return 1;
+        }
+        if($number=="administrador" or $number=="Administrador")
+        {
+            return 2;
+        }
+        if($number=="vendedor" or $number=="Vendedor")
+        {
+            return 3;
+        }
+    }
 }

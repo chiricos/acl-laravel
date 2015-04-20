@@ -7,6 +7,14 @@ $(document).on('ready', function() {
            this.value='';
        }
     });
+    $('#quantity').on('change',function()
+    {
+        if(this.value<1)
+        {
+            alert('El valor debe ser positivo');
+            this.value='';
+        }
+    });
     var b=0;
     $('.icon-users').on('click',function()
     {

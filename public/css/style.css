@@ -23,7 +23,7 @@
     font-family: "cerveruus";
     font-style: normal;
     font-weight: normal;
-    speak: none;
+    /*speak: none;*/
 
     display: inline-block;
     text-decoration: inherit;
@@ -137,9 +137,11 @@ h2{
 }
 
 body, html{
-    background: #F3F3F4;
+    background: white;
     font-size: 13px;
     font-family: 'Oswald', sans-serif;
+    height: 100%;
+    min-height: 100%;
     margin: 0;
     padding: 0;
 }
@@ -161,13 +163,13 @@ a{
 .message{
     color: green;
     margin-right: -10px;
-    padding-left: 8%;
+    padding-left: 6%;
 }
 
 .messageError{
     color: red;
     margin-right: -10px;
-    padding-left: 8%;
+    padding-left: 6%;
 }
 
 /****************************** HEADER *******************************/
@@ -254,12 +256,12 @@ header nav a:hover{
 }
 
 .wrapperBody1{
+
     width: 82.8125%;
     margin-right: -4px;
 }
 
 .row {
-    border-bottom: 1px solid rgba(172, 177, 181, 0.65);
     height: 34px;
     width: 100%;
 }
@@ -582,10 +584,31 @@ input[type=submit]{
 
 /********************************* BUTTON SEARCH ********************************/
 
+
+.formSearch{
+
+    width: 100%;
+}
+
+.formSearch button{
+    width: 26px;
+    float: right;
+    margin: -27px 10px;
+    position: relative;
+    height: 24px;
+    background: white;
+    border: none;
+}
+
 .buttonSearch{
+    margin-left: 80%;
     width: 200px;
 }
 
 .buttonSearch img{
     width: 20px;
+    float: right;
+    margin: -11px -4px;
+    position: relative;
 }
+
