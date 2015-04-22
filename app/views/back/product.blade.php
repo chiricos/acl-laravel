@@ -6,8 +6,8 @@
 
 @section('content')
     <div  class="" >
-        <a href="{{route('createProduct')}}">Crear producto</a>
-        <a class="seeCategory">Ver por categorias</a>
+        <a href="{{route('createProduct')}}" class="buttonA business">Crear producto</a>
+        <a class="seeCategory buttonA business-fixed">Ver por categorias</a>
     </div>
 
     <div class="">

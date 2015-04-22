@@ -16,17 +16,24 @@
                     {{ Form::text('type',$updateBusiness->type,['class'=>'hidden  update-business']) }}
                     {{ Form::text('id',$updateBusiness->id,['class'=>'hidden ']) }}
 
-                    <div>
-                        {{Form::label('manager','Encargado','',array('id'=>'manager'))}}
-                        {{ Form::select('manager', $managers, $updateBusiness->manager, array('id' => 'manager')) }}
-                    </div>
-
-                    @if($errors->first('manager'))
-                        <div class="formErrors">
-                            *{{$errors->first('manager')}}
+                    @if(Auth::user()->role_id==3)
+                        <div class="hidden">
+                            {{Form::label('manager','Encargado','',array('id'=>'manager'))}}
+                            {{ Form::select('manager', $managers, $updateBusiness->manager, array('id' => 'manager')) }}
                         </div>
-                    @endif
 
+                    @else
+                        <div>
+                            {{Form::label('manager','Encargado','',array('id'=>'manager'))}}
+                            {{ Form::select('manager', $managers, $updateBusiness->manager, array('id' => 'manager')) }}
+                        </div>
+
+                        @if($errors->first('manager'))
+                            <div class="formErrors">
+                                *{{$errors->first('manager')}}
+                            </div>
+                        @endif
+                    @endif
 
                     <div>
                         {{ Form::label('name', 'Nombre') }}
@@ -256,17 +263,25 @@
                     {{ Form::open(array('name'=>'form-show-business-two','url' => 'admin/actualizarEmpresa/'.$updateBusiness->id,'files'=>true, 'method' => 'POST')) }}
                     {{ Form::text('type',$updateBusiness->type,['class'=>'hidden  update-business']) }}
                     {{ Form::text('id',$updateBusiness->id,['class'=>'hidden ']) }}
-                    <div>
-                        {{Form::label('manager','Encargado','',array('id'=>'manager'))}}
-                        {{ Form::select('manager', $managers, $updateBusiness->manager, array('id' => 'manager')) }}
-                    </div>
 
-                    @if($errors->first('manager'))
-                        <div class="formErrors">
-                            *{{$errors->first('manager')}}
+                    @if(Auth::user()->role_id==3)
+                        <div class="hidden">
+                            {{Form::label('manager','Encargado','',array('id'=>'manager'))}}
+                            {{ Form::select('manager', $managers, $updateBusiness->manager, array('id' => 'manager')) }}
                         </div>
-                    @endif
 
+                    @else
+                        <div>
+                            {{Form::label('manager','Encargado','',array('id'=>'manager'))}}
+                            {{ Form::select('manager', $managers, $updateBusiness->manager, array('id' => 'manager')) }}
+                        </div>
+
+                        @if($errors->first('manager'))
+                            <div class="formErrors">
+                                *{{$errors->first('manager')}}
+                            </div>
+                        @endif
+                    @endif
 
                     <div>
                         {{ Form::label('name', 'Nombre') }}

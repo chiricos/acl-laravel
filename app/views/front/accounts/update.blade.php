@@ -78,26 +78,39 @@
             </div>
         @endif
 
-        <div>
-            {{ Form::label('role_id', 'Role') }}
-            {{ Form::select('role_id', $charges, $user->role_id, array('id' => 'role_id')) }}
-        </div>
-
-        @if($errors->first('role_id'))
-            <div class="formErrors">
-                *{{$errors->first('role_id')}}
+        @if(Auth::user()->role_id>1)
+            <div class="hidden">
+                {{ Form::label('role_id', 'Role') }}
+                {{ Form::select('role_id', $charges, $user->role_id, array('id' => 'role_id')) }}
             </div>
-        @endif
 
-        <div class="create-manager">
-            {{Form::label('manager','Encargado','',array('class'=>'manager'))}}
-            {{ Form::select('manager', $managers, $user->manager, array('id' => 'manager')) }}
-        </div>
-
-        @if(Session::get('manager'))
-            <div class="formErrors">
-                *{{Session::get('manager')}}
+            <div class="create-manager hidden">
+                {{Form::label('manager','Encargado','',array('class'=>'manager'))}}
+                {{ Form::select('manager', $managers, $user->manager, array('id' => 'manager')) }}
             </div>
+
+        @else
+            <div>
+                {{ Form::label('role_id', 'Role') }}
+                {{ Form::select('role_id', $charges, $user->role_id, array('id' => 'role_id')) }}
+            </div>
+
+            @if($errors->first('role_id'))
+                <div class="formErrors">
+                    *{{$errors->first('role_id')}}
+                </div>
+            @endif
+
+            <div class="create-manager">
+                {{Form::label('manager','Encargado','',array('class'=>'manager'))}}
+                {{ Form::select('manager', $managers, $user->manager, array('id' => 'manager')) }}
+            </div>
+
+            @if(Session::get('manager'))
+                <div class="formErrors">
+                    *{{Session::get('manager')}}
+                </div>
+            @endif
         @endif
 
         {{ Form::submit('Actualizar usuario') }}

@@ -51,15 +51,13 @@ class UserController extends BaseController
                 +[ 3 => "vendedor"]
                 +[ 2 => "administrador"]
                 +[ 1 => "super administrador"];
-            $managers = [ "0" => "selecione un encargado"]
+            $managers = [ "" => "selecione un encargado"]
                 +User::whereRaw('role_id=2')->lists('user_name','id');
         }
         if(Auth::user()->role_id==2)
         {
-            $charges= [ ''=> "seleccione un role"]
-                +[ 3 => "vendedor"];
-            $managers = [ "0" => "selecione un encargado"]
-                +["".Auth::user()->id.""=>"".Auth::user()->user_name.""];
+            $charges= [ 3 => "vendedor"];
+            $managers = ["".Auth::user()->id.""=>"".Auth::user()->user_name.""];
         }
         if(Auth::user()->role_id==3)
         {
@@ -110,15 +108,24 @@ class UserController extends BaseController
         $user=User::find($id);
         $managers = [ "0" => "selecione un encargado"]
             +User::whereRaw('role_id=2')->lists('user_name','id');
-        if(Auth::user()->role_id==1){
-            $charges= [ 'seleccione un role'=> "seleccione un role"]
+        if(Auth::user()->role_id==1)
+        {
+            $charges= [ ''=> "seleccione un role"]
                 +[ 3 => "vendedor"]
                 +[ 2 => "administrador"]
                 +[ 1 => "super administrador"];
-        }else{
-            $charges= [ 'seleccione un role'=> "seleccione un role"]
-                +[ 2 => "administrador"]
-                +[ 3 => "vendedor"];
+            $managers = [ "" => "selecione un encargado"]
+                +User::whereRaw('role_id=2')->lists('user_name','id');
+        }
+        if(Auth::user()->role_id==2)
+        {
+            $charges= [ 3 => "vendedor"];
+            $managers = ["".Auth::user()->id.""=>"".Auth::user()->user_name.""];
+        }
+        if(Auth::user()->role_id==3)
+        {
+            $charges= [ 'seleccione un role'=> "seleccione un role"];
+            $managers = [ "0" => "selecione un encargado"];
         }
         return View::make('front.accounts.update',compact('user','total','managers','charges'));
     }

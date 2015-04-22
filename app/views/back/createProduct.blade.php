@@ -5,7 +5,7 @@
 @stop
 
 @section('content')
-
+    <a href="{{route('product')}}" class="icon-reply back"></a>
     <section class="formContent">
         {{ Form::open(array('name'=>'form-update-permission','route' => 'createProduct', 'method' => 'POST')) }}
         <h2>Crear Productos</h2>

@@ -75,7 +75,6 @@ class BusinessController extends BaseController
 
     public function saveBusiness()
     {
-
         $businessManager=new BusinessManager(new Business(),Input::all());
         $businessValidator=$businessManager->isValid();
         if($businessValidator)

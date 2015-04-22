@@ -107,7 +107,7 @@
 
         </section>
     </div>
-
+    <a href="{{route('addProducts',$business->id)}}" class="buttonA">agregar un producto a cotizar</a>
         <section class="business-states">
             <p class="get-type hidden">{{$business->type}}</p>
             <p class="get-state hidden">{{$business->state}}</p>
@@ -115,7 +115,7 @@
                 <h2>Estado del cliente</h2>
 
                 {{ Form::open(array('name'=>'form-see-business','url' => 'admin/verEmpresa/'.$business->id, 'method' => 'POST')) }}
-                <a href="{{route('addProducts',$business->id)}}">agregar un producto a cotizar</a>
+
                 <details class="state-input hidden">
                     <summary><h3>cotizacion oridnaria</h3></summary>
                     <p class="state-p0">Comentarios: {{$business->record["state_one"]}}</p>

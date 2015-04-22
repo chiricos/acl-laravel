@@ -19,16 +19,24 @@
 
                         {{ Form::open(array('name'=>'form-show-business','route' => 'createBusiness','files'=>true, 'method' => 'POST')) }}
                         {{ Form::text('type','',['class'=>'hidden business1']) }}
-                        <div>
 
-                            {{Form::label('manager','Encargado','',array('id'=>'manager'))}}
-                            {{ Form::select('manager', $managers, null, array('id' => 'manager')) }}
-                        </div>
-
-                        @if($errors->first('manager'))
-                            <div class="formErrors">
-                                *{{$errors->first('manager')}}
+                        @if(Auth::user()->role_id==3)
+                            <div class="hidden">
+                                {{Form::label('manager','Encargado','',array('id'=>'manager'))}}
+                                {{ Form::select('manager', $managers, null, array('id' => 'manager')) }}
                             </div>
+
+                        @else
+                            <div>
+                                {{Form::label('manager','Encargado','',array('id'=>'manager'))}}
+                                {{ Form::select('manager', $managers, null, array('id' => 'manager')) }}
+                            </div>
+
+                            @if($errors->first('manager'))
+                                <div class="formErrors">
+                                    *{{$errors->first('manager')}}
+                                </div>
+                            @endif
                         @endif
 
                         <div>
@@ -249,17 +257,26 @@
                     <div class="formContent">
                         {{ Form::open(array('name'=>'form-show-business-two','route' => 'createBusiness','files'=>true, 'method' => 'POST')) }}
                         {{ Form::text('type','',['class'=>'hidden business2']) }}
-                        <div>
 
-                            {{Form::label('manager','Encargado','',array('id'=>'manager'))}}
-                            {{ Form::select('manager', $managers, null, array('id' => 'manager')) }}
-                        </div>
-
-                        @if($errors->first('manager'))
-                            <div class="formErrors">
-                                *{{$errors->first('manager')}}
+                        @if(Auth::user()->role_id==3)
+                            <div class="hidden">
+                                {{Form::label('manager','Encargado','',array('id'=>'manager'))}}
+                                {{ Form::select('manager', $managers, null, array('id' => 'manager')) }}
                             </div>
+
+                        @else
+                            <div>
+                                {{Form::label('manager','Encargado','',array('id'=>'manager'))}}
+                                {{ Form::select('manager', $managers, null, array('id' => 'manager')) }}
+                            </div>
+
+                            @if($errors->first('manager'))
+                                <div class="formErrors">
+                                    *{{$errors->first('manager')}}
+                                </div>
+                            @endif
                         @endif
+
 
                         <div>
                             {{ Form::label('name', 'Nombre') }}

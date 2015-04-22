@@ -6,7 +6,7 @@
 @stop
 
 @section('content')
-    <a href="{{route('createBusiness')}}">crear</a>
+    <a href="{{route('createBusiness')}} " class="buttonA">crear</a>
     <div class="">
         {{ Form::open(array('name'=>'form','route' => 'Business', 'method' => 'POST','class'=>'formSearch')) }}
         <div class="buttonSearch">

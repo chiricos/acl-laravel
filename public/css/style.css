@@ -446,7 +446,9 @@ input[type=submit]{
 /*********************************** BUTTON A ****************************/
 
 .buttonA{
-    border-bottom: 2px solid ;
+    border: 1px solid;
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px;
     color: rgb(159, 159, 160);
     cursor: pointer;
     display: block;
