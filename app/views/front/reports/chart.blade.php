@@ -59,9 +59,9 @@
             data.addColumn('string', 'Topping');
             data.addColumn('number', 'Slices');
             data.addRows([
-                ['('+business+') Cliente', parseInt(business)],
-                ['('+client+') Prospecto', parseInt(client)],
-                ['('+recurrent+') Recurrente', parseInt(recurrent)]
+                ['('+business+') Clientes', parseInt(business)],
+                ['('+client+') Prospectos', parseInt(client)],
+                ['('+recurrent+') Recurrentes', parseInt(recurrent)]
             ]);
 
             // Set chart options
