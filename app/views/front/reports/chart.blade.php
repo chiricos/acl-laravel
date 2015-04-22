@@ -6,9 +6,32 @@
 
 @section('content')
 
-    <input class="countBusiness" value="{{count($business)}}">
-    <input class="countClient" value="{{count($client)}}">
-    <div id="chart_div"></div>
+    <section class="reports">
+        <div id="chart_div">
+            <input class="countBusiness hidden" value="{{count($business)}}">
+            <input class="countClient hidden" value="{{count($client)}}">
+            <input class="countRecurrent hidden" value="{{$recurrent}}">
+        </div>
+    </section>
+
+    <div class="wrapperReports">
+        <table class="tableContent">
+            <thead>
+                <tr>
+                    <th>Vendedor</th>
+                    <th>clientes</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach($users as $user)
+                <tr>
+                    <td>{{$user->name}} {{$user->last_name}}</td>
+                    <td>{{$user->role_id}}</td>
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
+    </div>
 
 @stop
 
@@ -32,18 +55,20 @@
             var data = new google.visualization.DataTable();
             var business=$('.countBusiness').val();
             var client=$('.countClient').val();
+            var recurrent=$('.countRecurrent').val();
             data.addColumn('string', 'Topping');
             data.addColumn('number', 'Slices');
             data.addRows([
                 ['('+business+') Cliente', parseInt(business)],
                 ['('+client+') Prospecto', parseInt(client)],
-                ['recurentes', 10]
+                ['('+recurrent+') Recurrente', parseInt(recurrent)]
             ]);
 
             // Set chart options
-            var options = {'title':'Productos',
-                'width':400,
-                'height':300};
+            var total=parseInt(business)+ parseInt(client);
+            var options = {'title':'REPORTE DE CLIENTES('+total+')',
+                'width':500,
+                'height':400};
 
             // Instantiate and draw our chart, passing in some options.
             var chart = new google.visualization.PieChart(document.getElementById('chart_div'));

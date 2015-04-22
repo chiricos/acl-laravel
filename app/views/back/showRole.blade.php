@@ -51,7 +51,7 @@
 
     </div>
     @if($id>1)
-    {{ Form::submit('Actualizar usuario') }}
+    {{ Form::submit('Actualizar Permisos') }}
 
     {{ Form::close() }}
     @endif

@@ -612,3 +612,21 @@ input[type=submit]{
     position: relative;
 }
 
+/**************************** REPORTS ****************************/
+
+.wrapperReports{
+    background: white;
+    border-top: 4px solid rgba(111, 111, 111, 0.39);
+    border-radius: 3px;
+    display: inline-block;
+    margin: 76px 0px;
+    padding-bottom: 1px;
+    vertical-align: top;
+    width: 40%;
+}
+
+.reports{
+    display: inline-block;
+    vertical-align: top;
+    width: 500px;
+}
