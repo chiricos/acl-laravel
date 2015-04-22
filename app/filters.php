@@ -201,7 +201,7 @@ if(Auth::user()){
             return Redirect::to('/');
         }
     });
-    Route::filter('permiso12', function(){
+    Route::filter('charts', function(){
         if (Auth::guest()) return Redirect::guest('/');
         $permiso =new Proceso();
         $total=$permiso->filtrarPermisos();

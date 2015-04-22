@@ -121,6 +121,10 @@ Route::group(array('before' => 'auth'), function()
         route::post('admin/promocion', ['as' => 'promotion', 'uses' => 'PromotionController@sendPromotion']);
     });
 
+    Route::group(array('before'=>'charts'),function(){
+        route::get('admin/reportes', ['as' => 'charts', 'uses' => 'ReportController@show']);
+    });
+
 
 
     Route::get('mail','HomeController@email');
