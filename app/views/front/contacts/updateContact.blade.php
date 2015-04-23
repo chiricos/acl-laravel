@@ -6,7 +6,7 @@
 
 @section('content')
 
-    <a class="icon-reply back " href="{{route('contacts')}}"></a>
+    <a class="icon-reply back" href="{{route('contacts')}}"></a>
 
 
 
