@@ -73,7 +73,8 @@
         @if($business->maps!='')
         <div id="map-canvas"></div>
         @endif
-        <a class=" icon-users" ></a>
+        {{$business->maps}}
+        <a class=" icon-users buttonMaps" ></a>
         </div>
 
     </div>

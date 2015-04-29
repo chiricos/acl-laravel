@@ -1,32 +1,22 @@
 @extends('layou.plantille')
 
 @section('titleContent')
-    <h1>Pagos De La Empresa {{$business->name}}</h1>
+    <h1>Pagos De La Empresa</h1>
 @stop
 
 @section('content')
     <div class="formContent">
-        <div>
-            @if(count($business->payments)==1)
-                <h2>Una Cuota</h2>
-            @endif
-            @if(count($business->payments)==2)
-                <h2>Dos Cuotas</h2>
-            @endif
-            @if(count($business->payments)==3)
-                <h2>Tres Cuotas</h2>
-            @endif
-        </div>
+
         {{ Form::open(array('name'=>'form-create-user','url' => 'admin/pagos/'.$business->id, 'method' => 'POST')) }}
 
 
         @if(count($business->payments)>=1)
 
         <section class="formPayments">
+            <h2>Validar pagos</h2>
             <div >
                 {{ Form::text('id0',$business->payments[0]["id"],["class"=>"hidden"]) }}
-                <p >Primer Pago: {{$business->payments[0]["payment"]}}</p>
-                {{ Form::label('validator0', 'Pago realizado') }}
+                {{ Form::label('validator0', 'Primer Pago: '.$business->payments[0]["payment"]) }}
                 {{ Form::checkbox('validator0',1,$business->payments[0]["validator"]) }}
             </div>
         </section>
@@ -35,8 +25,7 @@
             <section class="formPayments ">
                 <div >
                     {{ Form::text('id1',$business->payments[1]["id"],["class"=>"hidden"]) }}
-                    <p>Primer Pago: {{$business->payments[1]["payment"]}}</p>
-                    {{ Form::label('validator1', 'Pago realizado') }}
+                    {{ Form::label('validator1', 'segundo Pago: '.$business->payments[1]["payment"]) }}
                     {{ Form::checkbox('validator1',1,$business->payments[1]["validator"]) }}
                 </div>
             </section>
@@ -45,8 +34,7 @@
             <section class=" formPayments">
                 <div >
                     {{ Form::text('id2',$business->payments[2]["id"],["class"=>"hidden"]) }}
-                    <p>Primer Pago: {{$business->payments[2]["payment"]}}</p>
-                    {{ Form::label('validator2', 'Pago realizado') }}
+                    {{ Form::label('validator2', 'Tercer Pago: '.$business->payments[2]["payment"]) }}
                     {{ Form::checkbox('validator2',1,$business->payments[2]["validator"]) }}
                 </div>
             </section>
@@ -61,6 +49,17 @@
     </div>
     <div class="formContent">
         {{ Form::open(array('name'=>'form-create-user','url' => 'admin/crearPagos/'.$business->id, 'method' => 'POST')) }}
+        <div>
+            @if(count($business->payments)==1)
+                <h2>Una Cuota</h2>
+            @endif
+            @if(count($business->payments)==2)
+                <h2>Dos Cuotas</h2>
+            @endif
+            @if(count($business->payments)==3)
+                <h2>Tres Cuotas</h2>
+            @endif
+        </div>
         <div>
             {{ Form::label('type', 'Općiones') }}
             {{ Form::select('type', $option, count($business->payments), array('id' => 'payment-option')) }}

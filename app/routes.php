@@ -28,6 +28,7 @@ Route::group(array('before' => 'auth'), function()
     });
 
     route::get('Inicio', ['as' => 'home', 'uses' => 'HomeController@index']);
+    route::get('InicioTodo', ['as' => 'homeAll', 'uses' => 'HomeController@all']);
 
     route::get('perfil', ['as' => 'profile', 'uses' => 'UserController@showProfile']);
 

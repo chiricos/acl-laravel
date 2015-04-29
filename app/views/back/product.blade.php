@@ -22,7 +22,7 @@
         </div>
     </div>
 
-    <div class="wrapperContent ">
+    <div class="wrapperContent" id="products">
         <section class="tableContent">
             <h2>Productos</h2>
             <table class=" ">
@@ -231,4 +231,8 @@
         </section>
     </div>
 </section>
+@stop
+
+@section('javascript')
+    {{ HTML::script('js/products.js'); }}
 @stop

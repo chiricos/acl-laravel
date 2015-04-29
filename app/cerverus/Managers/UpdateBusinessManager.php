@@ -70,6 +70,10 @@ class UpdateBusinessManager extends BaseManager
             $this->data["photo"]=$before.$file->getClientOriginalName();
             $file->move($destinationPath, $before.$file->getClientOriginalName());
         }
+        if($this->data["maps"]=="")
+        {
+            $this->data["maps"]=$this->entity->maps;
+        }
         $this->entity->fill($this->data);
         if($this->entity->update($this->data))
         {

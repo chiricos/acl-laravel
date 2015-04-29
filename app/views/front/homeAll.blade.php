@@ -7,7 +7,7 @@
 @section('content')
 
 
-    <a class="buttonA" href="{{route('homeAll')}}">Ver todos</a>
+    <a class="icon-reply back" href="{{route('home')}}"></a>
     <div class="wrapperContent">
         <section class="tableContent">
             <table class=" ">
@@ -23,13 +23,10 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($payments as $payment)
-
-                    @if($payment->type>0)
+                    @foreach($payments as $payment)
                         <tr>
-                        @foreach($businessProducts as $businessProduct)
-
-                            @if($payment->businessProduct_id==$businessProduct->id)
+                            @foreach($businessProducts as $businessProduct)
+                                @if($payment->businessProduct_id==$businessProduct->id)
                                     @foreach($business as $client)
                                         @if($businessProduct->business_id==$client->id)
                                             <td>{{ HTML::image('business/'.$client->photo,'',array('style'=>'width: 100px;')) }}</td>
@@ -43,15 +40,12 @@
                                             <td> {{$product->name}}</td>
                                         @endif
                                     @endforeach
-
-                            @endif
-                        @endforeach
-                        <td>{{$payment->payment}}</td>
-                        <td><a class="icon-folder-open" href="{{route('paymentBusiness',$payment->businessProduct_id)}}"></a></td>
+                                @endif
+                            @endforeach
+                                <td>{{$payment->payment}}</td>
+                                <td><a class="icon-folder-open" href="{{route('paymentBusiness',$payment->businessProduct_id)}}"></a></td>
                         </tr>
-                    @endif
-                @endforeach
-
+                    @endforeach
                 </tbody>
             </table>
 

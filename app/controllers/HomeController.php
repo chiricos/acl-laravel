@@ -9,18 +9,16 @@ use Carbon\Carbon;
 class HomeController extends BaseController
 {
 
-	/*
-	|--------------------------------------------------------------------------
-	| Default Home Controller
-	|--------------------------------------------------------------------------
-	|
-	| You may wish to use controllers instead of, or in addition to, Closure
-	| based routes. That's great! Here is an example controller method to
-	| get you started. To route to this controller, just add the route:
-	|
-	|	Route::get('/', 'HomeController@showWelcome');
-	|
-	*/
+	public function all()
+    {
+        $permiso =new Proceso();
+        $total=$permiso->filtrarPermisos();
+        $payments=Payment::all();
+        $businessProducts=BusinessProduct::all();
+        $business=Business::all();
+        $products=Product::all();
+        return View::make('front.homeAll',compact('total','payments','businessProducts','business','products'));
+    }
 
 	public function showWelcome()
 	{
