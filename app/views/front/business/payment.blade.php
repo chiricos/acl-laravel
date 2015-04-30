@@ -5,7 +5,7 @@
 @stop
 
 @section('content')
-    <div class="formContent">
+    <div class="formContent" >
 
         {{ Form::open(array('name'=>'form-create-user','url' => 'admin/pagos/'.$business->id, 'method' => 'POST')) }}
 

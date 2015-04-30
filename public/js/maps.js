@@ -21,11 +21,8 @@ function initialize() {
         if(i==0)
         {
             addMarker(event.latLng);
-            var k=(event.latLng.k);
-            var d=(event.latLng.D);
-            var map=""+ k+","+d+"";
-            document.getElementById('maps').value=map;
-            document.getElementById('map').value=map;
+            document.getElementById('maps').value=event.latLng;
+            $('.maps').val(event.latLng);
         }
 
     });

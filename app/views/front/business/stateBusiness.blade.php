@@ -10,7 +10,7 @@
 
 @section('content')
     {{ Form::text('maps',$business->maps,['id'=>'maps','class'=>'hidden']) }}
-    <div class="formContent">
+    <div class="formContent" style="margin-bottom: 20px">
 
     <script>
 
@@ -19,8 +19,10 @@
                 var ubicacion=$('#maps').val();
 
                 var res = ubicacion.split(",");
-                console.log(res[0]+res[1]);
-                var myLatlng = new google.maps.LatLng(res[0],res[1]);
+                var x=res[0].split("(");
+                var y=res[1].split(")");
+                console.log(y[0]);
+                var myLatlng = new google.maps.LatLng(x[1],y[0]);
                 var mapOptions = {
                     zoom: 12,
                     center: myLatlng
@@ -29,7 +31,11 @@
                 var marker = new google.maps.Marker({
                     position: myLatlng,
                     map: map,
-                    title: 'Hello World!'
+                    animation:google.maps.Animation.BOUNCE
+                });
+                google.maps.event.addListener(marker,'click',function() {
+                    map.setZoom(16);
+                    map.setCenter(marker.getPosition());
                 });
             }
 
@@ -70,10 +76,10 @@
 
 
         </section>
+
         @if($business->maps!='')
         <div id="map-canvas"></div>
         @endif
-        {{$business->maps}}
         <a class=" icon-users buttonMaps" ></a>
         </div>
 

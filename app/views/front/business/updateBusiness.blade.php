@@ -85,7 +85,7 @@
 
                     <div>
                         {{ Form::label( 'phone','Telefono') }}
-                        {{ Form::text('phone',$updateBusiness->phone) }}
+                        {{ Form::text('phone',$updateBusiness->phone,['id'=>'phone']) }}
                     </div>
 
                     @if($errors->first('phone'))
@@ -235,7 +235,7 @@
 
                     <div style="display: none">
                         {{ Form::label('maps', 'ubicacion') }}
-                        {{ Form::text('maps','',['id'=>'maps']) }}
+                        {{ Form::text('maps','',['class'=>'maps']) }}
                         {{$errors->first('maps')}}
                     </div>
 
@@ -333,7 +333,7 @@
 
                     <div>
                         {{ Form::label( 'phone','Telefono') }}
-                        {{ Form::text('phone',$updateBusiness->phone) }}
+                        {{ Form::text('phone',$updateBusiness->phone,['id'=>'phone1']) }}
                     </div>
 
                     @if($errors->first('phone'))
@@ -460,7 +460,7 @@
 
                     <div style="display: none">
                         {{ Form::label('maps', 'ubicacion') }}
-                        {{ Form::text('maps','',['id'=>'maps']) }}
+                        {{ Form::text('maps','',['class'=>'maps']) }}
                         {{$errors->first('maps')}}
                     </div>
 
@@ -490,6 +490,6 @@
 @stop
 
 @section('javascript')
-    {{ HTML::script('js/updateBusiness.js'); }}
     {{ HTML::script('js/maps.js'); }}
+    {{ HTML::script('js/updateBusiness.js'); }}
 @stop

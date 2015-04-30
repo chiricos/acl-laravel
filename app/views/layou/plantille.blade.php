@@ -44,6 +44,7 @@
         </section>
         </a>
         <nav>
+            <a href="{{route('profile')}}" class="profileNav">Perfil</a>
             <a href="{{route('home')}}">Inicio</a>
             @if(isset($total[1]) )
                 @if($total[1]==1)

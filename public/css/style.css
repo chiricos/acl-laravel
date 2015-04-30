@@ -178,6 +178,7 @@ a{
 header{
     background: #233645;
     height: 100%;
+    overflow: scroll;
     position: fixed;
     width: 220px;
 }
@@ -193,7 +194,7 @@ header{
 }
 
 .headerProfile figure{
-    height: 150px;
+    height: 115px;
     margin: 0;
     text-align: center;
     width: 100%;
@@ -203,7 +204,8 @@ header{
     border-radius: 50%;
     box-shadow: -7px 7px 20px black;
     height: 70px;
-    margin-top: 15px;
+    margin-top: 5px;
+    margin-bottom: -15px;
     width: 70px;
 }
 
@@ -239,6 +241,10 @@ header nav a:hover{
     opacity: 0.6;
 }
 
+.profileNav
+{
+    display: none;
+}
 /**************************************** HEADER DEL WRAPPER *********************/
 
 .wrapper{
@@ -631,4 +637,62 @@ input[type=submit]{
     display: inline-block;
     vertical-align: top;
     width: 500px;
+}
+
+@media all and (min-width: 0px) and (max-width: 480px){
+
+    .headerProfile{
+        display: none;
+    }
+
+    .profileNav{
+        display: block;
+    }
+
+    header{
+        display: none;
+        text-align: center;
+        width: 100%;
+        z-index: 99;
+    }
+
+    header nav a{
+        width: 100%;
+    }
+
+    h1{
+        margin: 0px 0px 20px;
+        width: 100%;
+    }
+
+    .wrapperBody{
+        display: none;
+    }
+
+    .wrapperBody1{
+        width: 100%;
+    }
+
+    .wrapperReports{
+        margin: 0;
+        width: 100%;
+    }
+
+    .formSearch{
+        width: 0;
+    }
+
+    .business, .business-fixed{
+        margin-left: 12px;
+        width: 45%;
+    }
+
+    .formContent{
+        margin: 0;
+        padding: 0;
+    }
+
+    form{
+        width: 100%;
+    }
 }
