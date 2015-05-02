@@ -15,6 +15,7 @@
 
     <!-- Style <script src="{{asset('js/prefixfree.min.js')}}"></script>-->
     <script src="{{asset('js/jquery-1.11.2.min.js')}}"></script>
+    <script src="{{asset('js/menu.js')}}"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
     @yield('javascript')
 </head>
@@ -22,6 +23,8 @@
 
 
     <header>
+        <div class="icon-cancel-circled close-menu">
+        </div>
         {{ HTML::image('img/logo.png','',array('id'=>'logo')) }}
         <a href="{{route('profile')}}">
         <section class="headerProfile">
@@ -95,7 +98,11 @@
 
     <div class="wrapper">
         @yield('titleContent')
-
+        <div class="menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
         <section class="wrapperBody">
 
         </section>

@@ -178,7 +178,6 @@ a{
 header{
     background: #233645;
     height: 100%;
-    overflow: scroll;
     position: fixed;
     width: 220px;
 }
@@ -223,7 +222,6 @@ header{
 
 header nav{
     background: rgba(0, 0, 0, 0.12);
-    height: 100%;
 }
 
 header nav a {
@@ -232,8 +230,9 @@ header nav a {
     display: block;
     font-size: 14px;
     font-weight: inherit;
-    padding: 13px;
-    width: 194px;
+    padding: 13px 0px 13px 0px;
+    text-align: center;
+    width: 100%;
 }
 
 header nav a:hover{
@@ -637,6 +636,41 @@ input[type=submit]{
     display: inline-block;
     vertical-align: top;
     width: 500px;
+}
+
+/******************************** MENU **********************************/
+
+.menu{
+    background: rgba(0, 0, 0, 0.45);
+    height: 40px;
+    margin: -20px 10px;
+    padding: 2px;
+    width: 40px;
+}
+
+.menu span{
+    background: white;
+    display: block;
+    height: 6px;
+    margin-top: 6px;
+    margin-left: 3px;
+    width: 85%;
+}
+
+.close-menu{
+    color: rgb(159, 159, 160);
+    cursor: pointer;
+    float: right;
+    font-size: 15px;
+    margin: 0px;
+}
+
+.close-menu:hover{
+    color: #07b4e3;
+}
+
+.menu:hover{
+    box-shadow: 0px 0px 8px #07b4e3;
 }
 
 @media all and (min-width: 0px) and (max-width: 480px){
