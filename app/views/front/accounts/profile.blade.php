@@ -120,8 +120,10 @@
                 </div>
             @endif
 
+            <div>
+                {{ Form::submit('Actualizar usuario') }}
+            </div>
 
-            {{ Form::submit('Actualizar usuario') }}
 
             {{ Form::close() }}
                 </div>

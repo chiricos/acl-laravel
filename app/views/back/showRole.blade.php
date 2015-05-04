@@ -51,7 +51,10 @@
 
     </div>
     @if($id>1)
-    {{ Form::submit('Actualizar Permisos') }}
+        <div>
+            {{ Form::submit('Actualizar Permisos') }}
+        </div>
+
 
     {{ Form::close() }}
     @endif

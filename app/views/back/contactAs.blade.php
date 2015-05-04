@@ -30,7 +30,10 @@
             </div>
         @endif
 
-        {{Form::submit('enviar correo')}}
+        <div>
+            {{Form::submit('enviar correo')}}
+        </div>
+
         {{Form::close()}}
     </section>
 

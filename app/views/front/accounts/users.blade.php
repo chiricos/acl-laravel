@@ -24,7 +24,8 @@
     </div>
     <div class="wrapperContent">
     @if(Auth::user()->role_id==1)
-        <table class="tableContent">
+        <section class="tableContent">
+        <table>
             <thead>
             <tr>
                 <th>Foto</th>
@@ -88,8 +89,10 @@
             @endforeach
             </tbody>
         </table>
+        </section>
     @else
-        <table class="tableContent ">
+        <section class="tableContent">
+        <table >
             <thead>
             <tr>
                 <th>Foto</th>
@@ -158,8 +161,8 @@
             @endforeach
             </tbody>
         </table>
+        </section>
     @endif
-    </div>
     </div>
 
 @stop

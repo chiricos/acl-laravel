@@ -642,10 +642,14 @@ input[type=submit]{
 
 .menu{
     background: rgba(0, 0, 0, 0.45);
+    cursor: pointer;
     height: 40px;
-    margin: -20px 10px;
+    left: 88%;
     padding: 2px;
+    position: fixed;
+    top: 10px;
     width: 40px;
+    z-index: 1;
 }
 
 .menu span{
@@ -655,6 +659,7 @@ input[type=submit]{
     margin-top: 6px;
     margin-left: 3px;
     width: 85%;
+    z-index: 0;
 }
 
 .close-menu{
