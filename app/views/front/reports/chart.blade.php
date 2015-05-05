@@ -67,8 +67,8 @@
             // Set chart options
             var total=parseInt(business)+ parseInt(client);
             var options = {'title':'REPORTE DE CLIENTES('+total+')',
-                'width':500,
-                'height':400};
+                'width':350,
+                'height':300};
 
             // Instantiate and draw our chart, passing in some options.
             var chart = new google.visualization.PieChart(document.getElementById('chart_div'));

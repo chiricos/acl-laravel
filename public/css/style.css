@@ -356,6 +356,7 @@ td{
 
 .tableContent a{
     color: rgba(0, 0, 0, 0.37);
+    font-size: 18px;
 }
 
 .tableContent a:hover{
@@ -643,6 +644,7 @@ input[type=submit]{
 .menu{
     background: rgba(0, 0, 0, 0.45);
     cursor: pointer;
+    display: none;
     height: 40px;
     left: 88%;
     padding: 2px;
@@ -665,8 +667,9 @@ input[type=submit]{
 .close-menu{
     color: rgb(159, 159, 160);
     cursor: pointer;
+    display: none;
     float: right;
-    font-size: 15px;
+    font-size: 30px;
     margin: 0px;
 }
 
@@ -678,7 +681,16 @@ input[type=submit]{
     box-shadow: 0px 0px 8px #07b4e3;
 }
 
-@media all and (min-width: 0px) and (max-width: 480px){
+@media all and (min-width: 0px) and (max-width: 1024px){
+
+
+    .menu{
+        display: block;
+    }
+
+    .close-menu{
+        display: block;
+    }
 
     .headerProfile{
         display: none;
@@ -690,6 +702,7 @@ input[type=submit]{
 
     header{
         display: none;
+        overflow: scroll;
         text-align: center;
         width: 100%;
         z-index: 99;
@@ -713,7 +726,7 @@ input[type=submit]{
     }
 
     .wrapperReports{
-        margin: 0;
+        margin-bottom: 30px;
         width: 100%;
     }
 
@@ -721,9 +734,22 @@ input[type=submit]{
         width: 0;
     }
 
+    .buttonSearch{
+        width: 150px;
+    }
+
+    .buttonMaps{
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .datesProfile{
+        font-size: 20px;
+    }
+
     .business, .business-fixed{
-        margin-left: 12px;
-        width: 45%;
+        margin-left: 21px;
+        width: 40%;
     }
 
     .formContent{
@@ -732,6 +758,23 @@ input[type=submit]{
     }
 
     form{
+        width: 80%;
+    }
+
+    .profileP{
+        padding-top: 100px;
+    }
+
+    .tableContent a{
+        font-size: 30px;
+    }
+
+    .icon-users{
+        font-size: 30px;
+    }
+
+    .reports{
         width: 100%;
     }
 }
+

@@ -146,3 +146,17 @@ input[type=checkbox] {
 .hidden, #hidden{
     display: none;
 }
+
+
+@media all and (min-width: 0px) and (max-width: 1024px){
+
+    #ima img{
+        display: block;
+        margin: auto;
+        width: 100%;
+    }
+
+    .container{
+        width: 70%;
+    }
+}
