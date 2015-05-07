@@ -3,6 +3,12 @@
 <head>
     <meta charset="utf-8">
     <title>Login</title>
+    <meta name="author" content="Drawde"/>
+    <meta name="description" content="CRM Mi-Martinez"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1"/>
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <!-- Style -->
+    <link rel="stylesheet" href="{{asset('css/normalize.min.css')}}"/>
     {{ HTML::style('css/Login.css'); }}
     <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
 
