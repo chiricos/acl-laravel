@@ -23,11 +23,11 @@ class PromotionController extends BaseController
             return Redirect::route('promotion')->withErrors($promotionValidator)->withInput();
         }
         $business=Business::all();
-        $data=[];
+        $data=Input::all();
         foreach($business as $client)
         {
             $email=$client->email;
-            Mail::send('emails.auth.reminder', $data, function ($message) use ($email) {
+            Mail::send('emails.promotion', $data, function ($message) use ($email) {
                 $message->to($email, 'cerveruss CRM')->subject('correo de Mi-Martinez.com');
             });
         }

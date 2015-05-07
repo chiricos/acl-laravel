@@ -8,7 +8,7 @@ class EmailManager extends BaseManager
     {
         $rules=[
             'about'                 => 'required',
-            'message'               => 'required',
+            'text'               => 'required',
             'image'                 => 'image'
         ];
         return  $rules;

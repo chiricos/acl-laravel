@@ -21,24 +21,13 @@
         @endif
 
         <div>
-            {{Form::label('message','Mensaje:')}}
-            {{Form::textarea('message')}}
+            {{Form::label('text','Mensaje:')}}
+            {{Form::textarea('text')}}
         </div>
 
-        @if($errors->first('message'))
+        @if($errors->first('text'))
             <div class="formErrors">
-                *{{$errors->first('message')}}
-            </div>
-        @endif
-
-        <div>
-            {{Form::label('image','Imagen:')}}
-            {{Form::file('image')}}
-        </div>
-
-        @if($errors->first('image'))
-            <div class="formErrors">
-                *{{$errors->first('image')}}
+                *{{$errors->first('text')}}
             </div>
         @endif
 
