@@ -159,4 +159,12 @@ input[type=checkbox] {
     .container{
         width: 70%;
     }
+
+    .margen{
+        width: 100%;
+    }
+
+    .enviar{
+        width: 100%;
+    }
 }
