@@ -148,7 +148,7 @@ input[type=checkbox] {
 }
 
 
-@media all and (min-width: 0px) and (max-width: 1024px){
+@media all and (min-width: 0px) and (max-width: 800px){
 
     #ima img{
         display: block;
