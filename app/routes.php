@@ -137,7 +137,7 @@ Route::group(array('before' => 'auth'), function()
 
     Route::get('contact',function()
     {
-       return View::make('emails.contactAs');
+       return View::make('emails.plantilleHome');
     });
 
 
