@@ -49,7 +49,7 @@ Route::group(array('before' => 'auth'), function()
         route::get('admin/pagos/{id}',['as'=>'paymentBusiness','uses'=>'BusinessController@showPayment']);
         route::post('admin/pagos/{id}',['as'=>'paymentBusiness','uses'=>'BusinessController@updatePayment']);
         route::post('admin/crearPagos/{id}',['as'=>'createPaymentBusiness','uses'=>'BusinessController@cratePayment']);
-        route::get('admin/eliminarProducto/{id}',['as'=>'deleteProducts','uses'=>'ProductController@delete']);
+        route::get('admin/eliminarProductosCliente/{id}',['as'=>'deleteProducts','uses'=>'ProductController@delete']);
         route::get('admin/agregarProductos/{id}',['as'=>'createProducts','uses'=>'ProductController@showProducts']);
         route::post('admin/agregarProductos/{id}',['as'=>'createProducts','uses'=>'ProductController@addProducts']);
         route::get('admin/agregarProducto/{id}',['as'=>'addProducts','uses'=>'ProductController@seeProducts']);

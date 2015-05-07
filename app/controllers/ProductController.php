@@ -161,6 +161,7 @@ class ProductController extends BaseController
 
     public function deleteProduct($id)
     {
+
         $businessProduct=BusinessProduct::where('product_id','=',$id)->first();
         if($businessProduct)
         {
