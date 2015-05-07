@@ -1,7 +1,7 @@
 @extends('layou.plantille')
 
 @section('titleContent')
-    <h1>Productos de</h1>
+    <h1>Cotizacion de productos</h1>
 @stop
 
 @section('content')
