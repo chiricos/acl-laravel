@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Correo de Contactenos</title>
+
 </head>
 <body style="color: black">
 <div style="  width: 50%; margin: auto; text-align: center; padding: 30px">
@@ -15,3 +15,4 @@
 
 </body>
 </html>
+
