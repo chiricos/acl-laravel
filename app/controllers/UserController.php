@@ -297,7 +297,6 @@ class UserController extends BaseController
 
     public function sendContact()
     {
-
         $sendManager=new EmailManager('',Input::all());
         $sendValidator=$sendManager->isValid();
         if($sendValidator)
@@ -332,7 +331,6 @@ class UserController extends BaseController
                 return Redirect::route('contactAs')->with('message','El correo se envio correctamente a los super administradores');
             }
         }
-
         return Redirect::route('contactAs')->with('message_error','el Super Administrador no puede enviar correos');
     }
 

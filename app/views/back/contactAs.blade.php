@@ -20,13 +20,13 @@
         @endif
 
         <div>
-            {{Form::label('message','Mensaje:')}}
-            {{ Form::textarea('message') }}
+            {{Form::label('text','Mensaje:')}}
+            {{ Form::textarea('text') }}
         </div>
 
-        @if($errors->first('message'))
+        @if($errors->first('text'))
             <div class="formErrors">
-                *{{$errors->first('message')}}
+                *{{$errors->first('text')}}
             </div>
         @endif
 
