@@ -18,7 +18,7 @@ class CreateUserManager extends BaseManager
             'phone'                 => 'required|numeric|digits_between:6,11',
             'address'               => 'required',
             'role_id'               => 'required|numeric',
-            'manager'               => 'required|numeric'
+            'manager'               => 'numeric'
         ];
         return  $rules;
     }
