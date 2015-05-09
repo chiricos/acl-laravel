@@ -145,7 +145,7 @@ class BusinessController extends BaseController
         $permiso =new Proceso();
         $total=$permiso->filtrarPermisos();
         $business=Business::find($id);
-        $manager=User::find($business->manager)->first();
+        $manager=User::find($business->manager);
         $businessRepo=new BusinessRepo();
         $state=$businessRepo->getState($business->type,$business->state);
         $contacts=Contact::where('business_id', '=', $id)->get();
