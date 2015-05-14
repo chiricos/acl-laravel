@@ -118,7 +118,7 @@ input[type=email] {
     color: #ffffff;
 }
 input[type=email] {
-    background:none repeat scroll 0 0 rgba(255, 255, 255, 0.4);
+    background:none repeat scroll 0 0 rgba(35, 54, 69, 1);
     color: #ffffff;
 }
 input[type=password] {
@@ -130,7 +130,7 @@ input[type=password] {
     padding: 5px;
     background:#07b4e3;
     color: #ffffff;
-    background:none repeat scroll 0 0 rgba(255, 255, 255, 0.4);
+    background:none repeat scroll 0 0 rgba(35, 54, 69, 1);
 }
 
 input[type=checkbox] {

@@ -28,10 +28,10 @@
             @endif
             {{ Form::open(array('route' => 'login')) }}
             <div class="form-group">
-                {{ Form::email('email', Input::old('email'), array('class' => 'form-control'),'required') }}
+                {{ Form::email('email', Input::old('email'), array('class' => 'form-control','placeholder'=>'E-mail'),'required') }}
             </div>
             <div class="form-group">
-                {{ Form::password('password', array('class' => 'form-control')); }}
+                {{ Form::password('password', array('class' => 'form-control','placeholder'=>'Contraseña')); }}
             </div>
             <div class="margen">
                 <div class="checkbox">
