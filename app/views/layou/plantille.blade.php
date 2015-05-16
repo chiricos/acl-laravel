@@ -135,6 +135,8 @@
 
     </div>
 
-
+<footer>
+    <p>®Cerveruus Todos los derechos reservados - 2015 - Diseño Web - Agencia de Publicidad <a href="http://mi-martinez.com" target="_blank">{{ HTML::image('img/logomim.png') }}</a></p>
+</footer>
 </body>
 </html>
