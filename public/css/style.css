@@ -247,6 +247,7 @@ header nav a:hover{
 /**************************************** HEADER DEL WRAPPER *********************/
 
 .wrapper{
+    min-height: 100%;
     width: 100%;
 }
 
@@ -679,6 +680,23 @@ input[type=submit]{
 
 .menu:hover{
     box-shadow: 0px 0px 8px #07b4e3;
+}
+
+footer{
+    background: #6E6C6C;
+    color: #B6B5B5;
+    text-align: center;
+    margin-top: -33px;
+}
+
+footer p{
+    font-size: 10px;
+    font-weight: 300;
+    padding: 3px 0;
+}
+
+footer img{
+    height: 15px;
 }
 
 @media all and (min-width: 0px) and (max-width: 1024px){
