@@ -62,7 +62,7 @@ class ReportController extends BaseController
         $production=Product::where('dependency','=',4)->get();
         $strategy=Product::where('dependency','=',5)->get();
         $print=Product::where('dependency','=',6)->get();
-        $users=User::where('role_id','=',3)->get();
+        $business=Business::all();
         foreach($branding as $brandingCount)
         {
             $brandingTotal=$brandingTotal+count($brandingCount['businessProduct']);
@@ -87,7 +87,7 @@ class ReportController extends BaseController
         {
             $printTotal=$printTotal+count($printCount['businessProduct']);
         }
-        return View::make('front.reports.report',compact('total','branding','web','marketing','production','strategy','print','brandingTotal','webTotal','marketingTotal','productionTotal','strategyTotal','printTotal'));
+        return View::make('front.reports.report',compact('business','total','branding','web','marketing','production','strategy','print','brandingTotal','webTotal','marketingTotal','productionTotal','strategyTotal','printTotal'));
     }
 
 }

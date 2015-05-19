@@ -29,10 +29,19 @@ class HomeController extends BaseController
 	{
 		$permiso =new Proceso();
 		$total=$permiso->filtrarPermisos();
-		$payments=Payment::all();
-        $businessProducts=BusinessProduct::all();
-		$business=Business::all();
-        $products=Product::all();
+        if(Auth::user()->role_id==3)
+        {
+            $business=Business::where('manager','=',Auth::user()->id)->get();
+            $payments=Payment::all();
+            $businessProducts=BusinessProduct::all();
+            $products=Product::all();
+        }else{
+            $payments=Payment::all();
+            $businessProducts=BusinessProduct::all();
+            $business=Business::all();
+            $products=Product::all();
+        }
+
 		foreach($payments as $payment)
 		{
 			if($this->dateState($payment->payment))

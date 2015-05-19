@@ -13,5 +13,9 @@ class Business extends \Eloquent
     }
 
 
+    public function businessProduct()
+    {
+        return $this->hasOne('cerverus\Entities\BusinessProduct','business_id');
+    }
 
 }

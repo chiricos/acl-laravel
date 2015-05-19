@@ -26,6 +26,7 @@
             <tr>
                 <th>Dependencia</th>
                 <th>Nombre del producto</th>
+                <th>Cliente</th>
             </tr>
             </thead>
             <tbody>
@@ -34,7 +35,13 @@
                 @for($i=0;$i<count($branding['businessProduct']);$i++)
                 <tr>
                     <td>BRANDING</td>
-                    <td>{{$branding['businessProduct']}}</td>
+                    <td>{{$branding->name}}</td>
+                    @foreach($business as $client)
+                        @if( $branding['businessProduct'][$i]['business_id']==$client->id)
+                            <td>{{$client->name}}</td>
+                        @endif
+                    @endforeach
+
                 </tr>
                 @endfor
 
@@ -46,6 +53,11 @@
                     <tr>
                         <td>WEB</td>
                         <td>{{$web->name}}</td>
+                        @foreach($business as $client)
+                            @if( $web['businessProduct'][$i]['business_id']==$client->id)
+                                <td>{{$client->name}}</td>
+                            @endif
+                        @endforeach
                     </tr>
                 @endfor
 
@@ -57,6 +69,11 @@
                     <tr>
                         <td>MARKETING</td>
                         <td>{{$marketing->name}}</td>
+                        @foreach($business as $client)
+                            @if( $marketing['businessProduct'][$i]['business_id']==$client->id)
+                                <td>{{$client->name}}</td>
+                            @endif
+                        @endforeach
                     </tr>
                 @endfor
 
@@ -68,6 +85,11 @@
                     <tr>
                         <td>PRODUCCION AUDIOVISUAL</td>
                         <td>{{$production->name}}</td>
+                        @foreach($business as $client)
+                            @if( $production['businessProduct'][$i]['business_id']==$client->id)
+                                <td>{{$client->name}}</td>
+                            @endif
+                        @endforeach
                     </tr>
                 @endfor
 
@@ -79,6 +101,11 @@
                     <tr>
                         <td>ESTRATEGIA</td>
                         <td>{{$strategy->name}}</td>
+                        @foreach($business as $client)
+                            @if( $strategy['businessProduct'][$i]['business_id']==$client->id)
+                                <td>{{$client->name}}</td>
+                            @endif
+                        @endforeach
                     </tr>
                 @endfor
 
@@ -90,6 +117,11 @@
                     <tr>
                         <td>IMPRESION</td>
                         <td>{{$print->name}}</td>
+                        @foreach($business as $client)
+                            @if( $print['businessProduct'][$i]['business_id']==$client->id)
+                                <td>{{$client->name}}</td>
+                            @endif
+                        @endforeach
                     </tr>
                 @endfor
 
