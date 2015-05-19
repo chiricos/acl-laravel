@@ -124,6 +124,7 @@ Route::group(array('before' => 'auth'), function()
 
     Route::group(array('before'=>'charts'),function(){
         route::get('admin/reportes', ['as' => 'charts', 'uses' => 'ReportController@show']);
+        route::get('admin/reportesProductos', ['as' => 'chart', 'uses' => 'ReportController@index']);
     });
 
 

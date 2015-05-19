@@ -6,6 +6,9 @@
 
 @section('content')
 
+    <a class="business-fixed buttonA" href="{{route('charts')}}" style="color: #07b4e3">Reporte de Clientes</a>
+    <a class="business buttonA" href="{{route('chart')}}">Reporte de productos</a>
+
     <section class="reports">
         <div id="chart_div">
             <input class="countBusiness hidden" value="{{count($business)}}">

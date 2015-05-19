@@ -10,7 +10,7 @@ class ProductManager extends BaseManager
         $rules=[
             'id'                  => 'required|numeric|unique:products',
             'dependency'          => 'required|numeric',
-            'name'                => 'required'
+            'name'                => 'required|unique:products'
         ];
         return  $rules;
     }
