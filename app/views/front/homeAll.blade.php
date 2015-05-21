@@ -50,7 +50,8 @@
             </table>
 
         </section>
-
+        <p style="font-weight: 100"> Total de registros{{$payments->getTotal()}} </p>
+        {{$payments->links();}}
     </div>
 
 @stop

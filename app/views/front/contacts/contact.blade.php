@@ -148,6 +148,7 @@
             </table>
 
         </div>
+        {{$contacts->links();}}
     </div>
 </div>
 

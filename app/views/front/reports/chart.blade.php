@@ -28,8 +28,10 @@
             <tbody>
             @foreach($users as $user)
                 <tr>
+                    @if($user->count_business)
                     <td>{{$user->name}} {{$user->last_name}}</td>
-                    <td>{{$user->role_id}}</td>
+                    <td>{{$user->count_business}}</td>
+                    @endif
                 </tr>
             @endforeach
             </tbody>

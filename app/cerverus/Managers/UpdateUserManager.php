@@ -16,7 +16,7 @@ class UpdateUserManager extends BaseManager
             'phone'                 => 'required|numeric|digits_between:6,11',
             'address'               => 'required',
             'role_id'               => 'required|numeric',
-            'manager'               => 'required|numeric|unique:users,id,NULL,id,id,'.$this->data["id"].''
+            'manager'               => 'numeric|unique:users,id,NULL,id,id,'.$this->data["id"].''
         ];
         return  $rules;
     }

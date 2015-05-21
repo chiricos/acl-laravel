@@ -26,10 +26,16 @@ class ReportController extends BaseController
             }
         }
         $users=User::where('role_id','=',3)->get();
-        foreach($users as $user)
+        for($i=0;$i<count($users);$i++)
         {
-            $user->role_id=count(Business::where('manager','=',$user->id)->get());
+            $users[$i]->count_business=count(Business::where('manager','=',$users[$i]->id)->get());
+            if($users[$i]->count_business==0)
+            {
+                unset($users[$i]);
+            }
+
         }
+
         return View::make('front.reports.chart',compact('total','business','client','recurrent','users'));
     }
 

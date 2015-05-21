@@ -18,7 +18,7 @@ class UserController extends BaseController
     {
         $permiso =new Proceso();
         $total=$permiso->filtrarPermisos();
-        $users=User::all();
+        $users=User::paginate(10);
         return View::make('front.accounts.users',compact('users','total'));
     }
 
@@ -33,10 +33,10 @@ class UserController extends BaseController
             ->orWhere('user_name', 'LIKE', "%".Input::get('search')."%")
             ->orWhere('email', 'LIKE', "%".Input::get('search')."%")
             ->orWhere('role_id', '=',$userRepo->changeString(Input::get('search')))
-            ->get();
+            ->paginate(10);
         if(Input::get('search')=="")
         {
-            $users=User::all();
+            $users=User::paginate(10);
         }
         return View::make('front.accounts.users',compact('users','total'));
     }
@@ -51,7 +51,7 @@ class UserController extends BaseController
                 +[ 3 => "vendedor"]
                 +[ 2 => "administrador"]
                 +[ 1 => "super administrador"];
-            $managers = [ "" => "selecione un encargado"]
+            $managers = [ "seleccione un encargado" => "selecione un encargado"]
                 +User::whereRaw('role_id=2')->lists('user_name','id');
         }
         if(Auth::user()->role_id==2)
@@ -106,7 +106,7 @@ class UserController extends BaseController
         $permiso =new Proceso();
         $total=$permiso->filtrarPermisos();
         $user=User::find($id);
-        $managers = [ "0" => "selecione un encargado"]
+        $managers = [ "seleccione un encargado" => "selecione un encargado"]
             +User::whereRaw('role_id=2')->lists('user_name','id');
         if(Auth::user()->role_id==1)
         {
@@ -114,7 +114,7 @@ class UserController extends BaseController
                 +[ 3 => "vendedor"]
                 +[ 2 => "administrador"]
                 +[ 1 => "super administrador"];
-            $managers = [ "" => "selecione un encargado"]
+            $managers = [ "seleccione un encargado" => "selecione un encargado"]
                 +User::whereRaw('role_id=2')->lists('user_name','id');
         }
         if(Auth::user()->role_id==2)
@@ -124,7 +124,7 @@ class UserController extends BaseController
         }
         if(Auth::user()->role_id==3)
         {
-            $charges= [ 'seleccione un role'=> "seleccione un role"];
+            $charges= [ 'seleccione un encargado'=> "seleccione un role"];
             $managers = [ "0" => "selecione un encargado"];
         }
         return View::make('front.accounts.update',compact('user','total','managers','charges'));
@@ -165,6 +165,7 @@ class UserController extends BaseController
             }
             if($userValidator or $manager!="" or $message)
             {
+
                 return Redirect::route('updateUser',$id)->with('message_error',$message)->with('manager', $manager)->withErrors($userValidator)->withInput();
             }
 

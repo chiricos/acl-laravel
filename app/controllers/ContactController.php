@@ -13,7 +13,7 @@ class ContactController extends BaseController
     {
         $permiso =new Proceso();
         $total=$permiso->filtrarPermisos();
-        $contacts=Contact::all();
+        $contacts=Contact::paginate(10);
         $business=Business::all();
         $business_id=[""=>"seleccione una empresa"]+Business::all()->lists('name','id');
         return View::make('front.contacts.contact',compact('business_id','total','contacts','charges','business'));
@@ -54,10 +54,10 @@ class ContactController extends BaseController
             ->orWhere('mobile_phone', 'LIKE', "%".Input::get('search')."%")
             ->orWhere('email', 'LIKE', "%".Input::get('search')."%")
             ->orWhere('charge', 'LIKE', "%".Input::get('search')."%")
-            ->get();
+            ->paginate(10);
         if(Input::get('search')=="")
         {
-            $contacts=Contact::all();
+            $contacts=Contact::paginate(10);
         }
         $business=Business::all();
         $business_id=[""=>"seleccione una empresa"]+Business::all()->lists('name','id');

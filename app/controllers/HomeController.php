@@ -13,7 +13,7 @@ class HomeController extends BaseController
     {
         $permiso =new Proceso();
         $total=$permiso->filtrarPermisos();
-        $payments=Payment::all();
+        $payments=Payment::paginate(5);
         $businessProducts=BusinessProduct::all();
         $business=Business::all();
         $products=Product::all();
