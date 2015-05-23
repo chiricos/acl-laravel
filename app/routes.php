@@ -11,8 +11,14 @@ route::get('restaurarContraseña/{id}', ['as' => 'restorePassword', 'uses' => 'A
 route::post('restaurarContraseña/{id}', ['as' => 'restorePassword', 'uses' => 'AuthController@changePassword']);
 
 //INICIO DE SESSION
-route::get('login', ['as' => 'login', 'uses' => 'AuthController@signUp']);
-route::post('login', ['as' => 'login', 'uses' => 'AuthController@login']);
+
+Route::group(array('before'=>'guest'),function()
+{
+    route::get('login', ['as' => 'login', 'uses' => 'AuthController@signUp']);
+    route::post('login', ['as' => 'login', 'uses' => 'AuthController@login']);
+}
+);
+
 
 /**
  * Aqui va las rutas que puede acceder cuando esta logeado
