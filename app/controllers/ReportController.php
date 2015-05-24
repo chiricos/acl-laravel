@@ -28,7 +28,17 @@ class ReportController extends BaseController
         $users=User::where('role_id','=',3)->get();
         for($i=0;$i<count($users);$i++)
         {
-            $users[$i]->count_business=count(Business::where('manager','=',$users[$i]->id)->get());
+            $businessUsers=Business::where('manager','=',$users[$i]->id)->get();
+            $users[$i]->count_business=count($businessUsers);
+            $users[$i]->all_products=0;
+            foreach($businessUsers as $product)
+            {
+                if($product['businessProduct'])
+                {
+                    $users[$i]->all_products++;
+                }
+            }
+
             if($users[$i]->count_business==0)
             {
                 unset($users[$i]);

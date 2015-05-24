@@ -27,6 +27,7 @@
                 <th>Dependencia</th>
                 <th>Nombre del producto</th>
                 <th>Cliente</th>
+                <th>Valor del producto</th>
             </tr>
             </thead>
             <tbody>
@@ -41,6 +42,7 @@
                             <td>{{$client->name}}</td>
                         @endif
                     @endforeach
+                    <td>$ {{$branding['businessProduct'][$i]->value}}</td>
 
                 </tr>
                 @endfor
@@ -58,6 +60,7 @@
                                 <td>{{$client->name}}</td>
                             @endif
                         @endforeach
+                        <td>$ {{$web['businessProduct'][$i]->value}}</td>
                     </tr>
                 @endfor
 
@@ -74,6 +77,7 @@
                                 <td>{{$client->name}}</td>
                             @endif
                         @endforeach
+                        <td>$ {{$marketing['businessProduct'][$i]->value}}</td>
                     </tr>
                 @endfor
 
@@ -90,6 +94,7 @@
                                 <td>{{$client->name}}</td>
                             @endif
                         @endforeach
+                        <td>$ {{$production['businessProduct'][$i]->value}}</td>
                     </tr>
                 @endfor
 
@@ -106,6 +111,7 @@
                                 <td>{{$client->name}}</td>
                             @endif
                         @endforeach
+                        <td>$ {{$strategy['businessProduct'][$i]->value}}</td>
                     </tr>
                 @endfor
 
@@ -122,6 +128,7 @@
                                 <td>{{$client->name}}</td>
                             @endif
                         @endforeach
+                        <td>$ {{$print['businessProduct'][$i]->value}}</td>
                     </tr>
                 @endfor
 

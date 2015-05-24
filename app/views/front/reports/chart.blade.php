@@ -23,6 +23,7 @@
                 <tr>
                     <th>Vendedor</th>
                     <th>clientes</th>
+                    <th>Productos Vendidos</th>
                 </tr>
             </thead>
             <tbody>
@@ -31,6 +32,7 @@
                     @if($user->count_business)
                     <td>{{$user->name}} {{$user->last_name}}</td>
                     <td>{{$user->count_business}}</td>
+                    <td>{{$user->all_products}}</td>
                     @endif
                 </tr>
             @endforeach
