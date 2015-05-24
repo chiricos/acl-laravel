@@ -22,7 +22,8 @@
             <thead>
                 <tr>
                     <th>Vendedor</th>
-                    <th>clientes</th>
+                    <th>Clientes</th>
+                    <th>Prospecto</th>
                     <th>Productos Vendidos</th>
                 </tr>
             </thead>
@@ -31,8 +32,13 @@
                 <tr>
                     @if($user->count_business)
                     <td>{{$user->name}} {{$user->last_name}}</td>
-                    <td>{{$user->count_business}}</td>
+                    <td>{{$user->client}}</td>
+                    <td>{{$user->prospect}}</td>
+                    @if($user->all_products)
                     <td>{{$user->all_products}}</td>
+                    @else
+                    <td>0</td>
+                    @endif
                     @endif
                 </tr>
             @endforeach
@@ -60,19 +66,19 @@
 
             // Create the data table.
             var data = new google.visualization.DataTable();
-            var business=$('.countBusiness').val();
-            var client=$('.countClient').val();
-            var recurrent=$('.countRecurrent').val();
+            var business=parseInt($('.countBusiness').val());
+            var client=parseInt($('.countClient').val())-parseInt($('.countRecurrent').val());
+            var recurrent=parseInt($('.countRecurrent').val());
             data.addColumn('string', 'Topping');
             data.addColumn('number', 'Slices');
             data.addRows([
-                ['('+business+') Clientes', parseInt(business)],
-                ['('+client+') Prospectos', parseInt(client)],
-                ['('+recurrent+') Recurrentes', parseInt(recurrent)]
+                ['('+business+') Clientes', business],
+                ['('+client+') Prospectos', client],
+                ['('+recurrent+') Recurrentes', recurrent]
             ]);
 
             // Set chart options
-            var total=parseInt(business)+ parseInt(client);
+            var total=business+client+recurrent;
             var options = {'title':'REPORTE DE CLIENTES('+total+')',
                 'width':350,
                 'height':300};

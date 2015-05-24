@@ -31,6 +31,12 @@ class ReportController extends BaseController
             $businessUsers=Business::where('manager','=',$users[$i]->id)->get();
             $users[$i]->count_business=count($businessUsers);
             $users[$i]->all_products=0;
+            $clients=Business::where('manager','=',$users[$i]->id)
+                                ->where('type','=',1)->get();
+            $prospects=Business::where('manager','=',$users[$i]->id)
+                                ->where('type','=',2)->get();
+            $users[$i]->client=count($clients);
+            $users[$i]->prospect=count($prospects);
             foreach($businessUsers as $product)
             {
                 if($product['businessProduct'])
