@@ -224,10 +224,11 @@ class UserController extends BaseController
     {
         $user=User::find($id);
         $permiso =new Proceso();
+        $users=User::where('manager','=',$user->id)->get();
         $total=$permiso->filtrarPermisos();
         $logs=Log::where('responsible_id','=',$id)->get();
         $business=Business::where('manager','=',$user->id)->get();
-        return View::make('front.accounts.show',compact('total','business','user','logs'));
+        return View::make('front.accounts.show',compact('total','business','user','logs','users'));
     }
 
     public function showProfile()

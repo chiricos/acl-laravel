@@ -73,7 +73,7 @@
                         @endif
 
                         <div>
-                            {{ Form::label('address', 'address') }}
+                            {{ Form::label('address', 'Dirección') }}
                             {{ Form::text('address') }}
                         </div>
 
@@ -95,7 +95,7 @@
                         @endif
 
                         <div>
-                            {{ Form::label('ext', 'Ext') }}
+                            {{ Form::label('ext', 'Extensión') }}
                             {{ Form::text('ext') }}
                         </div>
 
@@ -106,7 +106,7 @@
                         @endif
 
                         <div>
-                            {{ Form::label('email', 'E-mail') }}
+                            {{ Form::label('email', 'Correo electronico') }}
                             {{ Form::text('email') }}
                         </div>
 
@@ -117,7 +117,7 @@
                         @endif
 
                         <div>
-                            {{ Form::label('second_email', 'E-mail Opcional') }}
+                            {{ Form::label('second_email', 'Correo electronico opcional') }}
                             {{ Form::text('second_email') }}
                         </div>
 
@@ -312,7 +312,7 @@
                         @endif
 
                         <div>
-                            {{ Form::label('address', 'address') }}
+                            {{ Form::label('address', 'Dirección') }}
                             {{ Form::text('address') }}
                         </div>
 
@@ -334,7 +334,7 @@
                         @endif
 
                         <div>
-                            {{ Form::label('ext', 'Ext') }}
+                            {{ Form::label('ext', 'Extensión') }}
                             {{ Form::text('ext') }}
                         </div>
 
@@ -345,7 +345,7 @@
                         @endif
 
                         <div>
-                            {{ Form::label('email', 'E-mail') }}
+                            {{ Form::label('email', 'Correo electronico') }}
                             {{ Form::text('email') }}
                         </div>
 
@@ -356,7 +356,7 @@
                         @endif
 
                         <div>
-                            {{ Form::label('second_email', 'E-mail Opcional') }}
+                            {{ Form::label('second_email', 'Correo electronico opcional') }}
                             {{ Form::text('second_email') }}
                         </div>
 
