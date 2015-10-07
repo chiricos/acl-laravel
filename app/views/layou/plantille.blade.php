@@ -71,7 +71,7 @@
             @endif
             @if(isset($total[12]))
                 @if($total[12]==1)
-                    <a href="{{route('charts')}}">Reportes</a>
+                    <a href="{{route('charts')}}">Consultas</a>
                 @endif
             @endif
             @if(isset($total[8]))
@@ -86,7 +86,7 @@
             @endif
             @if(isset($total[9]))
                 @if($total[9]==1)
-                    <a  href="{{route('contactAs')}}">Contactenos</a>
+                    <a  href="{{route('contactAs')}}">Mensajeria</a>
                 @endif
             @endif
 

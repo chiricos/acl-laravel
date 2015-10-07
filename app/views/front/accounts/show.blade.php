@@ -154,7 +154,7 @@
                     <div class="formContent">
                         <div>
                     <h2 class="showMove">Movimientos</h2>
-                    <section class="profileLogs hidden">
+                    <section class="profileLogs ">
                         @foreach($logs as $log)
                             <p>
                                 {{$log->responsible}}

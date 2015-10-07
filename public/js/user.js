@@ -30,7 +30,7 @@ $(document).on('ready', function() {
         }
     });
     var k=0;
-    $('.showMove').on('click',function()
+   /* $('.showMove').on('click',function()
     {
         if(k==0)
         {
@@ -40,7 +40,7 @@ $(document).on('ready', function() {
             $('.profileLogs').addClass('hidden');
             k=0;
         }
-    });
+    });*/
 
 });
 var i=0;

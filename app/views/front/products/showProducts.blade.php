@@ -65,8 +65,8 @@
                         <td>{{$businessProduct->value}}</td>
 
                         <td>
-                            <a class="icon-folder-open" href="{{route('paymentBusiness',$businessProduct->id)}}"></a>
-                            <a class="icon-trash " href="{{route('deleteProducts',$businessProduct->id)}}"></a>
+                            <a class="icon-folder-open" href="{{route('paymentBusiness',$businessProduct->id)}}">Ver pagos</a>
+                            <a class="icon-trash " href="{{route('deleteProducts',$businessProduct->id)}}">Eliminar</a>
                         </td>
                     </tr>
                 @endforeach

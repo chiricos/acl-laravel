@@ -51,7 +51,10 @@
                                                         <td>{{$user->user_name}}</td>
                                                     @endif
                                                 @endforeach
-                                                <td><a class="icon-folder-open" href="{{route('seeBusiness',$businessClient->id)}}"></a> <a href="{{route('updateBusiness',$businessClient->id)}}" class="icon-ccw "></a><a class="icon-plus-circled" href="{{route('createProducts',$businessClient->id)}}"></a></td>
+                                                <td><a class="icon-folder-open" href="{{route('seeBusiness',$businessClient->id)}}">Ver</a>
+                                                    <a href="{{route('updateBusiness',$businessClient->id)}}" class="icon-ccw ">Editar</a>
+                                                    <a class="icon-plus-circled" href="{{route('createProducts',$businessClient->id)}}">Agregar producto</a>
+                                                </td>
                                             </tr>
                                         @endif
                                     @endif
@@ -69,7 +72,10 @@
                                                     <td>{{$user->user_name}}</td>
                                                 @endif
                                             @endforeach
-                                            <td><a class="icon-folder-open" href="{{route('seeBusiness',$businessClient->id)}}"></a> <a href="{{route('updateBusiness',$businessClient->id)}}" class="icon-ccw "></a><a class="icon-plus-circled" href="{{route('createProducts',$businessClient->id)}}"></a></td>
+                                            <td><a class="icon-folder-open" href="{{route('seeBusiness',$businessClient->id)}}">Ver</a>
+                                                <a href="{{route('updateBusiness',$businessClient->id)}}" class="icon-ccw ">Editar</a>
+                                                <a class="icon-plus-circled" href="{{route('createProducts',$businessClient->id)}}">Agregar producto</a>
+                                            </td>
                                         </tr>
                                     @endif
                                 @endif
@@ -113,7 +119,9 @@
                                                 <td>{{$user->user_name}}</td>
                                             @endif
                                         @endforeach
-                                        <td><a class="icon-folder-open" href="{{route('seeBusiness',$businessClient->id)}}"></a> <a href="{{route('updateBusiness',$businessClient->id)}}" class="icon-ccw "></a></td>
+                                        <td><a class="icon-folder-open" href="{{route('seeBusiness',$businessClient->id)}}">Ver</a>
+                                            <a href="{{route('updateBusiness',$businessClient->id)}}" class="icon-ccw ">Editar</a>
+                                        </td>
                                     </tr>
                                 @endif
                             @endif
@@ -132,7 +140,8 @@
                                             <td>{{$user->user_name}}</td>
                                         @endif
                                     @endforeach
-                                    <td><a class="icon-folder-open" href="{{route('seeBusiness',$businessClient->id)}}"></a> <a href="{{route('updateBusiness',$businessClient->id)}}" class="icon-ccw "></a></td>
+                                    <td><a class="icon-folder-open" href="{{route('seeBusiness',$businessClient->id)}}">Ver</a>
+                                        <a href="{{route('updateBusiness',$businessClient->id)}}" class="icon-ccw ">Editar</a></td>
                                 </tr>
                             @endif
                         @endif

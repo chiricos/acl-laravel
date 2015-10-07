@@ -72,17 +72,17 @@
                     @endif
                     @if(isset($total[7]))
                         @if($total[7]==1)
-                        <td><a href="{{route('showUser',$user->id)}}" class="icon-folder-open "></a>
+                        <td><a href="{{route('showUser',$user->id)}}" class="icon-folder-open ">Ver</a>
                         @endif
                     @endif
                     @if(isset($total[6]))
                         @if($total[6]==1)
-                            <a href="{{route('updateUser',$user->id)}}" class="icon-ccw "></a>
+                            <a href="{{route('updateUser',$user->id)}}" class="icon-ccw ">Editar</a>
                         @endif
                     @endif
                     @if(isset($total[5]))
                         @if($total[5]==1)
-                           <a href="{{route('deleteUser',$user->id)}}" class="icon-trash "></a></td>
+                           <a href="{{route('deleteUser',$user->id)}}" class="icon-trash ">Eliminar</a></td>
                         @endif
                     @endif
                 </tr>

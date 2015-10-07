@@ -47,7 +47,7 @@
                             @endif
                         @endforeach
                         <td>{{$payment->payment}}</td>
-                        <td><a class="icon-folder-open" href="{{route('paymentBusiness',$payment->businessProduct_id)}}"></a></td>
+                        <td><a class="icon-folder-open" href="{{route('paymentBusiness',$payment->businessProduct_id)}}">Ver pago</a></td>
                         </tr>
                     @endif
                 @endforeach
