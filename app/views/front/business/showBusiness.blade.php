@@ -51,9 +51,13 @@
                                                         <td>{{$user->user_name}}</td>
                                                     @endif
                                                 @endforeach
-                                                <td><a class="icon-folder-open" href="{{route('seeBusiness',$businessClient->id)}}">Ver</a>
+
+                                                <td>
+                                                    <a class="icon-folder-open" href="{{route('seeBusiness',$businessClient->id)}}">Ver</a>
+                                                    @if(Auth::user()->role_id>1)
                                                     <a href="{{route('updateBusiness',$businessClient->id)}}" class="icon-ccw ">Editar</a>
                                                     <a class="icon-plus-circled" href="{{route('createProducts',$businessClient->id)}}">Agregar producto</a>
+                                                    @endif
                                                 </td>
                                             </tr>
                                         @endif
@@ -72,9 +76,12 @@
                                                     <td>{{$user->user_name}}</td>
                                                 @endif
                                             @endforeach
-                                            <td><a class="icon-folder-open" href="{{route('seeBusiness',$businessClient->id)}}">Ver</a>
+                                            <td>
+                                                <a class="icon-folder-open" href="{{route('seeBusiness',$businessClient->id)}}">Ver</a>
+                                                @if(Auth::user()->role_id>1)
                                                 <a href="{{route('updateBusiness',$businessClient->id)}}" class="icon-ccw ">Editar</a>
                                                 <a class="icon-plus-circled" href="{{route('createProducts',$businessClient->id)}}">Agregar producto</a>
+                                                @endif
                                             </td>
                                         </tr>
                                     @endif
@@ -119,8 +126,11 @@
                                                 <td>{{$user->user_name}}</td>
                                             @endif
                                         @endforeach
-                                        <td><a class="icon-folder-open" href="{{route('seeBusiness',$businessClient->id)}}">Ver</a>
+                                        <td>
+                                            <a class="icon-folder-open" href="{{route('seeBusiness',$businessClient->id)}}">Ver</a>
+                                            @if(Auth::user()->role_id>1)
                                             <a href="{{route('updateBusiness',$businessClient->id)}}" class="icon-ccw ">Editar</a>
+                                            @endif
                                         </td>
                                     </tr>
                                 @endif
@@ -141,7 +151,9 @@
                                         @endif
                                     @endforeach
                                     <td><a class="icon-folder-open" href="{{route('seeBusiness',$businessClient->id)}}">Ver</a>
+                                        @if(Auth::user()->role_id>1)
                                         <a href="{{route('updateBusiness',$businessClient->id)}}" class="icon-ccw ">Editar</a></td>
+                                        @endif
                                 </tr>
                             @endif
                         @endif
