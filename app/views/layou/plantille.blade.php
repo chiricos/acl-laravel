@@ -86,7 +86,7 @@
             @endif
             @if(isset($total[9]))
                 @if($total[9]==1)
-                    <a  href="{{route('contactAs')}}">Mensajeria</a>
+                    <a  href="{{route('contactAs')}}">Mensajerìa</a>
                 @endif
             @endif
 

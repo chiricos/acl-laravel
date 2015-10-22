@@ -164,8 +164,7 @@
         </section>
 
     @endif
-        <p style="font-weight: 100"> Total de registros{{$users->getTotal()}} </p>
-        {{$users->links();}}
+
     </div>
 
 @stop

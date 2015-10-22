@@ -1,7 +1,7 @@
 @extends('layou/plantille')
 
 @section('titleContent')
-    <h1>Contactenos</h1>
+    <h1>Mensajería</h1>
 @stop
 
 @section('content')

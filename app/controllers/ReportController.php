@@ -17,6 +17,7 @@ class ReportController extends BaseController
         $business=Business::where('type','=',1)->get();
         $client=Business::where('type','=',2)->get();
         $recurrent=0;
+        $cliente=Business::all();
         foreach($client as $dates)
         {
             $more=$this->date($dates->created_at);
@@ -52,7 +53,7 @@ class ReportController extends BaseController
 
         }
 
-        return View::make('front.reports.chart',compact('total','business','client','recurrent','users'));
+        return View::make('front.reports.chart',compact('total','business','client','recurrent','users','cliente'));
     }
 
 

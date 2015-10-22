@@ -100,7 +100,7 @@
                                 <td>{{$businessClient->mobile_phone}}</td>
                                 <td>{{$user->user_name}}</td>
 
-                                <td><a class="icon-folder-open" href="{{route('seeBusiness',$businessClient->id)}}"></a> <a href="{{route('updateBusiness',$businessClient->id)}}" class="icon-ccw "></a><a class="icon-plus-circled" href="{{route('createProducts',$businessClient->id)}}"></a></td>
+                                <td><a class="icon-folder-open" href="{{route('seeBusiness',$businessClient->id)}}"></a> </td>
                             </tr>
                         @endif
                     @endforeach
@@ -138,7 +138,7 @@
                                 <td>{{$businessClient->email}}</td>
                                 <td>{{$businessClient->mobile_phone}}</td>
                                 <td>{{$user->user_name}}</td>
-                                <td><a class="icon-folder-open" href="{{route('seeBusiness',$businessClient->id)}}"></a> <a href="{{route('updateBusiness',$businessClient->id)}}" class="icon-ccw "></a><a class="icon-plus-circled" href="{{route('createProducts',$businessClient->id)}}"></a></td>
+                                <td><a class="icon-folder-open" href="{{route('seeBusiness',$businessClient->id)}}"></a></td>
                             </tr>
                         @endif
                     @endforeach

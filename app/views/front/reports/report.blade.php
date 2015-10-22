@@ -1,13 +1,13 @@
 @extends('layou/plantille')
 
 @section('titleContent')
-    <h1>Reportes</h1>
+    <h1>Consultas</h1>
 @stop
 
 @section('content')
 
-    <a class="business-fixed buttonA" href="{{route('charts')}}">Reporte de Clientes</a>
-    <a class="business buttonA" href="{{route('chart')}}" style="color: #07b4e3">Reporte de productos</a>
+    <a class="business-fixed buttonA" href="{{route('charts')}}">Consultas de Clientes</a>
+    <a class="business buttonA" href="{{route('chart')}}" style="color: #07b4e3">Consultas de productos</a>
 
     <section class="reports">
         <div id="chart_div">

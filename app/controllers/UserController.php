@@ -18,7 +18,7 @@ class UserController extends BaseController
     {
         $permiso =new Proceso();
         $total=$permiso->filtrarPermisos();
-        $users=User::paginate(10);
+        $users=User::all();
         return View::make('front.accounts.users',compact('users','total'));
     }
 

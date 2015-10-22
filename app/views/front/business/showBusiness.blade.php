@@ -54,7 +54,7 @@
 
                                                 <td>
                                                     <a class="icon-folder-open" href="{{route('seeBusiness',$businessClient->id)}}">Ver</a>
-                                                    @if(Auth::user()->role_id>1)
+                                                    @if(Auth::user()->role_id>2)
                                                     <a href="{{route('updateBusiness',$businessClient->id)}}" class="icon-ccw ">Editar</a>
                                                     <a class="icon-plus-circled" href="{{route('createProducts',$businessClient->id)}}">Agregar producto</a>
                                                     @endif
@@ -78,7 +78,7 @@
                                             @endforeach
                                             <td>
                                                 <a class="icon-folder-open" href="{{route('seeBusiness',$businessClient->id)}}">Ver</a>
-                                                @if(Auth::user()->role_id>1)
+                                                @if(Auth::user()->role_id>2)
                                                 <a href="{{route('updateBusiness',$businessClient->id)}}" class="icon-ccw ">Editar</a>
                                                 <a class="icon-plus-circled" href="{{route('createProducts',$businessClient->id)}}">Agregar producto</a>
                                                 @endif
@@ -128,7 +128,7 @@
                                         @endforeach
                                         <td>
                                             <a class="icon-folder-open" href="{{route('seeBusiness',$businessClient->id)}}">Ver</a>
-                                            @if(Auth::user()->role_id>1)
+                                            @if(Auth::user()->role_id>2)
                                             <a href="{{route('updateBusiness',$businessClient->id)}}" class="icon-ccw ">Editar</a>
                                             @endif
                                         </td>
@@ -151,7 +151,7 @@
                                         @endif
                                     @endforeach
                                     <td><a class="icon-folder-open" href="{{route('seeBusiness',$businessClient->id)}}">Ver</a>
-                                        @if(Auth::user()->role_id>1)
+                                        @if(Auth::user()->role_id>2)
                                         <a href="{{route('updateBusiness',$businessClient->id)}}" class="icon-ccw ">Editar</a></td>
                                         @endif
                                 </tr>
